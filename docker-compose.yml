@@ -1,0 +1,56 @@
+version: "3.8"
+
+networks:
+  laravel:
+    driver: bridge
+
+services:
+  app:
+    build:
+      context: ./apache
+      dockerfile: Dockerfile
+      args:
+        uid: 1000
+    container_name: app
+    tty: true
+    ports:
+      - "8080:80"
+    volumes:
+      - ./:/var/www/html
+    networks:
+      - laravel
+    environment:
+      - APACHE_RUN_USER="#1000"
+      - APACHE_RUN_GROUP="#1000"
+    depends_on:
+      - mysql
+  mysql:
+    image: mysql:5.7.22
+    container_name: mysql
+    restart: unless-stopped
+    ports:
+      - "4306:3306"
+    volumes:
+      - ./mysql:/var/lib/mysql
+    environment:
+      - MYSQL_DATABASE=land
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=password
+      - MYSQL_ROOT_PASSWORD=root
+      - SERVICE_TAG=dev
+      - SERVICE_NAME=mysql
+    networks:
+      - laravel
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    container_name: phpmyadmin
+    ports:
+      - "8081:80"
+    environment:
+      - PMA_HOST=mysql
+      - MYSQL_ROOT_PASSWOD=root
+    networks:
+      - laravel
+    depends_on:
+      - mysql

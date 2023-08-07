@@ -1,0 +1,8 @@
+.pointer{
+    cursor: pointer;
+}
+
+#DataTables_Table_0_filter{
+    display: flex;
+    justify-content: end;
+}
