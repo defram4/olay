@@ -113,10 +113,12 @@
         </div>
     </div>
     <!-- End preloader -->
+    <main class="main__content_wrapper">
+        @include('front.inc.menu')
 
-    @include('front.inc.menu')
+        @yield('content')
 
-    @yield('content')
+    </main>
 
     @include('front.inc.footer')
 

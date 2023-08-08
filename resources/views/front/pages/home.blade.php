@@ -23,44 +23,112 @@
         <!--TODO Start slider section -->
         <section class="hero__slider--section">
             <div class="hero__slider--activation swiper">
+
                 <div class="swiper-wrapper">
-                    @foreach ($banners as $banner)
-                        <div class="swiper-slide">
-                            <div class="home__two--slider__items"
-                                style="background-image:url('{{ asset('storage/banner/' . $banner->big_img) }}')">
-                                <div class="container">
-                                    <div class="slider__items--inner">
-                                        <div class="row align-items-center">
-                                            <div class="col-lg-6 col-md-6">
-                                                <div class="slider__content">
-                                                    <h2 class="slider__maintitle text__primary h1">
-                                                        {!! $banner->title_2 !!}
-                                                    </h2>
-                                                    <p class="slider__desc">
-                                                        {!! $banner->text !!}
-                                                    </p>
-                                                    <div class="header__account">
-                                                        <a class="primary__btn slider__btn" href="{!! $banner->btn_url !!}">
-                                                            {!! $banner->btn_text !!}
-                                                        </a>
-                                                    </div>
+                    <div class="swiper-slide">
+                        <div class="home__two--slider__items"
+                            style="background: url({{ asset('front/img/slider/slider1.jpg') }})">
+                            <div class="container">
+                                <div class="slider__items--inner">
+                                    <div class="row align-items-center">
+                                        <div class="col-lg-6 col-md-6">
+                                            <div class="slider__content">
+                                                <h2 class="slider__maintitle text__primary h1">
+                                                    Discover the Art of Beauty
+                                                </h2>
+                                                <p class="slider__desc">
+                                                    Transforming Your Look at Our Salon
+                                                </p>
+                                                <div class="header__account">
+                                                    <a class="primary__btn slider__btn"
+                                                        href="{{ route('front.contact', app()->getLocale()) }}">
+                                                        Our Contacts
+                                                    </a>
                                                 </div>
                                             </div>
-                                            <div class="col-lg-6 col-md-6">
-                                                <div class="hero__slider--thumbnail text-right"
-                                                    style="background-color:transparent;">
-                                                    <img class="slider__layer--img style2"
-                                                        src="{{ asset('storage/banner/' . $banner->mobile_img) }}"
-                                                        alt="slider-img">
-                                                </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6">
+                                            <div class="hero__slider--thumbnail text-right"
+                                                style="background-color:transparent;">
+                                                <img class="slider__layer--img style2"
+                                                    src="{{ asset('front/img/slider/slider2.jpg') }}" alt="slider-img">
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    @endforeach
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="home__two--slider__items"
+                            style="background: url({{ asset('front/img/slider/home2.jpg') }})">
+                            <div class="container">
+                                <div class="slider__items--inner">
+                                    <div class="row align-items-center">
+                                        <div class="col-lg-6 col-md-6">
+                                            <div class="slider__content">
+                                                <h2 class="slider__maintitle text__primary h1">
+                                                    Discover the Essence of Beauty
+                                                </h2>
+                                                <p class="slider__desc">
+                                                    Luxurious Treatments for Your Skin, Hair, and Nails
+                                                </p>
+                                                <div class="header__account">
+                                                    <a class="primary__btn slider__btn"
+                                                        href="{{ route('front.contact', app()->getLocale()) }}">
+                                                        Our Contacts
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6">
+                                            <div class="hero__slider--thumbnail text-right"
+                                                style="background-color:transparent;">
+                                                <img class="slider__layer--img style2"
+                                                    src="{{ asset('front/img/slider/slider21.jpg') }}" alt="slider-img">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="home__two--slider__items"
+                            style="background: url({{ asset('front/img/slider/home3.jpg') }})">
+                            <div class="container">
+                                <div class="slider__items--inner">
+                                    <div class="row align-items-center">
+                                        <div class="col-lg-6 col-md-6">
+                                            <div class="slider__content">
+                                                <h2 class="slider__maintitle text__primary h1">
+                                                    Discover Your Inner Beauty
+                                                </h2>
+                                                <p class="slider__desc">
+                                                    Unwind and Rejuvenate with our services
+                                                </p>
+                                                <div class="header__account">
+                                                    <a class="primary__btn slider__btn"
+                                                        href="{{ route('front.contact', app()->getLocale()) }}">
+                                                        Our Contacts
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6">
+                                            <div class="hero__slider--thumbnail text-right"
+                                                style="background-color:transparent;">
+                                                <img class="slider__layer--img style2"
+                                                    src="{{ asset('front/img/slider/slider22.jpg') }}" alt="slider-img">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
                 <div class="slider__pagination swiper-pagination"></div>
             </div>
         </section>
@@ -69,7 +137,7 @@
         <!--TODO Start about section -->
         <section class="about__Section section--padding">
             <div class="container">
-                <div class="row align-items-center">
+                <div class="row align-items-center" style="text-align:justify; transform: translatex(-3%);">
                     <div class="col-lg-6 col-md-6 col-sm-6">
                         <div class="about__thumbnail padding__left position-relative">
                             <img src="{{ asset('front/img/other/about.jpg') }}" alt="img">
@@ -91,7 +159,8 @@
                                 expertly crafted hairstyling to meticulous nail art and soothing massages, we offer a
                                 comprehensive range of services to enhance your appearance and nurture your well-being.
                             </p>
-                            <a class="about__conten--btn primary__btn" href="about.html">More about</a>
+                            <a class="about__conten--btn primary__btn"
+                                href="{{ route('front.about', app()->getLocale()) }}">More about</a>
                         </div>
                     </div>
                 </div>
@@ -107,7 +176,7 @@
                 </div>
                 <div class="team__container d-flex">
                     <div class="row" style="justify-content: center; align-items:center; margin: 0 auto">
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-6 custom-col mb-30">
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-6 custom-col mb-30">
                             <div class="team__items text-center">
                                 <div class="team__thumb">
                                     <img class="team__thumb--img" src="{{ asset('front/img/other/service1.jpg') }}"
@@ -118,7 +187,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-6 custom-col mb-30">
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-6 custom-col mb-30">
                             <div class="team__items text-center">
                                 <div class="team__thumb">
                                     <img class="team__thumb--img" src="{{ asset('front/img/other/service2.jpg') }}"
@@ -129,7 +198,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-6 custom-col mb-30">
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-6 custom-col mb-30">
                             <div class="team__items text-center">
                                 <div class="team__thumb">
                                     <img class="team__thumb--img" src="{{ asset('front/img/other/service3.jpg') }}"
@@ -140,11 +209,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="team__container d-flex">
-                    <div class="row " style="justify-content: center; align-items:center; margin: 0 auto">
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-6 custom-col mb-30">
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-6 custom-col mb-30">
                             <div class="team__items text-center">
                                 <div class="team__thumb">
                                     <img class="team__thumb--img" src="{{ asset('front/img/other/service4.jpg') }}"
@@ -155,7 +220,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-6 custom-col mb-30">
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-6 custom-col mb-30">
                             <div class="team__items text-center">
                                 <div class="team__thumb">
                                     <img class="team__thumb--img" src="{{ asset('front/img/other/service5.jpg') }}"
@@ -166,7 +231,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-6 custom-col mb-30">
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-6 custom-col mb-30">
                             <div class="team__items text-center">
                                 <div class="team__thumb">
                                     <img class="team__thumb--img" src="{{ asset('front/img/other/service6.jpg') }}"
@@ -179,6 +244,7 @@
                         </div>
                     </div>
                 </div>
+
             </div>
         </section>
         <!--TODO  Services end -->
@@ -226,7 +292,7 @@
         <section class="advice__banner--section" style="padding-top: 5%; padding-bottom: 5%;">
             <div class="advice__banner--box position-relative">
                 <img class="advice__banner--thumbnail height_260 border-radius-5" style="width: 100%;"
-                    src="front/img/banner/cta1.jpg" alt="banner">
+                    src="{{ asset('front/img/banner/cta1.jpg') }}" alt="banner">
                 <div class="advice__banner--content style2">
                     <h2 class="advice__banner--title">Transform Your Look Today!</h2>
                     <p class="advice__banner--desc mb-30">
@@ -244,7 +310,7 @@
              container" style="padding-bottom:5%;">
             <div class="section__heading text-center mb-40">
                 <h2 class="section__heading--maintitle">
-                    Unforgettable Transformations
+                    Our projects
                 </h2>
             </div>
             <div class="product__section--inner">
@@ -273,6 +339,173 @@
                             </div>
                         </article>
                     </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-6 custom-col mb-30">
+                        <article class="product__card">
+                            <div class="product__card--thumbnail">
+                                <a class="product__card--thumbnail__link display-block">
+                                    <img class="product__card--thumbnail__img product__primary--img"
+                                        src="{{ asset('front/img/product/main-product/pr2.png') }}" alt="product-img">
+                                    <img class="product__card--thumbnail__img product__secondary--img"
+                                        src="{{ asset('front/img/product/main-product/pr2-1.png') }}" alt="product-img">
+                                </a>
+                            </div>
+                            <div class="product__card--content text-center height">
+                                <h3 class="product__card--title">
+                                    <a>
+                                        Glow Up Projec
+                                    </a>
+                                </h3>
+                                <p style="text-align: justify;">
+                                    Embark on a transformative journey with our Glow Up Project, where our skilled team of
+                                    beauty professionals will enhance your natural beauty, leaving you with a radiant and
+                                    confident glow.
+                                </p>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-6 custom-col mb-30">
+                        <article class="product__card">
+                            <div class="product__card--thumbnail">
+                                <a class="product__card--thumbnail__link display-block">
+                                    <img class="product__card--thumbnail__img product__primary--img"
+                                        src="{{ asset('front/img/product/main-product/pr3.png') }}" alt="product-img">
+                                    <img class="product__card--thumbnail__img product__secondary--img"
+                                        src="{{ asset('front/img/product/main-product/pr3-1.png') }}" alt="product-img">
+                                </a>
+                            </div>
+                            <div class="product__card--content text-center height">
+                                <h3 class="product__card--title">
+                                    <a>
+                                        Beauty Revamp
+                                    </a>
+                                </h3>
+                                <p style="text-align: justify;">
+                                    Discover the power of a Beauty Revamp as our talented stylists and beauty experts work
+                                    their magic to revitalize your look, bringing out your inner beauty and redefining your
+                                    style.
+                                </p>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-6 custom-col mb-30">
+                        <article class="product__card">
+                            <div class="product__card--thumbnail">
+                                <a class="product__card--thumbnail__link display-block">
+                                    <img class="product__card--thumbnail__img product__primary--img"
+                                        src="{{ asset('front/img/product/main-product/pr4.png') }}" alt="product-img">
+                                    <img class="product__card--thumbnail__img product__secondary--img"
+                                        src="{{ asset('front/img/product/main-product/pr4-1.png') }}" alt="product-img">
+                                </a>
+                            </div>
+                            <div class="product__card--content text-center height">
+                                <h3 class="product__card--title">
+                                    <a>
+                                        Empowering You Beauty
+                                    </a>
+                                </h3>
+                                <p style="text-align: justify;">
+                                    Project Confidence is all about empowering you to embrace your unique beauty. Let our
+                                    salon be the canvas where you unleash your confidence.
+                                </p>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-6 custom-col mb-30">
+                        <article class="product__card">
+                            <div class="product__card--thumbnail">
+                                <a class="product__card--thumbnail__link display-block">
+                                    <img class="product__card--thumbnail__img product__primary--img"
+                                        src="{{ asset('front/img/product/main-product/pr5.png') }}" alt="product-img">
+                                    <img class="product__card--thumbnail__img product__secondary--img"
+                                        src="{{ asset('front/img/product/main-product/pr5-1.png') }}" alt="product-img">
+                                </a>
+                            </div>
+                            <div class="product__card--content text-center height">
+                                <h3 class="product__card--title">
+                                    <a>
+                                        Beauty Makeover Project
+                                    </a>
+                                </h3>
+                                <p style="text-align: justify;">
+                                    Join us on The Beauty Makeover Project, where our team of skilled professionals will
+                                    work closely with you to unveil your true potential. Experience a personalized beauty
+                                    journey that will leave you looking and feeli.
+                                </p>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-6 custom-col mb-30">
+                        <article class="product__card">
+                            <div class="product__card--thumbnail">
+                                <a class="product__card--thumbnail__link display-block">
+                                    <img class="product__card--thumbnail__img product__primary--img"
+                                        src="{{ asset('front/img/product/main-product/pr6.png') }}" alt="product-img">
+                                    <img class="product__card--thumbnail__img product__secondary--img"
+                                        src="{{ asset('front/img/product/main-product/pr6-1.png') }}" alt="product-img">
+                                </a>
+                            </div>
+                            <div class="product__card--content text-center height">
+                                <h3 class="product__card--title">
+                                    <a>
+                                        Beauty Renaissance
+                                    </a>
+                                </h3>
+                                <p style="text-align: justify;">
+                                    Indulge in our Beauty Renaissance project and let us guide you through a revitalizing
+                                    experience that transcends physical transformation. Discover a renewed sense of self and
+                                    embrace the beauty that lies within.
+                                </p>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-6 custom-col mb-30">
+                        <article class="product__card">
+                            <div class="product__card--thumbnail">
+                                <a class="product__card--thumbnail__link display-block">
+                                    <img class="product__card--thumbnail__img product__primary--img"
+                                        src="{{ asset('front/img/product/main-product/pr7.png') }}" alt="product-img">
+                                    <img class="product__card--thumbnail__img product__secondary--img"
+                                        src="{{ asset('front/img/product/main-product/pr7-1.png') }}" alt="product-img">
+                                </a>
+                            </div>
+                            <div class="product__card--content text-center height">
+                                <h3 class="product__card--title">
+                                    <a>
+                                        Beauty Evolution
+                                    </a>
+                                </h3>
+                                <p style="text-align: justify;">
+                                    Witness the transformative power of our Beauty Evolution project, where our experts will
+                                    guide you through a personalized journey of self-discovery and help you embrace a new
+                                    and improved version of yourself.
+                                </p>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-6 custom-col mb-30">
+                        <article class="product__card">
+                            <div class="product__card--thumbnail">
+                                <a class="product__card--thumbnail__link display-block">
+                                    <img class="product__card--thumbnail__img product__primary--img"
+                                        src="{{ asset('front/img/product/main-product/pr8.png') }}" alt="product-img">
+                                    <img class="product__card--thumbnail__img product__secondary--img"
+                                        src="{{ asset('front/img/product/main-product/pr8-1.png') }}" alt="product-img">
+                                </a>
+                            </div>
+                            <div class="product__card--content text-center height">
+                                <h3 class="product__card--title">
+                                    <a>
+                                        Redefining Elegance
+                                    </a>
+                                </h3>
+                                <p style="text-align: justify;">
+                                    Join Project Glam and experience the epitome of elegance and sophistication. Let our
+                                    salon's talented team of beauty professionals elevate your style with exquisite
+                                    treatments and personalized services that exude glamour.
+                                </p>
+                            </div>
+                        </article>
+                    </div>
 
 
                 </div>
@@ -288,7 +521,8 @@
                 <div class="row">
                     <div class="col-lg-5">
                         <div class="img__width--banner">
-                            <img class="border-radius-5 and" src="front/img/banner/why.jpg" alt="img">
+                            <img class="border-radius-5 and" src="{{ asset('front/img/banner/why.jpg') }}"
+                                alt="img">
                         </div>
                     </div>
                     <div class="col-lg-7">
@@ -315,11 +549,13 @@
 
                                 <ul class="img__width--content__logo d-flex">
                                     <li class="img__width--logo__list">
-                                        <span><img src="front/img/icon/icon-img1.webp" alt="icon"></span>
+                                        <span><img src="{{ asset('front/img/icon/icon-img1.webp') }}"
+                                                alt="icon"></span>
                                         <span class="img__width--logo__text">Expertise and Skill</span>
                                     </li>
                                     <li class="img__width--logo__list">
-                                        <span><img src="front/img/icon/icon-img2.webp" alt="icon"></span>
+                                        <span><img src="{{ asset('front/img/icon/icon-img2.webp') }}"
+                                                alt="icon"></span>
                                         <span class="img__width--logo__text">Relaxation and Pampering</span>
                                     </li>
                                     <li class="img__width--logo__list">
@@ -327,19 +563,21 @@
                                         <span class="img__width--logo__text">Range of Services</span>
                                     </li>
                                     <li class="img__width--logo__list">
-                                        <span><img src="front/img/icon/icon-img4.webp" alt="icon"></span>
+                                        <span><img src="{{ asset('front/img/icon/icon-img4.webp') }}"
+                                                alt="icon"></span>
                                         <span class="img__width--logo__text"> High-care</span>
                                     </li>
                                     <li class="img__width--logo__list">
-                                        <span><img src="front/img/icon/icon-img5.webp" alt="icon"></span>
+                                        <span><img src="{{ asset('front/img/icon/icon-img5.webp') }}"
+                                                alt="icon"></span>
                                         <span class="img__width--logo__text">Trends and Innovation</span>
                                     </li>
                                     <li class="img__width--logo__list">
-                                        <span><img src="front/img/icon/icon-img6.webp" alt="icon"></span>
+                                        <span><img src="{{ asset('front/img/icon/icon-img6.webp') }}"
+                                                alt="icon"></span>
                                         <span class="img__width--logo__text">Personalized Attention</span>
                                     </li>
                                 </ul>
-                                <a class="img__width--btn primary__btn" href="contact.html">Contact Now</a>
                             </div>
                         </div>
                     </div>
@@ -361,13 +599,13 @@
                                 <div class="blog__card--thumbnail">
                                     <a class="blog__card--thumbnail__link"
                                         href="{{ route('front.blog', app()->getLocale()) }}">
-                                        <img class="blog__card--thumbnail__img" src="front/img/blog/blog1.jpg"
-                                            alt="blog-img">
+                                        <img class="blog__card--thumbnail__img"
+                                            src="{{ asset('front/img/blog/blog1.jpg') }}" alt="blog-img">
                                     </a>
                                 </div>
                                 <div class="blog__card--content height1">
                                     <h3 class="blog__card--title">
-                                        <a href="blogs.html">
+                                        <a href="{{ route('front.project', app()->getLocale()) }}">
                                             Unlock the Secrets to Flawless Skin
                                         </a>
                                     </h3>
@@ -383,13 +621,13 @@
                                 <div class="blog__card--thumbnail">
                                     <a class="blog__card--thumbnail__link"
                                         href="{{ route('front.blog', app()->getLocale()) }}">
-                                        <img class="blog__card--thumbnail__img" src="front/img/blog/blog2.png"
-                                            alt="blog-img">
+                                        <img class="blog__card--thumbnail__img"
+                                            src="{{ asset('front/img/blog/blog2.png') }}" alt="blog-img">
                                     </a>
                                 </div>
                                 <div class="blog__card--content height1">
                                     <h3 class="blog__card--title">
-                                        <a href="blogs.html">
+                                        <a href="{{ route('front.project', app()->getLocale()) }}">
                                             Makeup Mastery
                                         </a>
                                     </h3>
@@ -407,13 +645,13 @@
                                 <div class="blog__card--thumbnail">
                                     <a class="blog__card--thumbnail__link"
                                         href="{{ route('front.blog', app()->getLocale()) }}">
-                                        <img class="blog__card--thumbnail__img" src="front/img/blog/blog3.png"
-                                            alt="blog-img">
+                                        <img class="blog__card--thumbnail__img"
+                                            src="{{ asset('front/img/blog/blog3.png') }}" alt="blog-img">
                                     </a>
                                 </div>
                                 <div class="blog__card--content height1">
                                     <h3 class="blog__card--title">
-                                        <a href="blogs.html">
+                                        <a href="{{ route('front.project', app()->getLocale()) }}">
                                             Hair Transformations
                                         </a>
                                     </h3>
@@ -429,13 +667,13 @@
                                 <div class="blog__card--thumbnail">
                                     <a class="blog__card--thumbnail__link"
                                         href="{{ route('front.blog', app()->getLocale()) }}">
-                                        <img class="blog__card--thumbnail__img" src="front/img/blog/blog4.png"
-                                            alt="blog-img">
+                                        <img class="blog__card--thumbnail__img"
+                                            src="{{ asset('front/img/blog/blog4.png') }}" alt="blog-img">
                                     </a>
                                 </div>
                                 <div class="blog__card--content height1">
                                     <h3 class="blog__card--title">
-                                        <a href="blogs.html">
+                                        <a href="{{ route('front.project', app()->getLocale()) }}">
                                             Nail Art Extravaganza
                                         </a>
                                     </h3>
@@ -453,13 +691,13 @@
                                 <div class="blog__card--thumbnail">
                                     <a class="blog__card--thumbnail__link"
                                         href="{{ route('front.blog', app()->getLocale()) }}">
-                                        <img class="blog__card--thumbnail__img" src="front/img/blog/blog5.png"
-                                            alt="blog-img">
+                                        <img class="blog__card--thumbnail__img"
+                                            src="{{ asset('front/img/blog/blog5.png') }}" alt="blog-img">
                                     </a>
                                 </div>
                                 <div class="blog__card--content height1">
                                     <h3 class="blog__card--title">
-                                        <a href="blogs.html">
+                                        <a href="{{ route('front.project', app()->getLocale()) }}">
                                             Escape and Indulge
                                         </a>
                                     </h3>
@@ -475,13 +713,13 @@
                                 <div class="blog__card--thumbnail">
                                     <a class="blog__card--thumbnail__link"
                                         href="{{ route('front.blog', app()->getLocale()) }}">
-                                        <img class="blog__card--thumbnail__img" src="front/img/blog/blog6.png"
-                                            alt="blog-img">
+                                        <img class="blog__card--thumbnail__img"
+                                            src="{{ asset('front/img/blog/blog6.png') }}" alt="blog-img">
                                     </a>
                                 </div>
                                 <div class="blog__card--content height1">
                                     <h3 class="blog__card--title">
-                                        <a href="blogs.html">
+                                        <a href="{{ route('front.project', app()->getLocale()) }}">
                                             Hair Color Chronicles
                                         </a>
                                     </h3>
@@ -499,13 +737,13 @@
                                 <div class="blog__card--thumbnail">
                                     <a class="blog__card--thumbnail__link"
                                         href="{{ route('front.blog', app()->getLocale()) }}">
-                                        <img class="blog__card--thumbnail__img" src="front/img/blog/blog7.png"
-                                            alt="blog-img">
+                                        <img class="blog__card--thumbnail__img"
+                                            src="{{ asset('front/img/blog/blog7.png') }}" alt="blog-img">
                                     </a>
                                 </div>
                                 <div class="blog__card--content height1">
                                     <h3 class="blog__card--title">
-                                        <a href="blogs.html">
+                                        <a href="{{ route('front.project', app()->getLocale()) }}">
                                             The Path to Radianc
                                         </a>
                                     </h3>
@@ -539,13 +777,17 @@
         <!--TODO End blog section -->
 
         <!-- TODO Cal to action 2 start-->
-        <section class="newsletter__section section--padding">
+        <section class="newsletter__section ">
             <div class="container">
-                <div class="newsletter__inner--style2 newsletter__bg2">
+                <div class="newsletter__inner--style2 newsletter__bg2"
+                    style="background: url({{ asset('front/img/banner/cta2.png') }})">
                     <div class="newsletter__style2--content text-center">
-                        <h2 class="newsletter__style2--content__title">Book Your Beauty Transformation Today!</h2>
-                        <p class="newsletter__style2--content__desc">Unlock Your Radiance and Experience Unforgettable
-                            Makeovers.</p>
+                        <h2 class="newsletter__style2--content__title">
+                            Book Your Beauty Transformation Today!
+                        </h2>
+                        <p class="newsletter__style2--content__desc">
+                            Unlock Your Radiance and Experience Unforgettable Makeovers.
+                        </p>
                     </div>
                     <div class="newsletter__style2">
                         <form class="newsletter__style2--form position-relative" action="#">
@@ -640,4 +882,5 @@
         </section>
         <!-- TODO Contact Form end -->
     </main>
+
 @endsection

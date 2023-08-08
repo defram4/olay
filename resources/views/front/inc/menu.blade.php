@@ -25,7 +25,7 @@
                      <nav class="header__menu--navigation">
                          <ul class="header__menu--wrapper d-flex">
                              <li class="header__menu--items">
-                                 <a class="header__menu--link active" href="index.html">
+                                 <a class="header__menu--link" href="{{ route('front.index', app()->getLocale()) }}">
                                      Home
                                  </a>
                              </li>
@@ -38,16 +38,15 @@
                                      Services
                                  </a>
                                  <ul class="header__sub--menu">
-                                     <li class="header__sub--menu__items"><a href=""
-                                             class="header__sub--menu__link">Body waxing</a></li>
-                                     <li class="header__sub--menu__items"><a href=""
-                                             class="header__sub--menu__link">Nail care and art</a></li>
-                                     <li class="header__sub--menu__items"><a href=""
-                                             class="header__sub--menu__link">Massage therapy</a></li>
-                                     <li class="header__sub--menu__items"><a href=""
-                                             class="header__sub--menu__link">Makeup application</a></li>
-                                     <li class="header__sub--menu__items"><a href=""
-                                             class="header__sub--menu__link">Eyebrow shapin</a></li>
+                                     @foreach ($services as $service)
+                                         <li class="header__sub--menu__items">
+                                             <a href="{{ route('front.single.service', ['locale' => app()->getLocale(), 'slug' => $service->slug]) }}"
+                                                 class="header__sub--menu__link">
+                                                 {{ $service->title }}
+                                             </a>
+                                         </li>
+                                     @endforeach
+
                                  </ul>
                              </li>
                              <li class="header__menu--items">
@@ -108,8 +107,8 @@
          </form>
      </div>
      <button class="predictive__search--close__btn" aria-label="search close" data-offcanvas>
-         <svg class="predictive__search--close__icon" xmlns="http://www.w3.org/2000/svg" width="40.51"
-             height="30.443" viewBox="0 0 512 512">
+         <svg class="predictive__search--close__icon" xmlns="http://www.w3.org/2000/svg" width="40.51" height="30.443"
+             viewBox="0 0 512 512">
              <path fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                  stroke-width="32" d="M368 368L144 144M368 144L144 368" />
          </svg>
@@ -121,7 +120,8 @@
      <div class="offcanvas__inner">
          <div class="offcanvas__logo">
              <a class="offcanvas__logo_link" href="index.html">
-                 <img src="{{ asset('front/img/logo/nav-logo.png') }}" alt="Logo-img" width="155" height="36">
+                 <img src="{{ asset('front/img/logo/nav-logo.png') }}" alt="Logo-img" width="155"
+                     height="36">
              </a>
              <button class="offcanvas__close--btn" data-offcanvas>close</button>
          </div>
@@ -138,18 +138,16 @@
                  <li class="offcanvas__menu_li">
                      <a class="offcanvas__menu_item"
                          href="{{ route('front.service', app()->getLocale()) }}">Services</a>
-                     <ul class="offcanvas__sub_menu">
-                         <li class="offcanvas__sub_menu_li"><a href="single_service.html"
-                                 class="offcanvas__sub_menu_item">Body waxing</a></li>
-                         <li class="offcanvas__sub_menu_li"><a href="single_service.html"
-                                 class="offcanvas__sub_menu_item">Nail care and art</a></li>
-                         <li class="offcanvas__sub_menu_li"><a href="single_service.html"
-                                 class="offcanvas__sub_menu_item">
-                                 Massage therapy</a></li>
-                         <li class="offcanvas__sub_menu_li"><a href="single_service.html"
-                                 class="offcanvas__sub_menu_item">Makeup application</a></li>
-                         <li class="offcanvas__sub_menu_li"><a href="single_service.html"
-                                 class="offcanvas__sub_menu_item">Eyebrow shapin</a></li>
+                     <ul class="header__sub--menu">
+                         @foreach ($services as $service)
+                             <li class="header__sub--menu__items">
+                                 <a href="{{ route('front.single.service', ['locale' => app()->getLocale(), 'slug' => $service->slug]) }}"
+                                     class="header__sub--menu__link">
+                                     {{ $service->title }}
+                                 </a>
+                             </li>
+                         @endforeach
+
                      </ul>
                  </li>
                  <li class="offcanvas__menu_li">
