@@ -106,63 +106,73 @@
         <!-- TODO Cal to action 2 end-->
 
         <!-- TODO Why choose us start -->
-        <section class="img__width--text__section" style="padding-bottom: 5%;">
+        <section class="team__section" style="padding-bottom: 5%;">
             <div class="container">
-                <div class="row">
-                    <div class="col-lg-5">
-                        <div class="img__width--banner">
-                            <img class="border-radius-5 and" src="{{ asset('front/img/banner/why.jpg') }}" alt="img">
+                <div class="section__heading style2 text-center mb-40">
+                    <h2 class="section__heading--maintitle">Why Choose Us</h2>
+                </div>
+                <div class="team__container d-flex">
+                    <div class="row" style="justify-content: center; align-items:center; margin: 0 auto">
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-6 custom-col mb-30">
+                            <div class="team__items text-center team__items-hover">
+                                <div class="team__thumb">
+                                    <img class="team__thumb--img" src="{{ asset('front/img/icon/w1.png') }}"
+                                        alt=" team img">
+                                </div>
+                                <div class="team__content ">
+                                    <h3 class="team__content--title">Facial Treatments</h3>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-lg-7">
-                        <div class="img__width--right__sidebar">
-                            <div class="img__width--content">
-                                <h2 class="img__width--content__title">
-                                    Why Choose Us
-                                </h2>
-                                <p class="img__width--content__desc">
-                                    When it comes to your beauty needs, choosing our salon is the ultimate choice for a
-                                    transformative and unforgettable experience. Our expert team of skilled professionals is
-                                    dedicated to providing exceptional service, ensuring you leave feeling confident and
-                                    beautiful. With a personalized approach, we take the time to understand your unique
-                                    desires and tailor our treatments to exceed your expectations. We pride ourselves on
-                                    using only the highest quality products, ensuring optimal results and the utmost care
-                                    for your hair, skin, and nails. <br> <br> Offering a comprehensive range of services,
-                                    from cutting-edge hairstyling to luxurious spa treatments, we have everything you need
-                                    to enhance your natural beauty. Step into our relaxing and welcoming salon environment,
-                                    where hygiene and client satisfaction are our top priorities. Choose us and indulge in a
-                                    beauty experience that will leave you feeling pampered, refreshed, and ready to conquer
-                                    the world.
-                                </p>
-
-
-                                <ul class="img__width--content__logo d-flex">
-                                    <li class="img__width--logo__list">
-                                        <span><img src="{{ asset('front/img/icon/icon-img1.webp') }}" alt="icon"></span>
-                                        <span class="img__width--logo__text">Expertise and Skill</span>
-                                    </li>
-                                    <li class="img__width--logo__list">
-                                        <span><img src="{{ asset('front/img/icon/icon-img2.webp') }}" alt="icon"></span>
-                                        <span class="img__width--logo__text">Relaxation and Pampering</span>
-                                    </li>
-                                    <li class="img__width--logo__list">
-                                        <span><img src="{{ asset('front/img/icon/icon-img3.webp') }}" alt="icon"></span>
-                                        <span class="img__width--logo__text">Range of Services</span>
-                                    </li>
-                                    <li class="img__width--logo__list">
-                                        <span><img src="{{ asset('front/img/icon/icon-img4.webp') }}" alt="icon"></span>
-                                        <span class="img__width--logo__text"> High-care</span>
-                                    </li>
-                                    <li class="img__width--logo__list">
-                                        <span><img src="{{ asset('front/img/icon/icon-img5.webp') }}" alt="icon"></span>
-                                        <span class="img__width--logo__text">Trends and Innovation</span>
-                                    </li>
-                                    <li class="img__width--logo__list">
-                                        <span><img src="{{ asset('front/img/icon/icon-img6.webp') }}" alt="icon"></span>
-                                        <span class="img__width--logo__text">Personalized Attention</span>
-                                    </li>
-                                </ul>
-
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-6 custom-col mb-30">
+                            <div class="team__items text-center team__items-hover">
+                                <div class="team__thumb">
+                                    <img class="team__thumb--img" src="{{ asset('front/img/icon/w2.png') }}" alt="team img">
+                                </div>
+                                <div class="team__content ">
+                                    <h3 class="team__content--title">Relaxation and Pampering</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-6 custom-col mb-30">
+                            <div class="team__items text-center team__items-hover">
+                                <div class="team__thumb">
+                                    <img class="team__thumb--img" src="{{ asset('front/img/icon/w3.png') }}" alt="team img">
+                                </div>
+                                <div class="team__content ">
+                                    <h3 class="team__content--title">Range of Services</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-6 custom-col mb-30">
+                            <div class="team__items text-center team__items-hover">
+                                <div class="team__thumb">
+                                    <img class="team__thumb--img" src="{{ asset('front/img/icon/w4.png') }}" alt="team img">
+                                </div>
+                                <div class="team__content ">
+                                    <h3 class="team__content--title">High-care</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-6 custom-col mb-30">
+                            <div class="team__items text-center team__items-hover">
+                                <div class="team__thumb">
+                                    <img class="team__thumb--img" src="{{ asset('front/img/icon/w5.png') }}" alt="team img">
+                                </div>
+                                <div class="team__content ">
+                                    <h3 class="team__content--title">Trends and Innovation</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-6 custom-col mb-30">
+                            <div class="team__items text-center team__items-hover">
+                                <div class="team__thumb">
+                                    <img class="team__thumb--img" src="{{ asset('front/img/icon/w6.png') }}"
+                                        alt="team img">
+                                </div>
+                                <div class="team__content ">
+                                    <h3 class="team__content--title">Personalized Attention</h3>
+                                </div>
                             </div>
                         </div>
                     </div>

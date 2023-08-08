@@ -29,9 +29,9 @@
         <!--TODO Start blog section -->
         <section class="blog__section blog__section--bg" style="padding-top: 5%; padding-bottom: 5%;">
             <div class="container">
-                <div class="section__heading text-center mb-40">
+                {{-- <div class="section__heading text-center mb-40">
                     <h2 class="section__heading--maintitle">Explore Beauty Secrets and Expert Advice</h2>
-                </div>
+                </div> --}}
                 <div class="blog__section--inner blog__swiper--activation swiper">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">

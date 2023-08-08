@@ -14499,3 +14499,8 @@ input[type=range]::-moz-range-track {
         display: none;
     }
 }
+
+.team__items-hover:hover .team__thumb {
+    /* border-color: var(--secondary-color); */
+    border-color: green;
+}
