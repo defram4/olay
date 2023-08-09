@@ -39,7 +39,7 @@ class Project extends Model
 
     public static function getProjects($locale = 'en')
     {
-        return Project::select('projects.id', 'projects.active', 'projects.img', 'projects.created_at',
+        return Project::select('projects.id', 'projects.active', 'projects.img_1', 'projects.img_2', 'projects.created_at',
             'project_trans.title', 'project_trans.sub_title', 'project_trans.slug', 'project_trans.text')
             ->leftJoin('project_trans', function ($join) use ($locale) {
                 $join->on('project_trans.project_id', 'projects.id')
@@ -52,7 +52,7 @@ class Project extends Model
 
     public static function getForFrontAllProjects($locale = 'en')
     {
-        return Project::select('projects.id', 'projects.active', 'projects.img', 'projects.created_at',
+        return Project::select('projects.id', 'projects.active', 'projects.img_1', 'projects.img_2', 'projects.created_at',
             'project_trans.title', 'project_trans.sub_title', 'project_trans.slug', 'project_trans.text')
             ->leftJoin('project_trans', function ($join) use ($locale) {
                 $join->on('project_trans.project_id', 'projects.id')
@@ -68,7 +68,8 @@ class Project extends Model
         return Project::select(
             'projects.id',
             'projects.active',
-            'projects.img',
+            'projects.img_1',
+            'projects.img_2',
             'projects.cover_img',
             'projects.cover_video_img',
             'projects.video_link',
@@ -95,7 +96,7 @@ class Project extends Model
 
     public static function getAllProjectOnPages($locale = 'en')
     {
-        return Project::select('projects.id', 'projects.active', 'projects.img', 'projects.created_at',
+        return Project::select('projects.id', 'projects.active', 'projects.img_1', 'projects.img_2', 'projects.created_at',
             'project_trans.title', 'project_trans.sub_title', 'project_trans.slug', 'project_trans.text')
             ->leftJoin('project_trans', function ($join) use ($locale) {
                 $join->on('project_trans.project_id', 'projects.id')

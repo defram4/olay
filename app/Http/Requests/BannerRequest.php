@@ -26,6 +26,7 @@ class BannerRequest extends FormRequest
         return [
             'big_img' => ['sometimes', 'file', 'max:3000'],
             'mobile_img' => ['sometimes', 'file', 'max:3000'],
+            'small_img' => ['sometimes', 'file', 'max:3000'],
             'big_video' => ['sometimes', 'file', 'max:3000'],
             'mobile_video' => ['sometimes', 'file', 'max:3000'],
 

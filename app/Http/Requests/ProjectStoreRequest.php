@@ -24,7 +24,8 @@ class ProjectStoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'img' => ['required', 'file', 'max:2500'],
+            'img_1' => ['required', 'file', 'max:2500'],
+            'img_2' => ['required', 'file', 'max:2500'],
             'text.*.title' => ['required', 'string'],
             'text.*.sub_title' => ['required', 'string'],
             'text.*.text' => ['required', 'string'],
@@ -42,7 +43,8 @@ class ProjectStoreRequest extends FormRequest
     public function attributes()
     {
         return [
-            'img' => trans('Photo'),
+            'img_1' => trans('Photo'),
+            'img_2' => trans('Photo'),
             'text.*.title' => trans('Title'),
             'text.*.sub_title' => trans('Sub title'),
             'text.*.text' => trans('Description'),

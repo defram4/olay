@@ -25,108 +25,42 @@
             <div class="hero__slider--activation swiper">
 
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="home__two--slider__items"
-                            style="background: url({{ asset('front/img/slider/slider1.jpg') }})">
-                            <div class="container">
-                                <div class="slider__items--inner">
-                                    <div class="row align-items-center">
-                                        <div class="col-lg-6 col-md-6">
-                                            <div class="slider__content">
-                                                <h2 class="slider__maintitle text__primary h1">
-                                                    Discover the Art of Beauty
-                                                </h2>
-                                                <p class="slider__desc">
-                                                    Transforming Your Look at Our Salon
-                                                </p>
-                                                <div class="header__account">
-                                                    <a class="primary__btn slider__btn"
-                                                        href="{{ route('front.contact', app()->getLocale()) }}">
-                                                        Our Contacts
-                                                    </a>
+                    @foreach ($banners as $banner)
+                        <div class="swiper-slide">
+                            <div class="home__two--slider__items"
+                                style="background: url({{ asset('storage/banner/' . $banner->big_img) }})">
+                                <div class="container">
+                                    <div class="slider__items--inner">
+                                        <div class="row align-items-center">
+                                            <div class="col-lg-6 col-md-6">
+                                                <div class="slider__content">
+                                                    <h2 class="slider__maintitle text__primary h1">
+                                                        {!! $banner->title_2 !!}
+                                                    </h2>
+                                                    <p class="slider__desc">
+                                                        {!! $banner->text !!}
+                                                    </p>
+                                                    <div class="header__account">
+                                                        <a class="primary__btn slider__btn" href="{!! $banner->btn_url !!}">
+                                                            {!! $banner->btn_text !!}
+                                                        </a>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="col-lg-6 col-md-6">
-                                            <div class="hero__slider--thumbnail text-right"
-                                                style="background-color:transparent;">
-                                                <img class="slider__layer--img style2"
-                                                    src="{{ asset('front/img/slider/slider2.jpg') }}" alt="slider-img">
+                                            <div class="col-lg-6 col-md-6">
+                                                <div class="hero__slider--thumbnail text-right"
+                                                    style="background-color:transparent;">
+                                                    <img class="slider__layer--img style2"
+                                                        src="{{ asset('storage/banner/' . $banner->small_img) }}"
+                                                        alt="slider-img">
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="home__two--slider__items"
-                            style="background: url({{ asset('front/img/slider/home2.jpg') }})">
-                            <div class="container">
-                                <div class="slider__items--inner">
-                                    <div class="row align-items-center">
-                                        <div class="col-lg-6 col-md-6">
-                                            <div class="slider__content">
-                                                <h2 class="slider__maintitle text__primary h1">
-                                                    Discover the Essence of Beauty
-                                                </h2>
-                                                <p class="slider__desc">
-                                                    Luxurious Treatments for Your Skin, Hair, and Nails
-                                                </p>
-                                                <div class="header__account">
-                                                    <a class="primary__btn slider__btn"
-                                                        href="{{ route('front.contact', app()->getLocale()) }}">
-                                                        Our Contacts
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6 col-md-6">
-                                            <div class="hero__slider--thumbnail text-right"
-                                                style="background-color:transparent;">
-                                                <img class="slider__layer--img style2"
-                                                    src="{{ asset('front/img/slider/slider21.jpg') }}" alt="slider-img">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="home__two--slider__items"
-                            style="background: url({{ asset('front/img/slider/home3.jpg') }})">
-                            <div class="container">
-                                <div class="slider__items--inner">
-                                    <div class="row align-items-center">
-                                        <div class="col-lg-6 col-md-6">
-                                            <div class="slider__content">
-                                                <h2 class="slider__maintitle text__primary h1">
-                                                    Discover Your Inner Beauty
-                                                </h2>
-                                                <p class="slider__desc">
-                                                    Unwind and Rejuvenate with our services
-                                                </p>
-                                                <div class="header__account">
-                                                    <a class="primary__btn slider__btn"
-                                                        href="{{ route('front.contact', app()->getLocale()) }}">
-                                                        Our Contacts
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6 col-md-6">
-                                            <div class="hero__slider--thumbnail text-right"
-                                                style="background-color:transparent;">
-                                                <img class="slider__layer--img style2"
-                                                    src="{{ asset('front/img/slider/slider22.jpg') }}" alt="slider-img">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
 
                 <div class="slider__pagination swiper-pagination"></div>
@@ -891,5 +825,4 @@
         </section>
         <!-- TODO Contact Form end -->
     </main>
-
 @endsection

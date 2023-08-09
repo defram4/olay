@@ -17,6 +17,7 @@ class CreateBannersTable extends Migration
             $table->id();
 
             $table->string('big_img')->nullable()->default(null);
+            $table->string('small_img')->nullable()->default(null);
             $table->string('mobile_img')->nullable()->default(null);
             $table->string('big_video')->nullable()->default(null);
             $table->string('mobile_video')->nullable()->default(null);

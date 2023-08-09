@@ -19,8 +19,11 @@ class ProjectService
     {
         $data = $request->validated();
 
-        if ($request->hasFile('img')) {
-            $data['img'] = storeFile('project', $request->file('img'));
+        if ($request->hasFile('img_1')) {
+            $data['img_1'] = storeFile('project', $request->file('img_1'));
+        }
+        if ($request->hasFile('img_2')) {
+            $data['img_2'] = storeFile('project', $request->file('img_2'));
         }
 
         if ($request->hasFile('seo.img')) {
@@ -33,13 +36,16 @@ class ProjectService
         }
 
         $project = Project::create([
-            'img' => $data['img'],
+            'img_1' => $data['img_1'],
+            'img_2' => $data['img_2'],
         ]);
 
         if ($request->hasFile('gallery')) {
             foreach ($data['gallery'] as $image) {
-                $img = storeFile('project', $image);
-                $project->gallery()->create(['image' => $img]);
+                $img_1 = storeFile('project', $image);
+                $project->gallery()->create(['image_1' => $img_1]);
+                $img_2 = storeFile('project', $image);
+                $project->gallery()->create(['image_2' => $img_2]);
             }
         }
 
@@ -56,11 +62,18 @@ class ProjectService
 //        $project->load(['text', 'gallery', 'meta.text']);
         $meta = $project->meta;
 
-        if ($request->hasFile('img')) {
-            removeFile('project', $project->img);
-            $data['img'] = storeFile('project', $request->file('img'));
+        if ($request->hasFile('img_1')) {
+            removeFile('project', $project->img_1);
+            $data['img_1'] = storeFile('project', $request->file('img_1'));
             $project->update([
-                'img' => $data['img']
+                'img_1' => $data['img_1']
+            ]);
+        }
+        if ($request->hasFile('img_2')) {
+            removeFile('project', $project->img_2);
+            $data['img_2'] = storeFile('project', $request->file('img_2'));
+            $project->update([
+                'img_2' => $data['img_2']
             ]);
         }
 

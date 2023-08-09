@@ -23,6 +23,9 @@ class BannerService
         if ($request->hasFile('big_img')) {
             $data['big_img'] = storeFile('banner', $request->file('big_img'));
         }
+        if ($request->hasFile('small_img')) {
+            $data['small_img'] = storeFile('banner', $request->file('small_img'));
+        }
 
         if ($request->hasFile('mobile_img')) {
             $data['mobile_img'] = storeFile('banner', $request->file('mobile_img'));
@@ -39,6 +42,7 @@ class BannerService
         $banner = Banner::create([
             'big_img' => $data['big_img'] ?? null,
             'mobile_img' => $data['mobile_img'] ?? null,
+            'small_img' => $data['mobile_img'] ?? null,
             'big_video' => $data['big_video'] ?? null,
             'mobile_video' => $data['mobile_video'] ?? null,
         ]);
@@ -66,6 +70,13 @@ class BannerService
             $data['mobile_img'] = storeFile('banner', $request->file('mobile_img'));
             $banner->update([
                 'mobile_img' => $data['mobile_img']
+            ]);
+        }
+        if ($request->hasFile('small_img')) {
+            removeFile('banner', $banner->mobile_img);
+            $data['small_img'] = storeFile('banner', $request->file('small_img'));
+            $banner->update([
+                'small_img' => $data['small_img']
             ]);
         }
 
