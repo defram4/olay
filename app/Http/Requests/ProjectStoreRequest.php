@@ -43,8 +43,8 @@ class ProjectStoreRequest extends FormRequest
     public function attributes()
     {
         return [
-            'img_1' => trans('Photo'),
-            'img_2' => trans('Photo'),
+            'img_1' => trans('Photo_1'),
+            'img_2' => trans('Photo_2'),
             'text.*.title' => trans('Title'),
             'text.*.sub_title' => trans('Sub title'),
             'text.*.text' => trans('Description'),

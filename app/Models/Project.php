@@ -12,7 +12,7 @@ class Project extends Model
     const ACTIVE = 1;
 
     protected $table = 'projects';
-    protected $fillable = ['img', 'active'];
+    protected $fillable = ['img_1', 'img_2', 'active'];
 
     protected $casts = [
         'active' => 'boolean'

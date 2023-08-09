@@ -23,6 +23,9 @@ use App\Models\Testimonial;
 use App\Models\WhyChoose;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\View;
+use App\Models\Project;
+use App\Models\ProjectMeta;
+use App\Models\ProjectTrans;
 
 class HomeController extends Controller
 {
@@ -44,6 +47,7 @@ class HomeController extends Controller
         $meta = PageMeta::getMetaForPage($locale, 1);
         $services = Service::getForFrontAllServices($locale);
         $banners = Banner::getAllBannersForFront($locale);
+        $projects = Project::getForFrontAllProjects($locale);
 
 
         return View::make('front.pages.home', [
@@ -60,7 +64,8 @@ class HomeController extends Controller
             'banners' => $banners, // title_1 , title_2 , title_3 , title_4 , text , btn_text , btn_url , big_img , mobile_img , big_video , mobile_video
             'posts' => $posts,
             'meta' => $meta,
-            'services' => $services
+            'services' => $services,
+            'projects' => $projects,
 
         ]);
 
