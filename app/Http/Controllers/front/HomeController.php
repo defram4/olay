@@ -10,6 +10,7 @@ use App\Models\Content;
 use App\Models\CustomerLogo;
 use App\Models\Gallery;
 use App\Models\Image;
+use App\Models\News;
 use App\Models\Page;
 use App\Models\PageMeta;
 use App\Models\PartnerLogo;
@@ -26,6 +27,7 @@ use Illuminate\Support\Facades\View;
 use App\Models\Project;
 use App\Models\ProjectMeta;
 use App\Models\ProjectTrans;
+
 
 class HomeController extends Controller
 {
@@ -48,6 +50,7 @@ class HomeController extends Controller
         $services = Service::getForFrontAllServices($locale);
         $banners = Banner::getAllBannersForFront($locale);
         $projects = Project::getForFrontAllProjects($locale);
+        $newses = News::getAllNewsForFront($locale);
 
 
         return View::make('front.pages.home', [
@@ -66,6 +69,8 @@ class HomeController extends Controller
             'meta' => $meta,
             'services' => $services,
             'projects' => $projects,
+            'newses' => $newses,
+
 
         ]);
 

@@ -1,7 +1,6 @@
 @extends('layouts.front_second')
-@section('title', $meta->title)
+{{-- @section('title', $meta->title) --}}
 @section('content')
-
     <main class="main__content_wrapper">
 
         <!-- Start breadcrumb section -->
@@ -386,7 +385,7 @@
                     </h2>
                 </div>
                 <div class="team__container">
-                    <div class="row mb--n30">
+                    <div class="row mb--n30" style="display:flex; justify-content:center;">
                         <div class="col-lg-3 col-md-4 col-sm-6 col-6 custom-col mb-30">
                             <div class="team__items text-center">
                                 <div class="team__thumb">
@@ -424,15 +423,15 @@
                         <div class="col-lg-3 col-md-4 col-sm-6 col-6 custom-col mb-30">
                             <div class="team__items text-center">
                                 <div class="team__thumb">
-                                    <img class="team__thumb--img" src="{{ asset('front/img/other/team3.jpg') }}"
+                                    <img class="team__thumb--img" src="{{ asset('front/img/other/team2.jpg') }}"
                                         alt="team img">
                                 </div>
                                 <div class="team__content ">
                                     <h3 class="team__content--title">
-                                        Nadine Gekson
+                                        Marine Del-Piero
                                     </h3>
                                     <span class="team__content--subtitle">
-                                        Colorist
+                                        Hairdresser
                                     </span>
 
                                 </div>
@@ -441,19 +440,21 @@
                         <div class="col-lg-3 col-md-4 col-sm-6 col-6 custom-col mb-30">
                             <div class="team__items text-center">
                                 <div class="team__thumb">
-                                    <img class="team__thumb--img" src="{{ asset('front/img/other/team4.jpg') }}"
+                                    <img class="team__thumb--img" src="{{ asset('front/img/other/team2.jpg') }}"
                                         alt="team img">
                                 </div>
                                 <div class="team__content ">
                                     <h3 class="team__content--title">
-                                        Annet Marinage
+                                        Marine Del-Piero
                                     </h3>
                                     <span class="team__content--subtitle">
-                                        Wig stylist
+                                        Hairdresser
                                     </span>
+
                                 </div>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -468,112 +469,29 @@
                 </div>
                 <div class="testimonial__section--inner testimonial__swiper--activation swiper">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="testimonial__items">
-                                <div class="testimonial__author d-flex align-items-center">
-                                    <div class="testimonial__author__thumbnail">
-                                        <img src="{{ asset('front/img/other/team1.png') }}" alt="testimonial-img">
+                        @foreach ($testimonials as $testimonial)
+                            <div class="swiper-slide">
+                                <div class="testimonial__items">
+                                    <div class="testimonial__author d-flex align-items-center">
+                                        <div class="testimonial__author__thumbnail">
+                                            <img src="{{ asset('storage/testimonial/' . $testimonial->img) }}"
+                                                alt="testimonial-img">
+                                        </div>
+                                        <div class="testimonial__author--text">
+                                            <h3 class="testimonial__author--title">{!! $testimonial->name !!}</h3>
+                                            <span class="testimonial__author--subtitle">{!! $testimonial->function !!}</span>
+                                        </div>
                                     </div>
-                                    <div class="testimonial__author--text">
-                                        <h3 class="testimonial__author--title">Michael Linda</h3>
-                                        <span class="testimonial__author--subtitle">Beautician</span>
+                                    <div class="testimonial__content">
+                                        <p class="testimonial__desc">
+                                            {!! $testimonial->text !!}
+                                        </p>
+                                        <img class="testimonial__vector--icon"
+                                            src="{{ asset('front/img/icon/vector-icon.webp') }}" alt="icon">
                                     </div>
-                                </div>
-                                <div class="testimonial__content">
-                                    <p class="testimonial__desc">
-                                        Amazing salon! Skilled stylists, friendly staff, and a welcoming atmosphere. My
-                                        haircut turned out fantastic. Highly recommend!
-                                    </p>
-                                    <img class="testimonial__vector--icon"
-                                        src="{{ asset('front/img/icon/vector-icon.webp') }}" alt="icon">
                                 </div>
                             </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="testimonial__items">
-                                <div class="testimonial__author d-flex align-items-center">
-                                    <div class="testimonial__author__thumbnail">
-                                        <img src="{{ asset('front/img/other/team2.png') }}" alt="testimonial-img">
-                                    </div>
-                                    <div class="testimonial__author--text">
-                                        <h3 class="testimonial__author--title">Anett Deckson</h3>
-                                        <span class="testimonial__author--subtitle">Dev</span>
-                                    </div>
-                                </div>
-                                <div class="testimonial__content">
-                                    <p class="testimonial__desc">
-                                        Top-notch salon! Excellent service, talented professionals, and a wide range of
-                                        treatments. Always leave feeling pampered and beautiful.
-                                    </p>
-                                    <img class="testimonial__vector--icon"
-                                        src="{{ asset('front/img/icon/vector-icon.webp') }}" alt="icon">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="testimonial__items">
-                                <div class="testimonial__author d-flex align-items-center">
-                                    <div class="testimonial__author__thumbnail">
-                                        <img src="{{ asset('front/img/other/team3.png') }}" alt="testimonial-img">
-                                    </div>
-                                    <div class="testimonial__author--text">
-                                        <h3 class="testimonial__author--title">Maerell Adapi</h3>
-                                        <span class="testimonial__author--subtitle">CEO</span>
-                                    </div>
-                                </div>
-                                <div class="testimonial__content">
-                                    <p class="testimonial__desc">
-                                        Fantastic experience! The esthetician was knowledgeable, and the facial left my skin
-                                        glowing. Can't wait to return for more rejuvenating treatments.
-                                    </p>
-                                    <img class="testimonial__vector--icon"
-                                        src="{{ asset('front/img/icon/vector-icon.webp') }}" alt="icon">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="testimonial__items">
-                                <div class="testimonial__author d-flex align-items-center">
-                                    <div class="testimonial__author__thumbnail">
-                                        <img src="{{ asset('front/img/other/team4.png') }}" alt="testimonial-img">
-                                    </div>
-                                    <div class="testimonial__author--text">
-                                        <h3 class="testimonial__author--title">Marieta Areno</h3>
-                                        <span class="testimonial__author--subtitle">Photographer</span>
-                                    </div>
-                                </div>
-                                <div class="testimonial__content">
-                                    <p class="testimonial__desc">
-                                        Outstanding salon! The nail technicians are meticulous, and the manicure lasted for
-                                        weeks. Relaxing ambiance and impeccable service. A hidden gem!
-                                    </p>
-                                    <img class="testimonial__vector--icon"
-                                        src="{{ asset('front/img/icon/vector-icon.webp') }}" alt="icon">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="testimonial__items">
-                                <div class="testimonial__author d-flex align-items-center">
-                                    <div class="testimonial__author__thumbnail">
-                                        <img src="{{ asset('front/img/other/team5.jpg') }}" alt="testimonial-img"
-                                            style="width:70px; height:70px;">
-                                    </div>
-                                    <div class="testimonial__author--text">
-                                        <h3 class="testimonial__author--title">Marien Areki</h3>
-                                        <span class="testimonial__author--subtitle">Dev</span>
-                                    </div>
-                                </div>
-                                <div class="testimonial__content">
-                                    <p class="testimonial__desc">
-                                        Love this salon! The makeup artist created a stunning look for my special event.
-                                        Professional, friendly, and exceeded my expectations. Will be back!
-                                    </p>
-                                    <img class="testimonial__vector--icon"
-                                        src="{{ asset('front/img/icon/vector-icon.webp') }}" alt="icon">
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                     <div class="testimonial__pagination swiper-pagination"></div>
                 </div>
@@ -587,6 +505,4 @@
 
     {{-- Customers Logo --}}
     {{-- @include('front.components.customer_logo', ['customers' => $customers]) --}}
-
-
 @endsection
