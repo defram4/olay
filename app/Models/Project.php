@@ -83,17 +83,17 @@ class Project extends Model
             'projects.active',
             'projects.img_1',
             'projects.img_2',
-            'projects.cover_img',
-            'projects.cover_video_img',
-            'projects.video_link',
+            // 'projects.cover_img',
+            // 'projects.cover_video_img',
+            // 'projects.video_link',
             'projects.created_at',
             'project_trans.slug',
             'project_trans.title',
             'project_trans.sub_title',
             'project_trans.text',
-            'project_trans.customer_name',
-            'project_trans.company_name',
-            'project_trans.country'
+            // 'project_trans.customer_name',
+            // 'project_trans.company_name',
+            // 'project_trans.country'
         )
             ->leftJoin('project_trans', function ($join) use ($locale) {
                 $join->on('project_trans.project_id', 'projects.id')
