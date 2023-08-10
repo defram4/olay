@@ -191,7 +191,7 @@
                     </form>
 
 
-                    <div class="p-5">
+                    {{-- <div class="p-5">
                         <h2>{{ __('Image gallery') }}</h2>
                         <div class="row">
                             @foreach ($project->gallery as $img)
@@ -210,7 +210,7 @@
                                 </div>
                             @endforeach
                         </div>
-                    </div>
+                    </div> --}}
 
                 </div>
             </div>

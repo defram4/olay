@@ -41,7 +41,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="{{ $errors->has("text.$loop->index.title_2") ? 'is-invalid' : '' }}">
+                                    {{-- <div class="{{ $errors->has("text.$loop->index.title_2") ? 'is-invalid' : '' }}">
                                         <div class="form-material floating">
                                             <input type="text" class="form-control" id="title_2-{{ $loop->index }}"
                                                 name="text[{{ $loop->index }}][title_2]" autocomplete="off"
@@ -81,7 +81,7 @@
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>
-                                    </div>
+                                    </div> --}}
 
                                     <div class="{{ $errors->has("text.$loop->index.btn_text") ? 'is-invalid' : '' }}">
                                         <div class="form-material floating">
@@ -161,7 +161,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-md-6 {{ $errors->has('mobile_img') ? 'is-invalid' : '' }}">
+                            {{-- <div class="col-md-6 {{ $errors->has('mobile_img') ? 'is-invalid' : '' }}">
                                 <div class="form-material ">
                                     <label for="mobile_img">
                                         {{ __('Mobile Image') }}
@@ -203,7 +203,7 @@
                                         <div class="invalid-feedback">{{ $message }}</div>
                                     @enderror
                                 </div>
-                            </div>
+                            </div> --}}
 
                         </div>
                         <div class="form-group row">

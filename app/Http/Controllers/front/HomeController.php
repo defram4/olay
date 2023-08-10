@@ -3,9 +3,7 @@
 namespace App\Http\Controllers\front;
 
 use App\Http\Controllers\Controller;
-use App\Models\Awards;
 use App\Models\Banner;
-use App\Models\Books;
 use App\Models\Content;
 use App\Models\CustomerLogo;
 use App\Models\Gallery;
@@ -14,8 +12,8 @@ use App\Models\News;
 use App\Models\Page;
 use App\Models\PageMeta;
 use App\Models\PartnerLogo;
-use App\Models\Patents;
 use App\Models\Post;
+use App\Models\Project;
 use App\Models\Review;
 use App\Models\Service;
 use App\Models\Social;
@@ -24,9 +22,6 @@ use App\Models\Testimonial;
 use App\Models\WhyChoose;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\View;
-use App\Models\Project;
-use App\Models\ProjectMeta;
-use App\Models\ProjectTrans;
 
 
 class HomeController extends Controller
@@ -40,17 +35,19 @@ class HomeController extends Controller
         $customers = CustomerLogo::getCustomerForFront($locale);
         $partners = PartnerLogo::getPartnerForFront($locale);
         $teams = Team::getAllTeamsForFront($locale);
-        $socials = Social::getAllSocialsForFront($locale);
         $why_chooses = WhyChoose::getAllWhyChoosesForFront($locale);
         $testimonials = Testimonial::getAllTestimonialsForFront($locale);
         $gallerys = Gallery::getAllGalleriesForFront($locale);
         $reviews = Review::getAllReviewsForFront($locale);
         $posts = Post::getAllByCategoryId($locale, 1); // Here you need to indicate what Id has your caategory from database
         $meta = PageMeta::getMetaForPage($locale, 1);
-        $services = Service::getForFrontAllServices($locale);
         $banners = Banner::getAllBannersForFront($locale);
-        $projects = Project::getForFrontAllProjects($locale);
+        $projects = Project::getForFrontFourProjects($locale);
         $newses = News::getAllNewsForFront($locale);
+        $socials = Social::getAllSocials($locale);
+        $socials = Social::getAllSocialsForFront($locale);
+        $services = Service::getForFrontAllServices($locale);
+
 
 
         return View::make('front.pages.home', [
@@ -70,8 +67,6 @@ class HomeController extends Controller
             'services' => $services,
             'projects' => $projects,
             'newses' => $newses,
-
-
         ]);
 
     }

@@ -8,6 +8,7 @@ use App\Models\Faq;
 use App\Models\Image;
 use App\Models\PageMeta;
 use App\Models\Service;
+use App\Models\Social;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\View;
 
@@ -22,6 +23,7 @@ class FaqController extends Controller
         $content = Content::getContentByPage($locale, 8); //PAGE ID FROM DATABASE
         $meta = PageMeta::getMetaForPage($locale, 8);//PAGE ID FROM DATABASE
         $services = Service::getForFrontAllServices($locale);
+        $socials = Social::getAllSocials($locale);
 
         $faqs = Faq::select('faqs.id', 'faqs.active', 'faq_trans.title', 'faq_trans.text', 'faqs.created_at')
             ->leftJoin('faq_trans', function ($join) use ($locale) {
@@ -37,7 +39,8 @@ class FaqController extends Controller
             'content' => $content,
             'images' => $img,
             'services' => $services,
-            'meta'=>$meta
+            'meta'=>$meta,
+            'socials' => $socials,
         ]);
     }
 

@@ -14,6 +14,7 @@ use App\Models\Review;
 use App\Models\Service;
 use App\Models\ServiceMeta;
 use App\Models\ServiceTrans;
+use App\Models\Social;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
@@ -29,6 +30,8 @@ class ProjectFrontController extends Controller
         $content = Content::getContentByPage($locale, 4);
         $meta = PageMeta::getMetaForPage($locale, 4);
         $services = Service::getForFrontAllServices($locale);
+        $socials = Social::getAllSocials($locale);
+        $socials = Social::getAllSocialsForFront($locale);
 
 
         return View::make('front.pages.projects.project', [
@@ -36,7 +39,8 @@ class ProjectFrontController extends Controller
             'projects' => $projects,
             'content'=>$content,
             'services' => $services,
-            'meta'=>$meta
+            'meta'=>$meta,
+            'socials' => $socials, // img(sometimes) , name(sometimes) , url
         ]);
 
 
@@ -67,6 +71,8 @@ class ProjectFrontController extends Controller
         $projectMeta = ProjectMeta::getProjectMeta($locale, $projectId->project_id);
         $projects = Project::getForFrontAllProjects($locale);
         $services = Service::getForFrontAllServices($locale);
+        $socials = Social::getAllSocials($locale);
+        $socials = Social::getAllSocialsForFront($locale);
 
         return View::make('front.pages.projects.single-project', [
             'locale' => $locale,
@@ -76,7 +82,8 @@ class ProjectFrontController extends Controller
             'images' => $img,
             'projectMeta' => $projectMeta,
             'services' => $services,
-            'projects' => $projects
+            'projects' => $projects,
+            'socials' => $socials, // img(sometimes) , name(sometimes) , url
         ]);
     }
 }

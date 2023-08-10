@@ -14,7 +14,7 @@ class NewsTrans extends Model
 
     protected $fillable = [
         'title',
-        'sub_title',
+        // 'sub_title',
         'excerpt',
         'text',
 

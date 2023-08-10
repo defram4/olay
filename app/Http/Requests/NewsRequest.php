@@ -27,10 +27,10 @@ class NewsRequest extends FormRequest
             'img' => ['sometimes', 'file', 'max:2000'],
             'cover_img' => ['sometimes', 'file', 'max:3000'],
 
-            'text.*.title' => ['required', 'string'],
-            'text.*.sub_title' => ['required', 'string'],
+            'text.*.title' => ['sometimes', 'string'],
+            // 'text.*.sub_title' => ['required', 'string'],
             'text.*.excerpt' => ['required', 'string'],
-            'text.*.text' => ['required', 'string'],
+            'text.*.text' => ['sometimes', 'string'],
             'text.*.lang' => ['string'],
 
 
@@ -40,8 +40,8 @@ class NewsRequest extends FormRequest
             'seotext.*.keywords' => ['required', 'string'],
             'seotext.*.lang' => ['string'],
 
-            'gallery' => ['sometimes', 'array'],
-            'gallery.*' => ['sometimes', 'file', 'max:2500']
+            // 'gallery' => ['sometimes', 'array'],
+            // 'gallery.*' => ['sometimes', 'file', 'max:2500']
 
 
         ];

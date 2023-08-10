@@ -61,6 +61,19 @@ class Project extends Model
             ->where('projects.active', self::ACTIVE)
             ->get();
     }
+    public static function getForFrontFourProjects($locale = 'en')
+    {
+        return Project::select('projects.id', 'projects.active', 'projects.img_1', 'projects.img_2', 'projects.created_at',
+            'project_trans.title', 'project_trans.sub_title', 'project_trans.slug', 'project_trans.text')
+            ->leftJoin('project_trans', function ($join) use ($locale) {
+                $join->on('project_trans.project_id', 'projects.id')
+                    ->where('project_trans.lang', $locale);
+            })
+            ->where('projects.active', self::ACTIVE)
+            ->limit(4)
+            ->latest()
+            ->get();
+    }
 
 
     public static function getFrontSingleProject($locale = 'en', $projectId)

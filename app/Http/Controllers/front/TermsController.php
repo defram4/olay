@@ -7,6 +7,7 @@ use App\Models\Content;
 use App\Models\Image;
 use App\Models\PageMeta;
 use App\Models\Service;
+use App\Models\Social;
 use App\Models\Terms;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\View;
@@ -23,6 +24,7 @@ class TermsController extends Controller
         $content = Content::getContentByPage($locale, 9); //PAGE ID FROM DATABASE
         $meta = PageMeta::getMetaForPage($locale, 9); //PAGE ID FROM DATABASE
         $services = Service::getForFrontAllServices($locale);
+        $socials = Social::getAllSocials($locale);
 
         $terms = Terms::select('terms.id', 'terms.active', 'terms_trans.title', 'terms_trans.text', 'terms.created_at')
             ->leftJoin('terms_trans', function ($join) use ($locale) {
@@ -38,7 +40,8 @@ class TermsController extends Controller
             'content' => $content,
             'images' => $img,
             'services' => $services,
-            'meta'=>$meta
+            'meta'=>$meta,
+            'socials' => $socials,
         ]);
     }
 

@@ -8,6 +8,7 @@ use App\Models\Image;
 use App\Models\PageMeta;
 use App\Models\Policy;
 use App\Models\Service;
+use App\Models\Social;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\View;
 
@@ -22,6 +23,7 @@ class PrivacyController extends Controller
         $content = Content::getContentByPage($locale, 7);
         $meta = PageMeta::getMetaForPage($locale, 7);
         $services = Service::getForFrontAllServices($locale);
+        $socials = Social::getAllSocials($locale);
 
         $policies = Policy::select('policies.id', 'policies.active', 'policy_trans.title',
             'policy_trans.text', 'policies.created_at')
@@ -38,7 +40,8 @@ class PrivacyController extends Controller
             'content' => $content,
             'images' => $img,
             'services' => $services,
-            'meta' => $meta
+            'meta' => $meta,
+            'socials' => $socials,
         ]);
     }
 

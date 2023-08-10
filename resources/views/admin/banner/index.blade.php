@@ -21,7 +21,7 @@
                             <th class="text-center" style="width: 5%;">#</th>
                             <th style="width: 25%">{{ __('Title') }}</th>
                             <th style="width: 15%">{{ __('Button') }}</th>
-                            <th style="width: 20%">{{ __('Video') }}</th>
+                            {{-- <th style="width: 20%">{{ __('Video') }}</th> --}}
                             <th style="width: 20%">{{ __('Photo') }}</th>
                             <th class="d-none d-sm-table-cell" style="width: 5%;">{{ __('Active') }}</th>
                             <th class="text-center" style="width: 10%">{{ __('Actions') }}</th>
@@ -33,19 +33,19 @@
                                 <th class="text-center" scope="row">{{ $loop->iteration }}</th>
                                 <td>
                                     {{ $banner->title_1 }}
-                                    <br>
+                                    {{-- <br>
                                     {{ $banner->title_2 }}
                                     <br>
                                     {{ $banner->title_3 }}
                                     <br>
-                                    {{ $banner->title_4 }}
+                                    {{ $banner->title_4 }} --}}
                                 </td>
                                 <td>
                                     @if ($banner->btn_text)
                                         <button type="button" class="btn btn-primary">{!! $banner->btn_text !!}</button>
                                     @endif
                                 </td>
-                                <td>
+                                {{-- <td>
                                     @if ($banner->big_video)
                                         <video width="160" height="90" controls autoplay loop>
                                             <source src="{{ asset('storage/banner/' . $banner->big_video) }}"
@@ -55,7 +55,7 @@
                                         <img class="img-fluid" width="160" height="90"
                                             src="{{ asset('admin/media/photos/no_video.jpg') }}">
                                     @endif
-                                </td>
+                                </td> --}}
                                 <td>
                                     @if ($banner->big_img)
                                         <img class="img-fluid" width="160" height="90"

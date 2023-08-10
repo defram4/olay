@@ -31,30 +31,13 @@
                             </li>
                             <li class="footer__widget--menu__list">
                                 <ul class="social__share footer__social d-flex">
-                                    <li class="social__share--list">
-                                        <a class="social__share--icon" target="_blank">
-                                            <img src="{{ asset('front/img/icons/Icons/Facebook/facebook-circle-black-24.png') }}"
-                                                alt="Facebook">
-                                        </a>
-                                    </li>
-                                    <li class="social__share--list">
-                                        <a class="social__share--icon" target="_blank">
-                                            <img src="{{ asset('front/img/icons/Icons/Instagram/instagram-circle-black-24.png') }}"
-                                                alt="Instagram">
-                                        </a>
-                                    </li>
-                                    <li class="social__share--list">
-                                        <a class="social__share--icon" target="_blank">
-                                            <img src="{{ asset('front/img/icons/Icons/tik-tok/tiktok-black-24.png') }}"
-                                                alt="Tiktok">
-                                        </a>
-                                    </li>
-                                    <li class="social__share--list">
-                                        <a class="social__share--icon" target="_blank">
-                                            <img src="{{ asset('front/img/icons/Icons/youtube/youtube-black-24.png') }}"
-                                                alt="Youtube">
-                                        </a>
-                                    </li>
+                                    @foreach ($socials as $social)
+                                        <li class="social__share--list">
+                                            <a class="social__share--icon" target="_blank">
+                                                <img src="{{ asset('storage/social/' . $social->img) }}" alt="Icons">
+                                            </a>
+                                        </li>
+                                    @endforeach
                                 </ul>
 
                             </li>

@@ -11,10 +11,13 @@ use App\Models\NewsMetaTrans;
 use App\Models\Image;
 use App\Models\Page;
 use App\Models\PageMeta;
+use App\Models\Service;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
 use PHPUnit\Util\Test;
+use App\Models\Social;
+use App\Models\Post;
 
 class FrontNewsController extends Controller
 {
@@ -59,13 +62,18 @@ class FrontNewsController extends Controller
         $content = Content::getContentByPage($locale, Page::HOME);
         $image = Image::getImageByPageId(Page::HOME);
         $newsMeta = NewsMeta::getNewsMeta($locale, $newsId->news_id);
+        $services = Service::getForFrontAllServices($locale);
+        $socials = Social::getAllSocials($locale);
+
 
         return view()->make('front.pages.news.single_news', [
             'newsMeta' => $newsMeta,
             'content' => $content,
             'image' => $image,
             'news' => $news,
-            'newses' => $newses
+            'newses' => $newses,
+            'services' => $services,
+            'socials' => $socials,
         ]);
     }
 }

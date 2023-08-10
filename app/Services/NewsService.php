@@ -42,12 +42,12 @@ class NewsService
         ]);
 
 
-        if ($request->hasFile('gallery')) {
-            foreach ($data['gallery'] as $image) {
-                $img = storeFile('news', $image);
-                $news->gallery()->create(['img' => $img]);
-            }
-        }
+        // if ($request->hasFile('gallery')) {
+        //     foreach ($data['gallery'] as $image) {
+        //         $img = storeFile('news', $image);
+        //         $news->gallery()->create(['img' => $img]);
+        //     }
+        // }
 
 
         $meta = $news->meta()->create($data['seo']);
@@ -89,12 +89,12 @@ class NewsService
             ]);
         }
 
-        if ($request->hasFile('gallery')) {
-            foreach ($data['gallery'] as $image) {
-                $img = storeFile('news', $image);
-                $news->gallery()->create(['img' => $img]);
-            }
-        }
+        // if ($request->hasFile('gallery')) {
+        //     foreach ($data['gallery'] as $image) {
+        //         $img = storeFile('news', $image);
+        //         $news->gallery()->create(['img' => $img]);
+        //     }
+        // }
 
 
         (new TextService())->updateText($data['text'], $news);

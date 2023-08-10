@@ -1,5 +1,5 @@
 @extends('layouts.front_second')
-@section('title', $serviceMeta->title)
+{{-- @section('title', $serviceMeta->title) --}}
 @section('content')
     <main class="main__content_wrapper">
 

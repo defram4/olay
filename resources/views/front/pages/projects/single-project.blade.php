@@ -1,7 +1,6 @@
 @extends('layouts.front_second')
-@section('title', $serviceMeta->title)
+{{-- @section('title', $serviceMeta->title) --}}
 @section('content')
-
     <main class="main__content_wrapper">
 
         <!-- Start breadcrumb section -->
@@ -137,8 +136,6 @@
         </section>
         <!--TODO End collection Photo section -->
     </main>
-
-
 @endsection
 
 {{-- <h1> --}}

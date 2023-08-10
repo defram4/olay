@@ -1,7 +1,6 @@
 @extends('layouts.front_second')
-@section('title', $meta->title)
+{{-- @section('title', $meta->title) --}}
 @section('content')
-
     <main class="main__content_wrapper">
 
         <!-- Start breadcrumb section -->
@@ -393,6 +392,4 @@
         <h4>{{ $faq->title }}</h4>
         <p>{{ $faq->text }}</p>
     @endforeach --}}
-
-
 @endsection

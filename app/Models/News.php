@@ -49,7 +49,7 @@ class News extends Model
             'news.img',
             'news.cover_img',
             'news_trans.title',
-            'news_trans.sub_title',
+            // 'news_trans.sub_title',
             'news_trans.excerpt',
             'news_trans.text',
             'news_trans.slug',
@@ -71,7 +71,7 @@ class News extends Model
             'news.img',
             'news.cover_img',
             'news_trans.title',
-            'news_trans.sub_title',
+            // 'news_trans.sub_title',
             'news_trans.excerpt',
             'news_trans.text',
             'news_trans.slug',
@@ -94,7 +94,7 @@ class News extends Model
             'news.img',
             'news.cover_img',
             'news_trans.title',
-            'news_trans.sub_title',
+            // 'news_trans.sub_title',
             'news_trans.excerpt',
             'news_trans.text',
             'news_trans.slug',
@@ -113,4 +113,20 @@ class News extends Model
 
 
 
+
+	/**
+	 * @return mixed
+	 */
+	public function getFillable() {
+		return $this->fillable;
+	}
+
+	/**
+	 * @param mixed $fillable
+	 * @return self
+	 */
+	public function setFillable($fillable): self {
+		$this->fillable = $fillable;
+		return $this;
+	}
 }

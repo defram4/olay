@@ -111,7 +111,6 @@ class AdminNewsController extends Controller
     {
         removeFile('news', $news->img);
         removeFile('news', $news->cover_img);
-        removeFile('news', $news->meta->img);
         $news->delete();
         return Redirect::route('admin.newses.index', ['locale' => $locale])
             ->with('toast_success', trans('News removed successfully'));

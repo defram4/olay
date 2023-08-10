@@ -11,6 +11,7 @@ use App\Models\ServiceTrans;
 use App\Models\Content;
 use App\Models\Image;
 use App\Models\PageMeta;
+use App\Models\Social;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
@@ -23,13 +24,15 @@ class ServiceFrontController extends Controller
         $services = Service::getForFrontAllServices($locale);
         $content = Content::getContentByPage($locale, 3);
         $meta = PageMeta::getMetaForPage($locale, 3);
+        $socials = Social::getAllSocials($locale);
 
 
         return View::make('front.pages.services.service', [
             'images' => $img,
             'services' => $services,
             'content'=>$content,
-            'meta'=>$meta
+            'meta'=>$meta,
+            'socials' => $socials,
         ]);
 
 
@@ -61,6 +64,7 @@ class ServiceFrontController extends Controller
         $customers = CustomerLogo::getCustomerForFront($locale);
         $reviews = Review::getAllReviewsForFront($locale);
         $services = Service::getForFrontAllServices($locale);
+        $socials = Social::getAllSocials($locale);
 
         return View::make('front.pages.services.single-service', [
             'locale' => $locale,
@@ -71,7 +75,8 @@ class ServiceFrontController extends Controller
             'serviceMeta' => $serviceMeta,
             'services' => $services,
             'customers' => $customers,
-            'reviews' => $reviews
+            'reviews' => $reviews,
+            'socials' => $socials,
         ]);
     }
 

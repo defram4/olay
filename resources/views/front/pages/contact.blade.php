@@ -1,7 +1,6 @@
 @extends('layouts.front_second')
-@section('title', $meta->title)
+{{-- @section('title', $meta->title) --}}
 @section('content')
-
     <main class="main__content_wrapper">
 
         <!-- Start breadcrumb section -->
@@ -213,8 +212,4 @@
         </div>
     @endif --}}
     {{--  END  CONTACT FORM --}}
-
-
-
-
 @endsection

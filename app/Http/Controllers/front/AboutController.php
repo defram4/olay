@@ -10,8 +10,10 @@ use App\Models\Image;
 use App\Models\PageMeta;
 use App\Models\Patents;
 use App\Models\Post;
+use App\Models\Project;
 use App\Models\Review;
 use App\Models\Service;
+use App\Models\Social;
 use App\Models\Testimonial;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\View;
@@ -31,6 +33,8 @@ class AboutController extends Controller
         $services = Service::getForFrontAllServices($locale);
         $reviews = Review::getAllReviewsForFront($locale);
         $testimonials = Testimonial::getAllTestimonials($locale);
+        $socials = Social::getAllSocials($locale);
+        $projects = Project::getForFrontAllProjects($locale);
 
         return View::make('front.pages.about', [
             'customers' => $customers,
@@ -39,7 +43,9 @@ class AboutController extends Controller
             'meta'=>$meta,
             'services' => $services,
             'reviews' => $reviews,
-            'testimonials' => $testimonials
+            'testimonials' => $testimonials,
+            'socials' => $socials,
+            'projects' => $projects
         ]);
     }
 

@@ -35,7 +35,7 @@
                                             <div class="col-lg-6 col-md-6">
                                                 <div class="slider__content">
                                                     <h2 class="slider__maintitle text__primary h1">
-                                                        {!! $banner->title_2 !!}
+                                                        {!! $banner->title_1 !!}
                                                     </h2>
                                                     <p class="slider__desc">
                                                         {!! $banner->text !!}
@@ -253,7 +253,8 @@
                         <div class="col-lg-3 col-md-4 col-sm-6 col-6 custom-col mb-30">
                             <article class="product__card">
                                 <div class="product__card--thumbnail">
-                                    <a class="product__card--thumbnail__link display-block">
+                                    <a class="product__card--thumbnail__link display-block"
+                                        href="{{ route('front.single.project', ['locale' => app()->getLocale(), 'slug' => $project->slug]) }}">
                                         <img class="product__card--thumbnail__img product__primary--img"
                                             src="{{ asset('storage/project/' . $project->img_1) }}" alt="product-img1">
                                         <img class="product__card--thumbnail__img product__secondary--img"
@@ -262,7 +263,8 @@
                                 </div>
                                 <div class="product__card--content text-center height">
                                     <h3 class="product__card--title">
-                                        <a>
+                                        <a
+                                            href="{{ route('front.single.project', ['locale' => app()->getLocale(), 'slug' => $project->slug]) }}">
                                             {{ $project->title }}
                                         </a>
                                     </h3>
@@ -273,6 +275,10 @@
                             </article>
                         </div>
                     @endforeach
+                    <div class="product__load--more text-center">
+                        <a class="load__more--btn primary__btn"
+                            href="{{ route('front.project', app()->getLocale()) }}">All projects</a>
+                    </div>
                 </div>
 
             </div>
@@ -361,7 +367,7 @@
         <!-- TODO Why choose us start -->
 
         <!--TODO Start blog section -->
-        <section class="blog__section blog__section--bg " style="padding-top: 5%; padding-bottom: 3%;">
+        <section class="blog__section blog__section--bg " style="padding-top: 4%; padding-bottom: 3%;">
             <div class="container">
                 <div class="section__heading text-center mb-40">
                     <h2 class="section__heading--maintitle">Blog</h2>
@@ -373,7 +379,7 @@
                                 <article class="blog__card">
                                     <div class="blog__card--thumbnail">
                                         <a class="blog__card--thumbnail__link"
-                                            href="{{ route('front.blog', app()->getLocale()) }}">
+                                            href="{{ route('front.single_news', ['locale' => app()->getLocale(), 'slug' => $news->slug]) }}">
                                             <img class="blog__card--thumbnail__img"
                                                 src="{{ asset('storage/news/' . $news->img) }}" alt="blog-img">
                                         </a>
@@ -381,7 +387,7 @@
                                     <div class="blog__card--content height1">
                                         <h3 class="blog__card--title">
                                             <a
-                                                href="{{ route('front.single.project', ['locale' => app()->getLocale(), 'slug' => $project->slug]) }}">
+                                                href="{{ route('front.single_news', ['locale' => app()->getLocale(), 'slug' => $news->slug]) }}">
                                                 {!! $news->title !!}
                                             </a>
                                         </h3>

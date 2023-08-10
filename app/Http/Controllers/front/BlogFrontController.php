@@ -6,11 +6,13 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Content;
 use App\Models\Image;
+use App\Models\News;
 use App\Models\PageMeta;
 use App\Models\Post;
 use App\Models\PostMeta;
 use App\Models\PostTrans;
 use App\Models\Service;
+use App\Models\Social;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
@@ -29,6 +31,8 @@ class BlogFrontController extends Controller
         $content = Content::getContentByPage($locale, 5); //number 5 is page ID check DATABASE what ID is your page
         $meta = PageMeta::getMetaForPage($locale, 5); //number 5 is page ID check DATABASE what ID is your page
         $services = Service::getForFrontAllServices($locale);
+        $socials = Social::getAllSocials($locale);
+        $newses = News::getAllNewsForFront($locale);
 
         return View::make('front.pages.blog.blog', [
             'posts' => $posts,
@@ -36,7 +40,9 @@ class BlogFrontController extends Controller
             'categories' => $categories,
             'images' => $img,
             'meta' => $meta,
-            'services' => $services
+            'services' => $services,
+            'socials' => $socials,
+
         ]);
     }
 
