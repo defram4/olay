@@ -12820,8 +12820,8 @@ details>summary::-webkit-details-marker {
     25. Faq page css
 */
 .face__step {
-    margin-bottom: 3.5rem;
-    padding-bottom: 3.8rem;
+    /* margin-bottom: 3.5rem; */
+    padding-bottom: 5%;
 }
 
 .face__step:last-child {

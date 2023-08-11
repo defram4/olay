@@ -21,6 +21,7 @@
         "tailwindcss": "^2.0.2"
     },
     "dependencies": {
-        "cropperjs": "^1.5.13"
+        "cropperjs": "^1.5.13",
+        "font-awesome": "^4.7.0"
     }
 }

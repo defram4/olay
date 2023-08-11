@@ -311,7 +311,7 @@
     "Logo": "Логотип",
     "Link": "Cсылка",
     "Key": "Ключ",
-    "Language successfully added" : "Язык успешно добавлен",
+    "Language successfully added": "Язык успешно добавлен",
     "Language is updated": "Язык обновлен",
     "Language is successfully removed": "Язык успешно удален",
     "Category added successfully": "Категория успешно добавлена",
@@ -354,46 +354,39 @@
     "Customer logo removed": "Логотип клиента удален",
     "Details was updated": "Подробности обновлены",
     "Password was updated": "Пароль обновлен",
-
     "Team": "Команда",
     "Add team member": "Добавить члена команды",
     "Function": "Должность",
     "Edit team member": "Редактировать участника команды",
-
     "Add photo": "Добавить фото",
     "Edit photo": "Редактировать фотографию",
-
     "Partner logo": "Логотип партнера",
     "Add partner logo": "Добавить логотип партнера",
     "Edit partner logo": "Редактировать логотип партнера",
-
-    "Testimonial" : "Отзыв",
-    "Add testimonial" : "Добавьте отзыв",
-    "Edit testimonial" : "Редактировать отзыв",
-
-    "Social media" : "Социальные сети",
-    "Add social media" : "Добавить социальные сети",
-    "Add social link" : "Добавить социальную ссылку",
-    "Edit social link" : "Редактировать ссылку на соц.",
-
-    "Why choose us" : "Почему выбирают нас",
-    "Add why choose us" : "Добавьте почему выбирают нас",
-    "Edit why choose us" : "Редактировать почему выбирают нас",
-
-    "News" : "Новости",
-    "Add news" : "Добавить новость",
-    "Edit news" : "Редактировать новости",
-
-    "Support" : "Поддержка",
-    "Instructions" : "Инструкция",
-
+    "Testimonial": "Отзыв",
+    "Add testimonial": "Добавьте отзыв",
+    "Edit testimonial": "Редактировать отзыв",
+    "Social media": "Социальные сети",
+    "Add social media": "Добавить социальные сети",
+    "Add social link": "Добавить социальную ссылку",
+    "Edit social link": "Редактировать ссылку на соц.",
+    "Why choose us": "Почему выбирают нас",
+    "Add why choose us": "Добавьте почему выбирают нас",
+    "Edit why choose us": "Редактировать почему выбирают нас",
+    "News": "Новости",
+    "Add news": "Добавить новость",
+    "Edit news": "Редактировать новости",
+    "Support": "Поддержка",
+    "Instructions": "Инструкция",
     "To provide you with the best website experience, we use ": "Чтобы предоставить вам лучший опыт использования веб-сайта, мы используем файлы ",
     "cookies.": "cookies.",
     "Accept": "Принимаю",
-
     "The name field is required.": "Поле имя обязательно для заполнения.",
     "The email field is required.": "Поле электронной почтой обязательно для заполнения.",
     "The subject field is required.": "Поле темы обязательно для заполнения.",
     "The contact number field is required.": "Поле номер телефона обязательно для заполнения.",
-    "The message field is required.": "Поле сообщение обязательно для заполнения."
+    "The message field is required.": "Поле сообщение обязательно для заполнения.",
+    "Add project": "Добавить проект",
+    "Banner": "Баннер",
+    "Projects": "Проекты"
 }

@@ -26,314 +26,40 @@
             <div class="container">
                 <div class="faq__section--inner">
                     <div class="face__step one border-bottom" id="accordionExample">
-                        <h3 class="face__step--title mb-30">General Terms and Conditions</h3>
+                        {{-- <h3 class="face__step--title mb-30">General Terms and Conditions</h3> --}}
                         <div class="row">
-                            <div class="col-lg-6">
-                                <div class="accordion__container">
-                                    <div class="accordion__items">
-                                        <h2 class="accordion__items--title">
-                                            <button class="faq__accordion--btn accordion__items--button">
-                                                Liability and Responsibility
-                                                <span class="accordion__items--button__icon">
-                                                    <svg class="accordion__items--button__icon--svg"
-                                                        xmlns="http://www.w3.org/2000/svg" width="25.355" height="20.394"
-                                                        viewBox="0 0 512 512">
-                                                        <path
-                                                            d="M98 190.06l139.78 163.12a24 24 0 0036.44 0L414 190.06c13.34-15.57 2.28-39.62-18.22-39.62h-279.6c-20.5 0-31.56 24.05-18.18 39.62z"
-                                                            fill="currentColor"></path>
-                                                    </svg>
-                                                </span>
-                                            </button>
-                                        </h2>
-                                        <div class="accordion__items--body">
-                                            <p class="accordion__items--body__desc">
-                                                While we take every precaution to provide a safe and pleasant experience,
-                                                our salon cannot be held liable for any damages, injuries, or loss of
-                                                personal belongings that may occur during your visit.
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="accordion__items">
-                                        <h2 class="accordion__items--title">
-                                            <button class="faq__accordion--btn accordion__items--button">
-                                                Client Conduct
-                                                <span class="accordion__items--button__icon">
-                                                    <svg class="accordion__items--button__icon--svg"
-                                                        xmlns="http://www.w3.org/2000/svg" width="25.355" height="20.394"
-                                                        viewBox="0 0 512 512">
-                                                        <path
-                                                            d="M98 190.06l139.78 163.12a24 24 0 0036.44 0L414 190.06c13.34-15.57 2.28-39.62-18.22-39.62h-279.6c-20.5 0-31.56 24.05-18.18 39.62z"
-                                                            fill="currentColor"></path>
-                                                    </svg>
-                                                </span>
-                                            </button>
-                                        </h2>
-                                        <div class="accordion__items--body">
-                                            <p class="accordion__items--body__desc">
-                                                We maintain a respectful and inclusive environment for all clients and
-                                                staff. Any inappropriate or disrespectful behavior towards our team or other
-                                                clients may result in refusal of service and termination of the appointment.
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="accordion__items">
-                                        <h2 class="accordion__items--title">
-                                            <button class="faq__accordion--btn accordion__items--button">
-                                                Privacy and Data Protection
-                                                <span class="accordion__items--button__icon">
-                                                    <svg class="accordion__items--button__icon--svg"
-                                                        xmlns="http://www.w3.org/2000/svg" width="25.355" height="20.394"
-                                                        viewBox="0 0 512 512">
-                                                        <path
-                                                            d="M98 190.06l139.78 163.12a24 24 0 0036.44 0L414 190.06c13.34-15.57 2.28-39.62-18.22-39.62h-279.6c-20.5 0-31.56 24.05-18.18 39.62z"
-                                                            fill="currentColor"></path>
-                                                    </svg>
-                                                </span>
-                                            </button>
-                                        </h2>
-                                        <div class="accordion__items--body">
-                                            <p class="accordion__items--body__desc">
-                                                We respect your privacy and handle your personal information in accordance
-                                                with applicable data protection laws. We use your information solely for
-                                                appointment management, communication, and salon-related purposes.
-                                            </p>
+                            @foreach ($terms as $term)
+                                <div class="col-lg-12" style="margin-bottom: 1%;">
+                                    <div class="accordion__container">
+                                        <div class="accordion__items">
+                                            <h2 class="accordion__items--title">
+                                                <button class="faq__accordion--btn accordion__items--button">
+                                                    {!! $term->title !!}
+                                                    <span class="accordion__items--button__icon">
+                                                        <svg class="accordion__items--button__icon--svg"
+                                                            xmlns="http://www.w3.org/2000/svg" width="25.355"
+                                                            height="20.394" viewBox="0 0 512 512">
+                                                            <path
+                                                                d="M98 190.06l139.78 163.12a24 24 0 0036.44 0L414 190.06c13.34-15.57 2.28-39.62-18.22-39.62h-279.6c-20.5 0-31.56 24.05-18.18 39.62z"
+                                                                fill="currentColor"></path>
+                                                        </svg>
+                                                    </span>
+                                                </button>
+                                            </h2>
+                                            <div class="accordion__items--body">
+                                                <p class="accordion__items--body__desc">
+                                                    {!! $term->text !!}
+                                                </p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="accordion__container">
-                                    <div class="accordion__items">
-                                        <h2 class="accordion__items--title">
-                                            <button class="faq__accordion--btn accordion__items--button">
-                                                Service Guarantee
-                                                <span class="accordion__items--button__icon">
-                                                    <svg class="accordion__items--button__icon--svg"
-                                                        xmlns="http://www.w3.org/2000/svg" width="25.355" height="20.394"
-                                                        viewBox="0 0 512 512">
-                                                        <path
-                                                            d="M98 190.06l139.78 163.12a24 24 0 0036.44 0L414 190.06c13.34-15.57 2.28-39.62-18.22-39.62h-279.6c-20.5 0-31.56 24.05-18.18 39.62z"
-                                                            fill="currentColor"></path>
-                                                    </svg>
-                                                </span>
-                                            </button>
-                                        </h2>
-                                        <div class="accordion__items--body">
-                                            <p class="accordion__items--body__desc">
-                                                We strive to provide excellent services. If, for any reason, you are not
-                                                satisfied with your service, please let us know within 48 hours, and we will
-                                                make every effort to resolve the issue to your satisfaction.
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="accordion__items">
-                                        <h2 class="accordion__items--title">
-                                            <button class="faq__accordion--btn accordion__items--button">
-                                                Intellectual Property
-                                                <span class="accordion__items--button__icon">
-                                                    <svg class="accordion__items--button__icon--svg"
-                                                        xmlns="http://www.w3.org/2000/svg" width="25.355" height="20.394"
-                                                        viewBox="0 0 512 512">
-                                                        <path
-                                                            d="M98 190.06l139.78 163.12a24 24 0 0036.44 0L414 190.06c13.34-15.57 2.28-39.62-18.22-39.62h-279.6c-20.5 0-31.56 24.05-18.18 39.62z"
-                                                            fill="currentColor"></path>
-                                                    </svg>
-                                                </span>
-                                            </button>
-                                        </h2>
-                                        <div class="accordion__items--body">
-                                            <p class="accordion__items--body__desc">
-                                                All content, including logos, images, and text, on our salon's website and
-                                                social media platforms are protected by intellectual property rights and may
-                                                not be reproduced, modified, or used without our prior written consent.
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="accordion__items">
-                                        <h2 class="accordion__items--title">
-                                            <button class="faq__accordion--btn accordion__items--button">
-                                                Modifications to Terms
-                                                <span class="accordion__items--button__icon">
-                                                    <svg class="accordion__items--button__icon--svg"
-                                                        xmlns="http://www.w3.org/2000/svg" width="25.355" height="20.394"
-                                                        viewBox="0 0 512 512">
-                                                        <path
-                                                            d="M98 190.06l139.78 163.12a24 24 0 0036.44 0L414 190.06c13.34-15.57 2.28-39.62-18.22-39.62h-279.6c-20.5 0-31.56 24.05-18.18 39.62z"
-                                                            fill="currentColor"></path>
-                                                    </svg>
-                                                </span>
-                                            </button>
-                                        </h2>
-                                        <div class="accordion__items--body">
-                                            <p class="accordion__items--body__desc">
-                                                Our salon reserves the right to update or modify these terms and conditions
-                                                at any time. Any changes will be effective immediately upon posting on our
-                                                website or other communication channels.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                     <div></div>
                 </div>
-                <div class="faq__section--inner">
-                    <div class="face__step one border-bottom" id="accordionExample">
-                        <h3 class="face__step--title mb-30">Booking and Appointments</h3>
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="accordion__container">
-                                    <div class="accordion__items">
-                                        <h2 class="accordion__items--title">
-                                            <button class="faq__accordion--btn accordion__items--button">
-                                                Appointment Confirmation
-                                                <span class="accordion__items--button__icon">
-                                                    <svg class="accordion__items--button__icon--svg"
-                                                        xmlns="http://www.w3.org/2000/svg" width="25.355" height="20.394"
-                                                        viewBox="0 0 512 512">
-                                                        <path
-                                                            d="M98 190.06l139.78 163.12a24 24 0 0036.44 0L414 190.06c13.34-15.57 2.28-39.62-18.22-39.62h-279.6c-20.5 0-31.56 24.05-18.18 39.62z"
-                                                            fill="currentColor"></path>
-                                                    </svg>
-                                                </span>
-                                            </button>
-                                        </h2>
-                                        <div class="accordion__items--body">
-                                            <p class="accordion__items--body__desc">
-                                                When you book an appointment with our beauty salon, you will receive a
-                                                confirmation either by email or SMS. It is your responsibility to review the
-                                                details and notify us promptly if any changes or corrections are needed.
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="accordion__items">
-                                        <h2 class="accordion__items--title">
-                                            <button class="faq__accordion--btn accordion__items--button">
-                                                Late Arrival Policy
-                                                <span class="accordion__items--button__icon">
-                                                    <svg class="accordion__items--button__icon--svg"
-                                                        xmlns="http://www.w3.org/2000/svg" width="25.355" height="20.394"
-                                                        viewBox="0 0 512 512">
-                                                        <path
-                                                            d="M98 190.06l139.78 163.12a24 24 0 0036.44 0L414 190.06c13.34-15.57 2.28-39.62-18.22-39.62h-279.6c-20.5 0-31.56 24.05-18.18 39.62z"
-                                                            fill="currentColor"></path>
-                                                    </svg>
-                                                </span>
-                                            </button>
-                                        </h2>
-                                        <div class="accordion__items--body">
-                                            <p class="accordion__items--body__desc">
-                                                We understand that unexpected delays may occur. However, arriving
-                                                excessively late for your appointment may result in a shortened or
-                                                rescheduled session to ensure fairness to other clients and maintain our
-                                                schedule.
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="accordion__items">
-                                        <h2 class="accordion__items--title">
-                                            <button class="faq__accordion--btn accordion__items--button">
-                                                Cancellation and No-Show Policy
-                                                <span class="accordion__items--button__icon">
-                                                    <svg class="accordion__items--button__icon--svg"
-                                                        xmlns="http://www.w3.org/2000/svg" width="25.355" height="20.394"
-                                                        viewBox="0 0 512 512">
-                                                        <path
-                                                            d="M98 190.06l139.78 163.12a24 24 0 0036.44 0L414 190.06c13.34-15.57 2.28-39.62-18.22-39.62h-279.6c-20.5 0-31.56 24.05-18.18 39.62z"
-                                                            fill="currentColor"></path>
-                                                    </svg>
-                                                </span>
-                                            </button>
-                                        </h2>
-                                        <div class="accordion__items--body">
-                                            <p class="accordion__items--body__desc">
-                                                We kindly request a minimum of 24 hours' notice for any appointment
-                                                cancellations. Failure to cancel or reschedule within this timeframe, as
-                                                well as no-shows, may result in a cancellation fee being charged.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="accordion__container">
-                                    <div class="accordion__items">
-                                        <h2 class="accordion__items--title">
-                                            <button class="faq__accordion--btn accordion__items--button">
-                                                Rescheduling and Availability
-                                                <span class="accordion__items--button__icon">
-                                                    <svg class="accordion__items--button__icon--svg"
-                                                        xmlns="http://www.w3.org/2000/svg" width="25.355" height="20.394"
-                                                        viewBox="0 0 512 512">
-                                                        <path
-                                                            d="M98 190.06l139.78 163.12a24 24 0 0036.44 0L414 190.06c13.34-15.57 2.28-39.62-18.22-39.62h-279.6c-20.5 0-31.56 24.05-18.18 39.62z"
-                                                            fill="currentColor"></path>
-                                                    </svg>
-                                                </span>
-                                            </button>
-                                        </h2>
-                                        <div class="accordion__items--body">
-                                            <p class="accordion__items--body__desc">
-                                                If you need to reschedule your appointment, please inform us as soon as
-                                                possible. We will make every effort to accommodate your request, subject to
-                                                availability.
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="accordion__items">
-                                        <h2 class="accordion__items--title">
-                                            <button class="faq__accordion--btn accordion__items--button">
-                                                Payment Terms
-                                                <span class="accordion__items--button__icon">
-                                                    <svg class="accordion__items--button__icon--svg"
-                                                        xmlns="http://www.w3.org/2000/svg" width="25.355" height="20.394"
-                                                        viewBox="0 0 512 512">
-                                                        <path
-                                                            d="M98 190.06l139.78 163.12a24 24 0 0036.44 0L414 190.06c13.34-15.57 2.28-39.62-18.22-39.62h-279.6c-20.5 0-31.56 24.05-18.18 39.62z"
-                                                            fill="currentColor"></path>
-                                                    </svg>
-                                                </span>
-                                            </button>
-                                        </h2>
-                                        <div class="accordion__items--body">
-                                            <p class="accordion__items--body__desc">
-                                                Payment for services is due at the time of the appointment. We accept cash,
-                                                credit cards, or any other payment methods specified by our salon. In the
-                                                case of package purchases or gift vouchers, the specific terms and
-                                                conditions outlined at the time of purchase apply.
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="accordion__items">
-                                        <h2 class="accordion__items--title">
-                                            <button class="faq__accordion--btn accordion__items--button">
-                                                Gift Voucher Terms
-                                                <span class="accordion__items--button__icon">
-                                                    <svg class="accordion__items--button__icon--svg"
-                                                        xmlns="http://www.w3.org/2000/svg" width="25.355" height="20.394"
-                                                        viewBox="0 0 512 512">
-                                                        <path
-                                                            d="M98 190.06l139.78 163.12a24 24 0 0036.44 0L414 190.06c13.34-15.57 2.28-39.62-18.22-39.62h-279.6c-20.5 0-31.56 24.05-18.18 39.62z"
-                                                            fill="currentColor"></path>
-                                                    </svg>
-                                                </span>
-                                            </button>
-                                        </h2>
-                                        <div class="accordion__items--body">
-                                            <p class="accordion__items--body__desc">
-                                                Gift vouchers are non-refundable and cannot be redeemed for cash. They must
-                                                be presented at the time of redemption, and any unused portion may not be
-                                                carried forward or exchanged for cash.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div></div>
-                </div>
+
             </div>
         </section>
         <!-- TODO FAQ section end -->

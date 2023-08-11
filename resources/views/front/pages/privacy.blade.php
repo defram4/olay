@@ -28,317 +28,35 @@
             <div class="container">
                 <div class="faq__section--inner">
                     <div class="face__step one border-bottom" id="accordionExample">
-                        <h3 class="face__step--title mb-30">Collection and Use of Personal Information</h3>
+                        {{-- <h3 class="face__step--title mb-30">Collection and Use of Personal Information</h3> --}}
                         <div class="row">
-                            <div class="col-lg-6">
-                                <div class="accordion__container">
-                                    <div class="accordion__items">
-                                        <h2 class="accordion__items--title">
-                                            <button class="faq__accordion--btn accordion__items--button">
-                                                Information We Collect
-                                                <span class="accordion__items--button__icon">
-                                                    <svg class="accordion__items--button__icon--svg"
-                                                        xmlns="http://www.w3.org/2000/svg" width="25.355" height="20.394"
-                                                        viewBox="0 0 512 512">
-                                                        <path
-                                                            d="M98 190.06l139.78 163.12a24 24 0 0036.44 0L414 190.06c13.34-15.57 2.28-39.62-18.22-39.62h-279.6c-20.5 0-31.56 24.05-18.18 39.62z"
-                                                            fill="currentColor"></path>
-                                                    </svg>
-                                                </span>
-                                            </button>
-                                        </h2>
-                                        <div class="accordion__items--body">
-                                            <p class="accordion__items--body__desc">
-                                                We collect personal information such as your name, contact details, and
-                                                appointment preferences when you book a service with our beauty salon. This
-                                                information is necessary for scheduling appointments and providing
-                                                personalized services.
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="accordion__items">
-                                        <h2 class="accordion__items--title">
-                                            <button class="faq__accordion--btn accordion__items--button">
-                                                Purpose of Collection
-                                                <span class="accordion__items--button__icon">
-                                                    <svg class="accordion__items--button__icon--svg"
-                                                        xmlns="http://www.w3.org/2000/svg" width="25.355" height="20.394"
-                                                        viewBox="0 0 512 512">
-                                                        <path
-                                                            d="M98 190.06l139.78 163.12a24 24 0 0036.44 0L414 190.06c13.34-15.57 2.28-39.62-18.22-39.62h-279.6c-20.5 0-31.56 24.05-18.18 39.62z"
-                                                            fill="currentColor"></path>
-                                                    </svg>
-                                                </span>
-                                            </button>
-                                        </h2>
-                                        <div class="accordion__items--body">
-                                            <p class="accordion__items--body__desc">
-                                                We use the collected information to manage appointments, communicate with
-                                                you regarding your bookings, and provide you with a tailored beauty
-                                                experience. We may also use your information to send important updates,
-                                                promotions, or relevant salon-related information, with your consent.
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="accordion__items">
-                                        <h2 class="accordion__items--title">
-                                            <button class="faq__accordion--btn accordion__items--button">
-                                                Data Protection
-                                                <span class="accordion__items--button__icon">
-                                                    <svg class="accordion__items--button__icon--svg"
-                                                        xmlns="http://www.w3.org/2000/svg" width="25.355" height="20.394"
-                                                        viewBox="0 0 512 512">
-                                                        <path
-                                                            d="M98 190.06l139.78 163.12a24 24 0 0036.44 0L414 190.06c13.34-15.57 2.28-39.62-18.22-39.62h-279.6c-20.5 0-31.56 24.05-18.18 39.62z"
-                                                            fill="currentColor"></path>
-                                                    </svg>
-                                                </span>
-                                            </button>
-                                        </h2>
-                                        <div class="accordion__items--body">
-                                            <p class="accordion__items--body__desc">
-                                                We prioritize the security of your personal information. We implement
-                                                industry-standard measures to protect your data from unauthorized access,
-                                                disclosure, or misuse. Your information is stored securely and accessed only
-                                                by authorized personnel.
-                                            </p>
+                            @foreach ($policies as $policy)
+                                <div class="col-lg-12" style="margin-bottom: 1%;">
+                                    <div class="accordion__container">
+                                        <div class="accordion__items">
+                                            <h2 class="accordion__items--title">
+                                                <button class="faq__accordion--btn accordion__items--button">
+                                                    {!! $policy->title !!}
+                                                    <span class="accordion__items--button__icon">
+                                                        <svg class="accordion__items--button__icon--svg"
+                                                            xmlns="http://www.w3.org/2000/svg" width="25.355"
+                                                            height="20.394" viewBox="0 0 512 512">
+                                                            <path
+                                                                d="M98 190.06l139.78 163.12a24 24 0 0036.44 0L414 190.06c13.34-15.57 2.28-39.62-18.22-39.62h-279.6c-20.5 0-31.56 24.05-18.18 39.62z"
+                                                                fill="currentColor"></path>
+                                                        </svg>
+                                                    </span>
+                                                </button>
+                                            </h2>
+                                            <div class="accordion__items--body">
+                                                <p class="accordion__items--body__desc">
+                                                    {!! $policy->text !!}
+                                                </p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="accordion__container">
-                                    <div class="accordion__items">
-                                        <h2 class="accordion__items--title">
-                                            <button class="faq__accordion--btn accordion__items--button">
-                                                Third-Party Disclosure
-                                                <span class="accordion__items--button__icon">
-                                                    <svg class="accordion__items--button__icon--svg"
-                                                        xmlns="http://www.w3.org/2000/svg" width="25.355" height="20.394"
-                                                        viewBox="0 0 512 512">
-                                                        <path
-                                                            d="M98 190.06l139.78 163.12a24 24 0 0036.44 0L414 190.06c13.34-15.57 2.28-39.62-18.22-39.62h-279.6c-20.5 0-31.56 24.05-18.18 39.62z"
-                                                            fill="currentColor"></path>
-                                                    </svg>
-                                                </span>
-                                            </button>
-                                        </h2>
-                                        <div class="accordion__items--body">
-                                            <p class="accordion__items--body__desc">
-                                                We do not sell, trade, or transfer your personal information to outside
-                                                parties. However, we may share your information with trusted third-party
-                                                service providers who assist us in operating our salon, such as online
-                                                booking platforms or payment processors, strictly for salon-related
-                                                purposes.
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="accordion__items">
-                                        <h2 class="accordion__items--title">
-                                            <button class="faq__accordion--btn accordion__items--button">
-                                                Retention Period
-                                                <span class="accordion__items--button__icon">
-                                                    <svg class="accordion__items--button__icon--svg"
-                                                        xmlns="http://www.w3.org/2000/svg" width="25.355" height="20.394"
-                                                        viewBox="0 0 512 512">
-                                                        <path
-                                                            d="M98 190.06l139.78 163.12a24 24 0 0036.44 0L414 190.06c13.34-15.57 2.28-39.62-18.22-39.62h-279.6c-20.5 0-31.56 24.05-18.18 39.62z"
-                                                            fill="currentColor"></path>
-                                                    </svg>
-                                                </span>
-                                            </button>
-                                        </h2>
-                                        <div class="accordion__items--body">
-                                            <p class="accordion__items--body__desc">
-                                                We retain your personal information for as long as necessary to fulfill the
-                                                purposes for which it was collected and comply with applicable legal and
-                                                regulatory requirements. After this period, your data will be securely and
-                                                permanently deleted.
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="accordion__items">
-                                        <h2 class="accordion__items--title">
-                                            <button class="faq__accordion--btn accordion__items--button">
-                                                Your Rights
-                                                <span class="accordion__items--button__icon">
-                                                    <svg class="accordion__items--button__icon--svg"
-                                                        xmlns="http://www.w3.org/2000/svg" width="25.355" height="20.394"
-                                                        viewBox="0 0 512 512">
-                                                        <path
-                                                            d="M98 190.06l139.78 163.12a24 24 0 0036.44 0L414 190.06c13.34-15.57 2.28-39.62-18.22-39.62h-279.6c-20.5 0-31.56 24.05-18.18 39.62z"
-                                                            fill="currentColor"></path>
-                                                    </svg>
-                                                </span>
-                                            </button>
-                                        </h2>
-                                        <div class="accordion__items--body">
-                                            <p class="accordion__items--body__desc">
-                                                You have the right to access, update, correct, or delete your personal
-                                                information. If you wish to exercise these rights or have any concerns about
-                                                the handling of your data, please contact our salon directly.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div></div>
-                </div>
-                <div class="faq__section--inner">
-                    <div class="face__step one border-bottom" id="accordionExample">
-                        <h3 class="face__step--title mb-30">Cookies and Website Analytics</h3>
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="accordion__container">
-                                    <div class="accordion__items">
-                                        <h2 class="accordion__items--title">
-                                            <button class="faq__accordion--btn accordion__items--button">
-                                                Use of Cookies
-                                                <span class="accordion__items--button__icon">
-                                                    <svg class="accordion__items--button__icon--svg"
-                                                        xmlns="http://www.w3.org/2000/svg" width="25.355" height="20.394"
-                                                        viewBox="0 0 512 512">
-                                                        <path
-                                                            d="M98 190.06l139.78 163.12a24 24 0 0036.44 0L414 190.06c13.34-15.57 2.28-39.62-18.22-39.62h-279.6c-20.5 0-31.56 24.05-18.18 39.62z"
-                                                            fill="currentColor"></path>
-                                                    </svg>
-                                                </span>
-                                            </button>
-                                        </h2>
-                                        <div class="accordion__items--body">
-                                            <p class="accordion__items--body__desc">
-                                                Our website may use cookies to enhance your browsing experience. Cookies are
-                                                small text files that are stored on your device and help us analyze website
-                                                traffic, remember your preferences, and provide personalized content.
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="accordion__items">
-                                        <h2 class="accordion__items--title">
-                                            <button class="faq__accordion--btn accordion__items--button">
-                                                Cookie Management
-                                                <span class="accordion__items--button__icon">
-                                                    <svg class="accordion__items--button__icon--svg"
-                                                        xmlns="http://www.w3.org/2000/svg" width="25.355" height="20.394"
-                                                        viewBox="0 0 512 512">
-                                                        <path
-                                                            d="M98 190.06l139.78 163.12a24 24 0 0036.44 0L414 190.06c13.34-15.57 2.28-39.62-18.22-39.62h-279.6c-20.5 0-31.56 24.05-18.18 39.62z"
-                                                            fill="currentColor"></path>
-                                                    </svg>
-                                                </span>
-                                            </button>
-                                        </h2>
-                                        <div class="accordion__items--body">
-                                            <p class="accordion__items--body__desc">
-                                                You can control and manage cookies through your browser settings. You have
-                                                the option to accept or decline cookies. However, please note that disabling
-                                                cookies may impact certain functionalities of our website.
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="accordion__items">
-                                        <h2 class="accordion__items--title">
-                                            <button class="faq__accordion--btn accordion__items--button">
-                                                Website Analytics
-                                                <span class="accordion__items--button__icon">
-                                                    <svg class="accordion__items--button__icon--svg"
-                                                        xmlns="http://www.w3.org/2000/svg" width="25.355" height="20.394"
-                                                        viewBox="0 0 512 512">
-                                                        <path
-                                                            d="M98 190.06l139.78 163.12a24 24 0 0036.44 0L414 190.06c13.34-15.57 2.28-39.62-18.22-39.62h-279.6c-20.5 0-31.56 24.05-18.18 39.62z"
-                                                            fill="currentColor"></path>
-                                                    </svg>
-                                                </span>
-                                            </button>
-                                        </h2>
-                                        <div class="accordion__items--body">
-                                            <p class="accordion__items--body__desc">
-                                                We may use website analytics tools to analyze user behavior, track website
-                                                performance, and improve our online services. These tools may collect
-                                                anonymized data, such as IP addresses and browsing patterns, to generate
-                                                aggregated insights.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="accordion__container">
-                                    <div class="accordion__items">
-                                        <h2 class="accordion__items--title">
-                                            <button class="faq__accordion--btn accordion__items--button">
-                                                Third-Party Links
-                                                <span class="accordion__items--button__icon">
-                                                    <svg class="accordion__items--button__icon--svg"
-                                                        xmlns="http://www.w3.org/2000/svg" width="25.355" height="20.394"
-                                                        viewBox="0 0 512 512">
-                                                        <path
-                                                            d="M98 190.06l139.78 163.12a24 24 0 0036.44 0L414 190.06c13.34-15.57 2.28-39.62-18.22-39.62h-279.6c-20.5 0-31.56 24.05-18.18 39.62z"
-                                                            fill="currentColor"></path>
-                                                    </svg>
-                                                </span>
-                                            </button>
-                                        </h2>
-                                        <div class="accordion__items--body">
-                                            <p class="accordion__items--body__desc">
-                                                Our website may contain links to third-party websites. We are not
-                                                responsible for the privacy practices or content of these external sites. We
-                                                encourage you to review their privacy policies before providing any personal
-                                                information.
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="accordion__items">
-                                        <h2 class="accordion__items--title">
-                                            <button class="faq__accordion--btn accordion__items--button">
-                                                Children's Privacy
-                                                <span class="accordion__items--button__icon">
-                                                    <svg class="accordion__items--button__icon--svg"
-                                                        xmlns="http://www.w3.org/2000/svg" width="25.355" height="20.394"
-                                                        viewBox="0 0 512 512">
-                                                        <path
-                                                            d="M98 190.06l139.78 163.12a24 24 0 0036.44 0L414 190.06c13.34-15.57 2.28-39.62-18.22-39.62h-279.6c-20.5 0-31.56 24.05-18.18 39.62z"
-                                                            fill="currentColor"></path>
-                                                    </svg>
-                                                </span>
-                                            </button>
-                                        </h2>
-                                        <div class="accordion__items--body">
-                                            <p class="accordion__items--body__desc">
-                                                Our services and website are not directed towards individuals under the age
-                                                of 13. We do not knowingly collect or store personal information from
-                                                children. If you believe a child has provided us with personal information,
-                                                please contact us immediately.
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="accordion__items">
-                                        <h2 class="accordion__items--title">
-                                            <button class="faq__accordion--btn accordion__items--button">
-                                                Updates to Privacy Policy
-                                                <span class="accordion__items--button__icon">
-                                                    <svg class="accordion__items--button__icon--svg"
-                                                        xmlns="http://www.w3.org/2000/svg" width="25.355" height="20.394"
-                                                        viewBox="0 0 512 512">
-                                                        <path
-                                                            d="M98 190.06l139.78 163.12a24 24 0 0036.44 0L414 190.06c13.34-15.57 2.28-39.62-18.22-39.62h-279.6c-20.5 0-31.56 24.05-18.18 39.62z"
-                                                            fill="currentColor"></path>
-                                                    </svg>
-                                                </span>
-                                            </button>
-                                        </h2>
-                                        <div class="accordion__items--body">
-                                            <p class="accordion__items--body__desc">
-                                                We may update our privacy policy from time to time to reflect changes in our
-                                                practices or legal requirements. We recommend reviewing our privacy policy
-                                                periodically to stay informed about how we handle your personal information.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                     <div></div>

@@ -23,322 +23,45 @@
         <!-- End breadcrumb section -->
 
         <!-- TODO FAQ section start -->
-        <section class="faq__section " style="padding-top: 5%;">
+        <section class="faq__section " style="padding-top: 5%; ">
             <div class="container">
                 <div class="faq__section--inner">
-                    <div class="face__step one border-bottom" id="accordionExample">
-                        <h3 class="face__step--title mb-30">Services and Treatments</h3>
+                    <div class="face__step one" id="accordionExample">
+                        {{-- <h3 class="face__step--title mb-30">Services and Treatments</h3> --}}
                         <div class="row">
-                            <div class="col-lg-6">
-                                <div class="accordion__container">
-                                    <div class="accordion__items">
-                                        <h2 class="accordion__items--title">
-                                            <button class="faq__accordion--btn accordion__items--button">
-                                                What skincare products do you use in your treatments?
-                                                <span class="accordion__items--button__icon">
-                                                    <svg class="accordion__items--button__icon--svg"
-                                                        xmlns="http://www.w3.org/2000/svg" width="25.355" height="20.394"
-                                                        viewBox="0 0 512 512">
-                                                        <path
-                                                            d="M98 190.06l139.78 163.12a24 24 0 0036.44 0L414 190.06c13.34-15.57 2.28-39.62-18.22-39.62h-279.6c-20.5 0-31.56 24.05-18.18 39.62z"
-                                                            fill="currentColor"></path>
-                                                    </svg>
-                                                </span>
-                                            </button>
-                                        </h2>
-                                        <div class="accordion__items--body">
-                                            <p class="accordion__items--body__desc">
-                                                We use a carefully curated selection of high-quality skincare products from
-                                                renowned brands. Our estheticians will assess your skin type and concerns
-                                                and choose products best suited to your needs.
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="accordion__items">
-                                        <h2 class="accordion__items--title">
-                                            <button class="faq__accordion--btn accordion__items--button">
-                                                How long do your treatments typically last?
-                                                <span class="accordion__items--button__icon">
-                                                    <svg class="accordion__items--button__icon--svg"
-                                                        xmlns="http://www.w3.org/2000/svg" width="25.355" height="20.394"
-                                                        viewBox="0 0 512 512">
-                                                        <path
-                                                            d="M98 190.06l139.78 163.12a24 24 0 0036.44 0L414 190.06c13.34-15.57 2.28-39.62-18.22-39.62h-279.6c-20.5 0-31.56 24.05-18.18 39.62z"
-                                                            fill="currentColor"></path>
-                                                    </svg>
-                                                </span>
-                                            </button>
-                                        </h2>
-                                        <div class="accordion__items--body">
-                                            <p class="accordion__items--body__desc">
-                                                Treatment durations can vary depending on the specific service. As a general
-                                                guideline, facials usually last between 60 to 90 minutes, while massages
-                                                range from 30 minutes to 2 hours. Our team will provide you with precise
-                                                timing details when you book your appointment.
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="accordion__items">
-                                        <h2 class="accordion__items--title">
-                                            <button class="faq__accordion--btn accordion__items--button">
-                                                Should I arrive early for my treatment?
-                                                <span class="accordion__items--button__icon">
-                                                    <svg class="accordion__items--button__icon--svg"
-                                                        xmlns="http://www.w3.org/2000/svg" width="25.355" height="20.394"
-                                                        viewBox="0 0 512 512">
-                                                        <path
-                                                            d="M98 190.06l139.78 163.12a24 24 0 0036.44 0L414 190.06c13.34-15.57 2.28-39.62-18.22-39.62h-279.6c-20.5 0-31.56 24.05-18.18 39.62z"
-                                                            fill="currentColor"></path>
-                                                    </svg>
-                                                </span>
-                                            </button>
-                                        </h2>
-                                        <div class="accordion__items--body">
-                                            <p class="accordion__items--body__desc">
-                                                We recommend arriving 10-15 minutes before your scheduled appointment. This
-                                                allows time for check-in, completing any necessary forms, and discussing
-                                                your goals and preferences with your therapist or esthetician.
-                                            </p>
-                                        </div>
+                            @foreach ($faqs as $faq)
+                                <div
+                                    class="col-lg-12" ">
+                                        <div class="accordion__container">
+                                            <div class="accordion__items" style="margin-bottom: 1%;>
+                                            <h2 class="accordion__items--title">
+                                    <button class="faq__accordion--btn accordion__items--button">
+                                        {!! $faq->title !!}
+                                        <span class="accordion__items--button__icon">
+                                            <svg class="accordion__items--button__icon--svg"
+                                                xmlns="http://www.w3.org/2000/svg" width="25.355" height="20.394"
+                                                viewBox="0 0 512 512">
+                                                <path
+                                                    d="M98 190.06l139.78 163.12a24 24 0 0036.44 0L414 190.06c13.34-15.57 2.28-39.62-18.22-39.62h-279.6c-20.5 0-31.56 24.05-18.18 39.62z"
+                                                    fill="currentColor"></path>
+                                            </svg>
+                                        </span>
+                                    </button>
+                                    </h2>
+                                    <div class="accordion__items--body">
+                                        <p class="accordion__items--body__desc">
+                                            {!! $faq->text !!}
+                                        </p>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="accordion__container">
-                                    <div class="accordion__items">
-                                        <h2 class="accordion__items--title">
-                                            <button class="faq__accordion--btn accordion__items--button">
-                                                What should I wear for my spa treatment?
-                                                <span class="accordion__items--button__icon">
-                                                    <svg class="accordion__items--button__icon--svg"
-                                                        xmlns="http://www.w3.org/2000/svg" width="25.355" height="20.394"
-                                                        viewBox="0 0 512 512">
-                                                        <path
-                                                            d="M98 190.06l139.78 163.12a24 24 0 0036.44 0L414 190.06c13.34-15.57 2.28-39.62-18.22-39.62h-279.6c-20.5 0-31.56 24.05-18.18 39.62z"
-                                                            fill="currentColor"></path>
-                                                    </svg>
-                                                </span>
-                                            </button>
-                                        </h2>
-                                        <div class="accordion__items--body">
-                                            <p class="accordion__items--body__desc">
-                                                For most treatments, you will be provided with a robe or comfortable attire
-                                                to change into. However, if you prefer, you can wear loose, comfortable
-                                                clothing to your appointment. Our team will ensure your privacy and comfort
-                                                during the treatment.
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="accordion__items">
-                                        <h2 class="accordion__items--title">
-                                            <button class="faq__accordion--btn accordion__items--button">
-                                                Are your treatments suitable for pregnant women?
-                                                <span class="accordion__items--button__icon">
-                                                    <svg class="accordion__items--button__icon--svg"
-                                                        xmlns="http://www.w3.org/2000/svg" width="25.355" height="20.394"
-                                                        viewBox="0 0 512 512">
-                                                        <path
-                                                            d="M98 190.06l139.78 163.12a24 24 0 0036.44 0L414 190.06c13.34-15.57 2.28-39.62-18.22-39.62h-279.6c-20.5 0-31.56 24.05-18.18 39.62z"
-                                                            fill="currentColor"></path>
-                                                    </svg>
-                                                </span>
-                                            </button>
-                                        </h2>
-                                        <div class="accordion__items--body">
-                                            <p class="accordion__items--body__desc">
-                                                Many of our treatments are safe and enjoyable for pregnant women. However,
-                                                certain treatments and products may be contraindicated during pregnancy.
-                                                Please inform us when booking your appointment so we can provide appropriate
-                                                recommendations and modifications.
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="accordion__items">
-                                        <h2 class="accordion__items--title">
-                                            <button class="faq__accordion--btn accordion__items--button">
-                                                Do you offer gift vouchers for your services?
-                                                <span class="accordion__items--button__icon">
-                                                    <svg class="accordion__items--button__icon--svg"
-                                                        xmlns="http://www.w3.org/2000/svg" width="25.355" height="20.394"
-                                                        viewBox="0 0 512 512">
-                                                        <path
-                                                            d="M98 190.06l139.78 163.12a24 24 0 0036.44 0L414 190.06c13.34-15.57 2.28-39.62-18.22-39.62h-279.6c-20.5 0-31.56 24.05-18.18 39.62z"
-                                                            fill="currentColor"></path>
-                                                    </svg>
-                                                </span>
-                                            </button>
-                                        </h2>
-                                        <div class="accordion__items--body">
-                                            <p class="accordion__items--body__desc">
-                                                Yes, we offer gift vouchers that can be purchased for specific services or
-                                                for a monetary value. Gift vouchers are a wonderful way to treat your loved
-                                                ones to a luxurious and personalized beauty experience at our salon
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
-                    <div></div>
+                    @endforeach
                 </div>
-                <div class="faq__section--inner">
-                    <div class="face__step one border-bottom" id="accordionExample">
-                        <h3 class="face__step--title mb-30">Services and Treatments</h3>
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="accordion__container">
-                                    <div class="accordion__items">
-                                        <h2 class="accordion__items--title">
-                                            <button class="faq__accordion--btn accordion__items--button">
-                                                What skincare products do you use in your treatments?
-                                                <span class="accordion__items--button__icon">
-                                                    <svg class="accordion__items--button__icon--svg"
-                                                        xmlns="http://www.w3.org/2000/svg" width="25.355" height="20.394"
-                                                        viewBox="0 0 512 512">
-                                                        <path
-                                                            d="M98 190.06l139.78 163.12a24 24 0 0036.44 0L414 190.06c13.34-15.57 2.28-39.62-18.22-39.62h-279.6c-20.5 0-31.56 24.05-18.18 39.62z"
-                                                            fill="currentColor"></path>
-                                                    </svg>
-                                                </span>
-                                            </button>
-                                        </h2>
-                                        <div class="accordion__items--body">
-                                            <p class="accordion__items--body__desc">
-                                                We use a carefully curated selection of high-quality skincare products from
-                                                renowned brands. Our estheticians will assess your skin type and concerns
-                                                and choose products best suited to your needs.
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="accordion__items">
-                                        <h2 class="accordion__items--title">
-                                            <button class="faq__accordion--btn accordion__items--button">
-                                                How long do your treatments typically last?
-                                                <span class="accordion__items--button__icon">
-                                                    <svg class="accordion__items--button__icon--svg"
-                                                        xmlns="http://www.w3.org/2000/svg" width="25.355" height="20.394"
-                                                        viewBox="0 0 512 512">
-                                                        <path
-                                                            d="M98 190.06l139.78 163.12a24 24 0 0036.44 0L414 190.06c13.34-15.57 2.28-39.62-18.22-39.62h-279.6c-20.5 0-31.56 24.05-18.18 39.62z"
-                                                            fill="currentColor"></path>
-                                                    </svg>
-                                                </span>
-                                            </button>
-                                        </h2>
-                                        <div class="accordion__items--body">
-                                            <p class="accordion__items--body__desc">
-                                                Treatment durations can vary depending on the specific service. As a general
-                                                guideline, facials usually last between 60 to 90 minutes, while massages
-                                                range from 30 minutes to 2 hours. Our team will provide you with precise
-                                                timing details when you book your appointment.
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="accordion__items">
-                                        <h2 class="accordion__items--title">
-                                            <button class="faq__accordion--btn accordion__items--button">
-                                                Should I arrive early for my treatment?
-                                                <span class="accordion__items--button__icon">
-                                                    <svg class="accordion__items--button__icon--svg"
-                                                        xmlns="http://www.w3.org/2000/svg" width="25.355" height="20.394"
-                                                        viewBox="0 0 512 512">
-                                                        <path
-                                                            d="M98 190.06l139.78 163.12a24 24 0 0036.44 0L414 190.06c13.34-15.57 2.28-39.62-18.22-39.62h-279.6c-20.5 0-31.56 24.05-18.18 39.62z"
-                                                            fill="currentColor"></path>
-                                                    </svg>
-                                                </span>
-                                            </button>
-                                        </h2>
-                                        <div class="accordion__items--body">
-                                            <p class="accordion__items--body__desc">
-                                                We recommend arriving 10-15 minutes before your scheduled appointment. This
-                                                allows time for check-in, completing any necessary forms, and discussing
-                                                your goals and preferences with your therapist or esthetician.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="accordion__container">
-                                    <div class="accordion__items">
-                                        <h2 class="accordion__items--title">
-                                            <button class="faq__accordion--btn accordion__items--button">
-                                                What should I wear for my spa treatment?
-                                                <span class="accordion__items--button__icon">
-                                                    <svg class="accordion__items--button__icon--svg"
-                                                        xmlns="http://www.w3.org/2000/svg" width="25.355" height="20.394"
-                                                        viewBox="0 0 512 512">
-                                                        <path
-                                                            d="M98 190.06l139.78 163.12a24 24 0 0036.44 0L414 190.06c13.34-15.57 2.28-39.62-18.22-39.62h-279.6c-20.5 0-31.56 24.05-18.18 39.62z"
-                                                            fill="currentColor"></path>
-                                                    </svg>
-                                                </span>
-                                            </button>
-                                        </h2>
-                                        <div class="accordion__items--body">
-                                            <p class="accordion__items--body__desc">
-                                                For most treatments, you will be provided with a robe or comfortable attire
-                                                to change into. However, if you prefer, you can wear loose, comfortable
-                                                clothing to your appointment. Our team will ensure your privacy and comfort
-                                                during the treatment.
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="accordion__items">
-                                        <h2 class="accordion__items--title">
-                                            <button class="faq__accordion--btn accordion__items--button">
-                                                Are your treatments suitable for pregnant women?
-                                                <span class="accordion__items--button__icon">
-                                                    <svg class="accordion__items--button__icon--svg"
-                                                        xmlns="http://www.w3.org/2000/svg" width="25.355" height="20.394"
-                                                        viewBox="0 0 512 512">
-                                                        <path
-                                                            d="M98 190.06l139.78 163.12a24 24 0 0036.44 0L414 190.06c13.34-15.57 2.28-39.62-18.22-39.62h-279.6c-20.5 0-31.56 24.05-18.18 39.62z"
-                                                            fill="currentColor"></path>
-                                                    </svg>
-                                                </span>
-                                            </button>
-                                        </h2>
-                                        <div class="accordion__items--body">
-                                            <p class="accordion__items--body__desc">
-                                                Many of our treatments are safe and enjoyable for pregnant women. However,
-                                                certain treatments and products may be contraindicated during pregnancy.
-                                                Please inform us when booking your appointment so we can provide appropriate
-                                                recommendations and modifications.
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="accordion__items">
-                                        <h2 class="accordion__items--title">
-                                            <button class="faq__accordion--btn accordion__items--button">
-                                                Do you offer gift vouchers for your services?
-                                                <span class="accordion__items--button__icon">
-                                                    <svg class="accordion__items--button__icon--svg"
-                                                        xmlns="http://www.w3.org/2000/svg" width="25.355" height="20.394"
-                                                        viewBox="0 0 512 512">
-                                                        <path
-                                                            d="M98 190.06l139.78 163.12a24 24 0 0036.44 0L414 190.06c13.34-15.57 2.28-39.62-18.22-39.62h-279.6c-20.5 0-31.56 24.05-18.18 39.62z"
-                                                            fill="currentColor"></path>
-                                                    </svg>
-                                                </span>
-                                            </button>
-                                        </h2>
-                                        <div class="accordion__items--body">
-                                            <p class="accordion__items--body__desc">
-                                                Yes, we offer gift vouchers that can be purchased for specific services or
-                                                for a monetary value. Gift vouchers are a wonderful way to treat your loved
-                                                ones to a luxurious and personalized beauty experience at our salon
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div></div>
-                </div>
+            </div>
+            <div></div>
+            </div>
+
             </div>
         </section>
         <!-- TODO FAQ section end -->

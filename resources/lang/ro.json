@@ -219,41 +219,35 @@
     "Add team member": "Adăugați un membru al echipei",
     "Function": "Funcţie",
     "Edit team member": "Editați membrul echipei",
-
     "Add photo": "Adăugați o fotografie",
     "Edit photo": "Editează fotografia",
-
     "Partner logo": "Sigla partenerului",
     "Add partner logo": "Adăgați sigla partenerului",
     "Edit partner logo": "Editați sigla partenerului",
-
-    "Testimonial" : "Recenzii",
-    "Add testimonial" : "Adaugă o recenzie",
-    "Edit testimonial" : "Editează recenzia",
-
-    "Social media" : "Rețelele de socializare",
-    "Add social media" : "Adăugați rețea de socializare",
-    "Add social link" : "Adăugați link-ul la rețeaua de socializare",
-    "Edit social link" : "Editați link-ul la rețeaua de socializare",
-
-    "Why choose us" : "De ce să ne alegeți pe noi",
-    "Add why choose us" : "Adaugă de ce să ne alegi pe noi",
-    "Edit why choose us" : "Editează de ce ne alegi pe noi",
-
-    "News" : "Știri",
-    "Add news" : "Adaugă o știre",
-    "Edit news" : "Editeză știrea",
-
-    "Support" : "Suport",
-    "Instructions" : "Instrucțiuni",
-
+    "Testimonial": "Recenzii",
+    "Add testimonial": "Adaugă o recenzie",
+    "Edit testimonial": "Editează recenzia",
+    "Social media": "Rețelele de socializare",
+    "Add social media": "Adăugați rețea de socializare",
+    "Add social link": "Adăugați link-ul la rețeaua de socializare",
+    "Edit social link": "Editați link-ul la rețeaua de socializare",
+    "Why choose us": "De ce să ne alegeți pe noi",
+    "Add why choose us": "Adaugă de ce să ne alegi pe noi",
+    "Edit why choose us": "Editează de ce ne alegi pe noi",
+    "News": "Știri",
+    "Add news": "Adaugă o știre",
+    "Edit news": "Editeză știrea",
+    "Support": "Suport",
+    "Instructions": "Instrucțiuni",
     "To provide you with the best website experience, we use ": "Pentru a vă oferi o experiență mai bună, folosim ",
     "cookies.": "cookies.",
     "Accept": "Accept",
-
     "The name field is required.": "Câmpul nume este obligatoriu.",
     "The email field is required.": "Câmpul email este obligatoriu.",
     "The subject field is required.": "Câmpul subiect este obligatoriu.",
     "The contact number field is required.": "Câmpul număr de contact este obligatoriu.",
-    "The message field is required.": "Câmpul mesaj este obligatoriu."
+    "The message field is required.": "Câmpul mesaj este obligatoriu.",
+    "Add project": "Adaugă proiect",
+    "Banner": "Banner",
+    "Projects": "Proiecte"
 }

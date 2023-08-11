@@ -75,22 +75,22 @@
             <ul class="nav-main">
 
                 <li>
-                    <a href="{{ route('admin.widget.index', ['locale' => app()->getLocale()]) }}">
-                        <i class="si si-envelope-open"></i>
+                    <a href="{{ route('admin.widget.index', ['locale' => app()->getLocale()]) }} ">
+                        <i class="fa fa-life-saver"></i>
                         <span class="sidebar-mini-hide">{{ __('Support') }}</span>
                     </a>
                 </li>
 
                 <li>
                     <a href="https://instructions.royalsystems.md" target="_blank">
-                        <i class="si si-envelope-open"></i>
+                        <i class="fa-question fa "></i>
                         <span class="sidebar-mini-hide">{{ __('Instructions') }}</span>
                     </a>
                 </li>
                 <hr>
                 <li>
                     <a href="{{ route('admin.inbox', ['locale' => app()->getLocale()]) }}">
-                        <i class="si si-envelope-open"></i>
+                        <i class="fa fa-envelope-open"></i>
                         <span class="sidebar-mini-hide">{{ __('Inbox') }}</span>
                     </a>
                 </li>
@@ -135,18 +135,18 @@
                     <li>
                         <a class="{{ Route::currentRouteName() == 'admin.newses.index' ? 'active' : '' }}"
                             href="{{ route('admin.newses.index', ['locale' => app()->getLocale()]) }}">
-                            <i class="fa fa-newspaper-o"></i>
+                            <i class="fa-regular fa-newspaper"></i>
                             <span class="sidebar-mini-hide">{{ __('News') }}</span>
                         </a>
                     </li>
 
-                    <li>
+                    {{-- <li>
                         <a class="{{ Route::currentRouteName() == 'admin.services.index' ? 'active' : '' }}"
                             href="{{ route('admin.services.index', ['locale' => app()->getLocale()]) }}">
                             <i class="fa fa-chain"></i>
                             <span class="sidebar-mini-hide">{{ __('Service') }}</span>
                         </a>
-                    </li>
+                    </li> --}}
                     <li>
                         <a class="{{ Route::currentRouteName() == 'admin.projects.index' ? 'active' : '' }}"
                             href="{{ route('admin.projects.index', ['locale' => app()->getLocale()]) }}">
@@ -155,45 +155,45 @@
                         </a>
                     </li>
 
-                    <li>
+                    {{-- <li>
                         <a class="{{ Route::currentRouteName() == 'admin.teams.index' ? 'active' : '' }}"
                             href="{{ route('admin.teams.index', ['locale' => app()->getLocale()]) }}">
                             <i class="fa fa-users" aria-hidden="true"></i>
                             <span class="sidebar-mini-hide">{{ __('Team') }}</span>
                         </a>
-                    </li>
+                    </li> --}}
 
-                    <li>
+                    {{-- <li>
                         <a class="{{ Route::currentRouteName() == 'admin.galleries.index' ? 'active' : '' }}"
                             href="{{ route('admin.galleries.index', ['locale' => app()->getLocale()]) }}">
                             <i class="fa fa-picture-o" aria-hidden="true"></i>
                             <span class="sidebar-mini-hide">{{ __('Gallery') }}</span>
                         </a>
-                    </li>
+                    </li> --}}
 
-                    <li>
+                    {{-- <li>
                         <a class="{{ Route::currentRouteName() == 'admin.customerLogos.index' ? 'active' : '' }}"
                             href="{{ route('admin.customerLogos.index', ['locale' => app()->getLocale()]) }}">
                             <i class="fa fa-archive" aria-hidden="true"></i>
                             <span class="sidebar-mini-hide">{{ __('Customer logo') }}</span>
                         </a>
-                    </li>
+                    </li> --}}
 
-                    <li>
+                    {{-- <li>
                         <a class="{{ Route::currentRouteName() == 'admin.partnerLogos.index' ? 'active' : '' }}"
                             href="{{ route('admin.partnerLogos.index', ['locale' => app()->getLocale()]) }}">
                             <i class="fa fa-archive" aria-hidden="true"></i>
                             <span class="sidebar-mini-hide">{{ __('Partner logo') }}</span>
                         </a>
-                    </li>
+                    </li> --}}
 
-                    <li>
+                    {{-- <li>
                         <a class="{{ Route::currentRouteName() == 'admin.reviews.index' ? 'active' : '' }}"
                             href="{{ route('admin.reviews.index', ['locale' => app()->getLocale()]) }}">
                             <i class="fa fa-user"></i>
                             <span class="sidebar-mini-hide">{{ __('Reviews') }}</span>
                         </a>
-                    </li>
+                    </li> --}}
 
                     <li>
                         <a class="{{ Route::currentRouteName() == 'admin.testimonials.index' ? 'active' : '' }}"
@@ -203,19 +203,18 @@
                         </a>
                     </li>
 
-                    <li>
+                    {{-- <li>
                         <a class="{{ Route::currentRouteName() == 'admin.why_chooses.index' ? 'active' : '' }}"
                             href="{{ route('admin.why_chooses.index', ['locale' => app()->getLocale()]) }}">
                             <i class="fa fa-user"></i>
                             <span class="sidebar-mini-hide">{{ __('Why choose us') }}</span>
                         </a>
-                    </li>
+                    </li> --}}
 
                     {{-- FAQ Terms Cookies --}}
                     <li
                         class="{{ request()->segment(3) == 'faq' || request()->segment(3) == 'term' || request()->segment(3) == 'policy' ? 'open' : '' }}">
-                        <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i
-                                class="si si-question"></i><span
+                        <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-question"></i><span
                                 class="sidebar-mini-hide">{{ __('Faq | Terms | Cookie') }}</span></a>
                         <ul>
                             <li>
@@ -240,8 +239,7 @@
                     {{-- TODO:COMENT THIS li WHEN YOU FINISH PROJECT --}}
                     <li
                         class="{{ request()->segment(3) == 'contents' || request()->segment(3) == 'images' ? 'open' : '' }}">
-                        <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i
-                                class="si si-book-open"></i><span
+                        <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-book-open"></i><span
                                 class="sidebar-mini-hide">{{ __('Web content') }}</span></a>
                         <ul>
 
