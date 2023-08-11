@@ -33,6 +33,7 @@ class BlogFrontController extends Controller
         $services = Service::getForFrontAllServices($locale);
         $socials = Social::getAllSocials($locale);
         $newses = News::getAllNewsForFront($locale);
+        $newses = News::getAllNewsForFront($locale);
 
         return View::make('front.pages.blog.blog', [
             'posts' => $posts,
@@ -42,6 +43,7 @@ class BlogFrontController extends Controller
             'meta' => $meta,
             'services' => $services,
             'socials' => $socials,
+            'newses' => $newses,
 
         ]);
     }
@@ -73,6 +75,7 @@ class BlogFrontController extends Controller
         $img = Image::getImageByPageId(5);
         $relevantPosts = Post::getRelevantPosts($locale, $postId);
         $services = Service::getForFrontAllServices($locale);
+        $newses = News::getAllNewsForFront($locale);
 
 
         return View::make('front.pages.blog.single-post', [
@@ -82,7 +85,8 @@ class BlogFrontController extends Controller
             'content' => $content,
             'images' => $img,
             'relevantPosts' => $relevantPosts,
-            'services' => $services
+            'services' => $services,
+            'newses' => $newses,
         ]);
     }
 

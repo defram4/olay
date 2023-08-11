@@ -43,7 +43,7 @@ class ContactFormController extends Controller
         $data=$request->validated();
 
         Inbox::create($data);
-        Mail::to('pislarustefan@gmail.com')->send(new ContactFormMail($data));
+        Mail::to('test@royalsystems.md')->send(new ContactFormMail($data));
 
         return redirect()->route('front.contact.thank', app()->getLocale());
     }

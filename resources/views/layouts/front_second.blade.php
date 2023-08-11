@@ -57,14 +57,13 @@
         background-color: #fcfcfc;
     }
 
+    /* Your existing CSS styles here */
+
 
     /*Cookie Consent End*/
 </style>
 
 <body>
-
-
-
     <div id="cookieConsent">
         <div id="closeCookieConsent">x</div>
         {{ __('To provide you with the best website experience, we use ') }}
@@ -591,20 +590,20 @@
         })
     </script>
     <script>
-        // Get all the solution-one_block elements
-        var blocks = document.getElementsByClassName('height');
-        // Initialize variable to hold the maximum height
-        var maxHeight = 0;
-        // Loop through each solution-one_block element to find the maximum height
-        for (var i = 0; i < blocks.length; i++) {
-            var blockHeight = blocks[i].clientHeight;
-            maxHeight = Math.max(maxHeight, blockHeight);
-        }
-        // Set the maximum height to all the solution-one_block elements
-        for (var i = 0; i < blocks.length; i++) {
-            blocks[i].style.height = maxHeight + "px";
-        }
+        // Get references to the form and preloader elements
+        const form = document.getElementById('submitButton'); // Replace 'contactForm' with your form's ID
+        const preloader = document.getElementById('ctn-preloader');
+        const pre = document.querySelector('.animation-preloader');
+        const letter = document.querySelector('.main__content_wrapper');
+        const footer = document.querySelector('.footer__section');
+        // Add an event listener to the form submission
+        submitButton.addEventListener('click', function(event) {
+            pre.style.opacity = '100%';
+            letter.style.display = 'none';
+            footer.style.display = 'none';
+        });
     </script>
+    @stack('script')
 
 </body>
 

@@ -64,57 +64,83 @@
                 <div class="contact__form">
                     <h3 class="contact__form--title mb-30">Contact</h3>
                     <h3 class=" mb-30" style="color:#3c3837;">Get in Touch for Expert Consultation</h3>
-                    <form class="contact__form--inner" action="#">
+                    <form class="contact__form--inner" form id="contact"
+                        action="{{ route('front.contact.storage', app()->getLocale()) }}" method="post">
+                        @csrf
                         <div class="row">
-                            <div class="col-lg-6 col-md-6">
+                            <div class="col-lg-12 col-md-12">
                                 <div class="contact__form--list mb-20">
-                                    <label class="contact__form--label" for="input1">First Name <span
+                                    <label class="contact__form--label" for="name"> Name <span
                                             class="contact__form--label__star">*</span></label>
-                                    <input class="contact__form--input" name="firstname" id="input1"
-                                        placeholder="Your First Name" type="text">
+                                    <input class="contact__form--input" type="text" name="name"
+                                        value="{{ old('name') }}" autocomplete="off">
+                                    @error('name')
+                                        <span style="color: red">
+                                            {{ __('The name field is required.') }}
+                                        </span>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6">
                                 <div class="contact__form--list mb-20">
-                                    <label class="contact__form--label" for="input2">Last Name <span
+                                    <label class="contact__form--label" for="phone">Phone <span
                                             class="contact__form--label__star">*</span></label>
-                                    <input class="contact__form--input" name="lastname" id="input2"
-                                        placeholder="Your Last Name" type="text">
+                                    <input class="contact__form--input" type="text" name="phone"
+                                        value="{{ old('phone') }}" autocomplete="off">
+                                    @error('phone')
+                                        <span style="color: red">
+                                            {{ __('The phone field is required.') }}
+                                        </span>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6">
                                 <div class="contact__form--list mb-20">
-                                    <label class="contact__form--label" for="input3">Phone Number <span
+                                    <label class="contact__form--label" for="email">Email <span
                                             class="contact__form--label__star">*</span></label>
-                                    <input class="contact__form--input" name="number" id="input3"
-                                        placeholder="Phone number" type="text">
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6">
-                                <div class="contact__form--list mb-20">
-                                    <label class="contact__form--label" for="input4">Email <span
-                                            class="contact__form--label__star">*</span></label>
-                                    <input class="contact__form--input" name="email" id="input4" placeholder="Email"
-                                        type="text">
+                                    <input class="contact__form--input" type="text" name="email"
+                                        value="{{ old('email') }}" autocomplete="off">
+                                    @error('email')
+                                        <span style="color: red">
+                                            {{ __('The email field is required.') }}
+                                        </span>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="col-lg-12 col-md-12">
                                 <div class="contact__form--list mb-20">
-                                    <label class="contact__form--label" for="input4">Subject <span
+                                    <label class="contact__form--label" for="title">Subject <span
                                             class="contact__form--label__star">*</span></label>
-                                    <input class="contact__form--input" name="text" id="input4" placeholder="Subject"
-                                        type="text">
+                                    <input class="contact__form--input" type="text" name="title"
+                                        value="{{ old('title') }}" autocomplete="off">
+                                    @error('title')
+                                        <span style="color: red">
+                                            {{ __('The subject field is required.') }}
+                                        </span>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="contact__form--list mb-15">
-                                    <label class="contact__form--label" for="input5">Write Your Message <span
+                                    <label class="contact__form--label" for="message">Write Your Message <span
                                             class="contact__form--label__star">*</span></label>
-                                    <textarea class="contact__form--textarea" name="message" id="input5" placeholder="Write Your Message"></textarea>
+                                    <textarea class="contact__form--textarea" id="input5" placeholder="Write Your Message" name="message"
+                                        autocomplete="off">{{ old('message') }}</textarea>
+                                    @error('message')
+                                        <span style="color: red">
+                                            {{ __('The message field is required.') }}
+                                        </span>
+                                    @enderror
                                 </div>
                             </div>
                         </div>
-                        <button class="contact__form--btn primary__btn" type="submit"> <span>Submit Now</span></button>
+
+                        <button class="contact__form--btn primary__btn" type="submit" name="submit" id="submitButton">
+                            <span>
+                                Submit
+                            </span>
+                        </button>
+
                     </form>
                 </div>
             </div>
@@ -122,7 +148,7 @@
         <!-- TODO Contact Form end -->
 
         <!-- Start contact map area -->
-        <div class="contact__map--area col-lg-12 col-md-12 col-sm-12">
+        {{-- <div class="contact__map--area col-lg-12 col-md-12 col-sm-12">
             <div class="row">
                 <iframe style=""
                     src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d21751.49961716119!2d28.82800534999999!3d47.04145815!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sro!2s!4v1691501847420!5m2!1sro!2s"
@@ -130,7 +156,7 @@
                     referrerpolicy="no-referrer-when-downgrade">
                 </iframe>
             </div>
-        </div>
+        </div> --}}
         <!-- End contact map area -->
     </main>
 

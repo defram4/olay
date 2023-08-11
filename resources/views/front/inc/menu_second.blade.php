@@ -25,7 +25,7 @@
                      <nav class="header__menu--navigation">
                          <ul class="header__menu--wrapper d-flex">
                              <li class="header__menu--items">
-                                 <a class="header__menu--link " href="{{ route('front.index', app()->getLocale()) }}">
+                                 <a class="header__menu--link" href="{{ route('front.index', app()->getLocale()) }}">
                                      Home
                                  </a>
                              </li>
@@ -46,6 +46,7 @@
                                              </a>
                                          </li>
                                      @endforeach
+
                                  </ul>
                              </li>
                              <li class="header__menu--items">
@@ -128,19 +129,15 @@
          <nav class="offcanvas__menu">
              <ul class="offcanvas__menu_ul">
                  <li class="offcanvas__menu_li">
-                     <a class="offcanvas__menu_item" href="{{ route('front.index', app()->getLocale()) }}">
-                         Home
-                     </a>
+                     <a class="offcanvas__menu_item" href="{{ route('front.index', app()->getLocale()) }}">Home</a>
                  </li>
                  <li class="offcanvas__menu_li">
-                     <a class="offcanvas__menu_item" href="{{ route('front.about', app()->getLocale()) }}">
-                         About Us
-                     </a>
+                     <a class="offcanvas__menu_item" href="{{ route('front.about', app()->getLocale()) }}">About
+                         Us</a>
                  </li>
                  <li class="offcanvas__menu_li">
-                     <a class="offcanvas__menu_item" href="{{ route('front.service', app()->getLocale()) }}">
-                         Services
-                     </a>
+                     <a class="offcanvas__menu_item"
+                         href="{{ route('front.service', app()->getLocale()) }}">Services</a>
                      <ul class="header__sub--menu">
                          @foreach ($services as $service)
                              <li class="header__sub--menu__items">
@@ -150,23 +147,17 @@
                                  </a>
                              </li>
                          @endforeach
+
                      </ul>
                  </li>
                  <li class="offcanvas__menu_li">
-                     <a class="offcanvas__menu_item" href="{{ route('front.project', app()->getLocale()) }}">
-                         Projects
-                     </a>
-                 </li>
-                 <li class="offcanvas__menu_li">
-                     <a class="offcanvas__menu_item" href="{{ route('front.blog', app()->getLocale()) }}">
-                         Blog
-                     </a>
+                     <a class="offcanvas__menu_item"
+                         href="{{ route('front.project', app()->getLocale()) }}">Projects</a>
                  </li>
                  <li class="offcanvas__menu_li"><a class="offcanvas__menu_item"
-                         href="{{ route('front.contact', app()->getLocale()) }}">
-                         Contacts
-                     </a>
-                 </li>
+                         href="{{ route('front.blog', app()->getLocale()) }}">Blog</a></li>
+                 <li class="offcanvas__menu_li"><a class="offcanvas__menu_item"
+                         href="{{ route('front.contact', app()->getLocale()) }}">Contacts</a></li>
                  <li class="offcanvas__menu_li">
                      <a class="offcanvas__menu_item">
                          Language

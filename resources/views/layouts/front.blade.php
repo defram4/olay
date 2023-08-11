@@ -57,13 +57,13 @@
         background-color: #fcfcfc;
     }
 
+    /* Your existing CSS styles here */
+
 
     /*Cookie Consent End*/
 </style>
 
 <body>
-
-
     <div id="cookieConsent">
         <div id="closeCookieConsent">x</div>
         {{ __('To provide you with the best website experience, we use ') }}
@@ -589,21 +589,7 @@
             });
         })
     </script>
-    <script>
-        // Get all the solution-one_block elements
-        var blocks = document.getElementsByClassName('height');
-        // Initialize variable to hold the maximum height
-        var maxHeight = 0;
-        // Loop through each solution-one_block element to find the maximum height
-        for (var i = 0; i < blocks.length; i++) {
-            var blockHeight = blocks[i].clientHeight;
-            maxHeight = Math.max(maxHeight, blockHeight);
-        }
-        // Set the maximum height to all the solution-one_block elements
-        for (var i = 0; i < blocks.length; i++) {
-            blocks[i].style.height = maxHeight + "px";
-        }
-    </script>
+    @stack('script')
 
 </body>
 

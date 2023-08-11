@@ -38,7 +38,7 @@
                                 <article class="blog__card">
                                     <div class="blog__card--thumbnail">
                                         <a class="blog__card--thumbnail__link"
-                                            href="{{ route('front.single.blog', ['locale' => app()->getLocale(), 'slug' => $post->slug]) }}">
+                                            href="{{ route('front.single_news', ['locale' => app()->getLocale(), 'slug' => $news->slug]) }}">
                                             <img class="blog__card--thumbnail__img"
                                                 src="{{ asset('storage/news/' . $news->img) }}" alt="blog-img">
                                         </a>
@@ -46,7 +46,7 @@
                                     <div class="blog__card--content height1">
                                         <h3 class="blog__card--title">
                                             <a
-                                                href="{{ route('front.single.blog', ['locale' => app()->getLocale(), 'slug' => $post->slug]) }}">
+                                                href="{{ route('front.single_news', ['locale' => app()->getLocale(), 'slug' => $news->slug]) }}">
                                                 {!! $news->title !!}
                                             </a>
                                         </h3>

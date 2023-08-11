@@ -28,12 +28,14 @@ class FrontNewsController extends Controller
         $content = Content::getContentByPage($locale, Page::HOME);
         $image = Image::getImageByPageId(Page::HOME);
         $newses = News::getAllNewsForFront($locale);
+
         return view()->make('front.pages.news.news', [
             'meta' => $meta,
             'content' => $content,
             'locale' => $locale,
             'image' => $image,
-            'newses' => $newses
+            'newses' => $newses,
+
         ]);
     }
 
@@ -66,6 +68,7 @@ class FrontNewsController extends Controller
         $socials = Social::getAllSocials($locale);
 
 
+
         return view()->make('front.pages.news.single_news', [
             'newsMeta' => $newsMeta,
             'content' => $content,
@@ -74,6 +77,7 @@ class FrontNewsController extends Controller
             'newses' => $newses,
             'services' => $services,
             'socials' => $socials,
+
         ]);
     }
 }
