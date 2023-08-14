@@ -116,16 +116,17 @@ Route::group(['prefix' => '{locale}', 'middleware' => 'setLocale'], function () 
         Route::get('/reviews', [ReviewController::class, 'index'])->name('front.reviews');
 
         Route::get('/blog', [BlogFrontController::class, 'index'])->name('front.blog');
-        Route::get('/single-blog/{slug}', [BlogFrontController::class, 'show'])->name('front.single.blog');
-        Route::get('/filter-blog/{id}', [\App\Http\Controllers\front\BlogFilterController::class, 'filterBlog']);
-        Route::delete('/gallery-post/{id}', [PostGalleryController::class, 'delete'])->name('admin.gallery-post-delete');
+        // Route::get('/single-blog/{slug}', [BlogFrontController::class, 'show'])->name('front.single.blog');
+        Route::get('/single-news/{slug}', [BlogFrontController::class, 'show'])->name('front.single_blog');
+        // Route::get('/filter-blog/{id}', [\App\Http\Controllers\front\BlogFilterController::class, 'filterBlog']);
+        // Route::delete('/gallery-post/{id}', [PostGalleryController::class, 'delete'])->name('admin.gallery-post-delete');
 
         Route::get('/services', [ServiceFrontController::class, 'index'])->name('front.service');
         Route::get('/single-services/{slug}', [ServiceFrontController::class, 'show'])->name('front.single.service');
         Route::delete('/gallery-service/{id}', [ServiceGalleryController::class, 'delete'])->name('admin.gallery-service-delete');
 
         Route::get('/news', [FrontNewsController::class, 'index'])->name('front.news');
-        Route::get('/single-news/{slug}', [FrontNewsController::class, 'show'])->name('front.single_news');
+        // Route::get('/single-news/{slug}', [FrontNewsController::class, 'show'])->name('front.single_news');
         Route::delete('/gallery-news/{id}', [NewsGalleryController::class, 'delete'])->name('admin.gallery-news-delete');
 
         Route::get('/projects', [ProjectFrontController::class, 'index'])->name('front.project');

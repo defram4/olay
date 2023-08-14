@@ -69,7 +69,7 @@ class FrontNewsController extends Controller
 
 
 
-        return view()->make('front.pages.news.single_news', [
+        return view()->make('front.pages.blog.single_news', [
             'newsMeta' => $newsMeta,
             'content' => $content,
             'image' => $image,

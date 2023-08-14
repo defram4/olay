@@ -3,91 +3,81 @@
 namespace App\Http\Controllers\front;
 
 use App\Http\Controllers\Controller;
-use App\Models\Category;
 use App\Models\Content;
-use App\Models\Image;
 use App\Models\News;
+use App\Models\NewsTrans;
+use App\Models\NewsMeta;
+use App\Models\NewsMetaTrans;
+use App\Models\Image;
+use App\Models\Page;
 use App\Models\PageMeta;
-use App\Models\Post;
-use App\Models\PostMeta;
-use App\Models\PostTrans;
 use App\Models\Service;
-use App\Models\Social;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
+use PHPUnit\Util\Test;
+use App\Models\Social;
+use App\Models\Post;
 
 class BlogFrontController extends Controller
 {
-
-//    TODO:THIS IS FOR BLOG PAGE - UNCOMENT THIS TO SHOW ON FRONT
-
     public function index($locale)
     {
 
-        $posts = Post::getAllPosts($locale);
-        $img = Image::getImageByPageId(5);
-        $categories = Category::getAllCategories($locale);
-        $content = Content::getContentByPage($locale, 5); //number 5 is page ID check DATABASE what ID is your page
-        $meta = PageMeta::getMetaForPage($locale, 5); //number 5 is page ID check DATABASE what ID is your page
-        $services = Service::getForFrontAllServices($locale);
-        $socials = Social::getAllSocials($locale);
-        $newses = News::getAllNewsForFront($locale);
+        $meta = PageMeta::getMetaForPage($locale, Page::NEWS);
+        $content = Content::getContentByPage($locale, Page::HOME);
+        $image = Image::getImageByPageId(Page::HOME);
         $newses = News::getAllNewsForFront($locale);
 
-        return View::make('front.pages.blog.blog', [
-            'posts' => $posts,
-            'content' => $content,
-            'categories' => $categories,
-            'images' => $img,
+        return view()->make('front.pages.news.news', [
             'meta' => $meta,
-            'services' => $services,
-            'socials' => $socials,
+            'content' => $content,
+            'locale' => $locale,
+            'image' => $image,
             'newses' => $newses,
 
         ]);
     }
-
 
     public function show($locale, $slug)
     {
-
-        $postId = PostTrans::select('post_id', 'lang')
+        $newsId = NewsTrans::select('news_id', 'lang')
             ->where('slug', $slug)
             ->first();
-        if ($postId->lang !== $locale) {
-            $postRedirect = PostTrans::select('slug')
+
+        if ($newsId->lang !== $locale) {
+            $newsRedirect = NewsTrans::select('slug')
                 ->where([
-                    ['post_id', $postId->post_id],
+                    ['news_id', $newsId->news_id],
                     ['lang', $locale]
                 ])
                 ->first();
-            return Redirect::route('front.single.blog', [
+
+            return Redirect::route('front.single_blog', [
                 'locale' => $locale,
-                'slug' => $postRedirect->slug
+                'slug' => $newsRedirect->slug
             ]);
         }
 
-
-        $post = Post::getFrontSinglePost($locale, $postId->post_id);
-        $postMeta = PostMeta::getPostMeta($locale, $postId->post_id);
-        $content = Content::getContentByPage($locale, 5);
-        $img = Image::getImageByPageId(5);
-        $relevantPosts = Post::getRelevantPosts($locale, $postId);
-        $services = Service::getForFrontAllServices($locale);
+        $news = News::getSingleNewsForFront($locale, $newsId->news_id);
         $newses = News::getAllNewsForFront($locale);
+        $content = Content::getContentByPage($locale, Page::HOME);
+        $image = Image::getImageByPageId(Page::HOME);
+        $newsMeta = NewsMeta::getNewsMeta($locale, $newsId->news_id);
+        $services = Service::getForFrontAllServices($locale);
+        $socials = Social::getAllSocials($locale);
 
 
-        return View::make('front.pages.blog.single-post', [
-            'post' => $post,
-            'locale' => $locale,
-            'postMeta' => $postMeta,
+
+        return view()->make('front.pages.blog.single_blog', [
+            'newsMeta' => $newsMeta,
             'content' => $content,
-            'images' => $img,
-            'relevantPosts' => $relevantPosts,
-            'services' => $services,
+            'image' => $image,
+            'news' => $news,
             'newses' => $newses,
+            'services' => $services,
+            'socials' => $socials,
+
         ]);
     }
-
 }
