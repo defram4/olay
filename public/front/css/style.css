@@ -12821,7 +12821,14 @@ details>summary::-webkit-details-marker {
 */
 .face__step {
     /* margin-bottom: 3.5rem; */
-    padding-bottom: 5%;
+    padding-bottom: 4%;
+
+}
+
+
+
+.face__step:last-child {
+    padding-bottom: 0;
 }
 
 .face__step:last-child {
@@ -14502,5 +14509,14 @@ input[type=range]::-moz-range-track {
 
 .team__items-hover:hover .team__thumb {
     /* border-color: var(--secondary-color); */
+
     border-color: green;
+}
+
+.accordion__container .accordion__items {
+    padding-bottom: 1%;
+}
+
+.accordion__container:last-child {
+    padding-bottom: 0%;
 }

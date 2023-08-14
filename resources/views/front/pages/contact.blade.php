@@ -148,7 +148,7 @@
         <!-- TODO Contact Form end -->
 
         <!-- Start contact map area -->
-        {{-- <div class="contact__map--area col-lg-12 col-md-12 col-sm-12">
+        <div class="contact__map--area col-lg-12 col-md-12 col-sm-12">
             <div class="row">
                 <iframe style=""
                     src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d21751.49961716119!2d28.82800534999999!3d47.04145815!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sro!2s!4v1691501847420!5m2!1sro!2s"
@@ -156,9 +156,26 @@
                     referrerpolicy="no-referrer-when-downgrade">
                 </iframe>
             </div>
-        </div> --}}
+        </div>
         <!-- End contact map area -->
+
     </main>
+    @push('script')
+        <script>
+            // Get references to the form and preloader elements
+            const form = document.getElementById('submitButton'); // Replace 'contactForm' with your form's ID
+            const preloader = document.getElementById('ctn-preloader');
+            const pre = document.querySelector('.animation-preloader');
+            const letter = document.querySelector('.main__content_wrapper');
+            const footer = document.querySelector('.footer__section');
+            // Add an event listener to the form submission
+            submitButton.addEventListener('click', function(event) {
+                pre.style.opacity = '100%';
+                letter.style.display = 'none';
+                footer.style.display = 'none';
+            });
+        </script>
+    @endpush
 
 
 

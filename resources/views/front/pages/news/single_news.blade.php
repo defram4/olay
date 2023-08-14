@@ -28,22 +28,15 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6 col-md-6 col-sm-6">
                         <div class="about__thumbnail padding__left position-relative">
-                            <img src="{{ asset('front/img/other/about-blog.jpg') }}" alt="img">
+                            <img src="{{ asset('storage/news/' . $news->img) }}" alt="img">
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6">
                         <div class="about__content padding__left">
-                            <h3 class="about__content--subtitle">About post</h3>
-                            <h2 class="about__content--title">Discover the Magic Behind Effective Skincare</h2>
+                            <h3 class="about__content--subtitle">{!! $news->title !!}</h3>
+                            <h2 class="about__content--title">{!! $news->sub_title !!}</h2>
                             <p class="about__content--desc">
-                                Learn about the superhero ingredients that can make a significant difference in your
-                                skincare routine. From the moisture-binding magic of hyaluronic acid to the
-                                collagen-boosting properties of peptides, we will uncover the science behind these
-                                remarkable ingredients. <br> <br>
-                                Discover the remarkable benefits of antioxidant-rich botanical extracts like green tea and
-                                vitamin C, which protect your skin from environmental damage and promote a youthful
-                                complexion. Dive into the world of retinol, a powerful ingredient that aids in reducing fine
-                                lines, improving texture, and promoting cellular turnover.
+                                {!! $news->text !!}
                             </p>
                             <!-- <a class="about__conten--btn primary__btn" href="about.html">VIEW MORE</a> -->
                         </div>

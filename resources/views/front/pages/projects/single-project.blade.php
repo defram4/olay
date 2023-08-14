@@ -31,22 +31,17 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6 col-md-6 col-sm-6">
                         <div class="about__thumbnail padding__left position-relative">
-                            <img src="{{ asset('front/img/project/project-p.jpg') }}" alt="img">
+                            <img src="{{ asset('storage/project/' . $project->img_1) }}" alt="img"
+                                style="width: 100%;">
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6">
                         <div class="about__content padding__left">
-                            <h3 class="about__content--subtitle">Ethereal Elegance</h3>
-                            <h2 class="about__content--title">Transforming Beauty with Grace and Style</h2>
+                            <h3 class="about__content--subtitle">{{ $project->title }}</h3>
+                            <h2 class="about__content--title">{{ $project->sub_title }}</h2>
                             <p class="about__content--desc">
-                                Welcome to our captivating project showcase, where we unveil the breathtaking transformation
-                                of our latest endeavor, Project Name. This remarkable project embodies the essence of
-                                ethereal elegance, showcasing our unrivaled expertise and innovative approach to beauty
-                                salon design. <br>
-                                In Project Name, we set out to create an enchanting space that harmoniously blends
-                                sophistication, comfort, and functionality. From the moment you step through the doors, you
-                                will be captivated by the seamless fusion of contemporary aesthetics and timeless charm.
-                                <!-- <a class="about__conten--btn primary__btn" href="about.html">VIEW MORE</a> -->
+                                {{ $project->text }}
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -110,8 +105,8 @@
                         <div class="swiper-slide">
                             <div class="shop__collection--card text-center">
                                 <a class="shop__collection--link">
-                                    <img class="shop__collection--img" src="{{ asset('front/img/project/project-s6.jpg') }}"
-                                        alt="icon-img">
+                                    <img class="shop__collection--img"
+                                        src="{{ asset('front/img/project/project-s6.jpg') }}" alt="icon-img">
                                     <!-- <h3 class="shop__collection--title mb-0">Necklaces</h3> -->
                                 </a>
                             </div>

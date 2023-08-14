@@ -67,7 +67,7 @@
         <!-- TODO Our Project end -->
 
         <!-- TODO Cal to action 2 start-->
-        <section class="newsletter__section " style="padding-top: 3%;">
+        <section class="newsletter__section ">
             <div class="container">
                 <div class="newsletter__inner--style2 newsletter__bg2"
                     style="background: url({{ asset('front/img/banner/cta2.png') }})">
@@ -229,6 +229,7 @@
             </div>
         </section>
         <!--TODO End testimonial section -->
+
     </main>
 @endsection
 
