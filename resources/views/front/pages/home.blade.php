@@ -444,7 +444,7 @@
         <!-- TODO Cal to action 2 end-->
 
         <!-- TODO Contact Form start -->
-        <section class="contact__section  d-flex" style="padding-bottom: 5%;">
+        <section class="contact__section  d-flex" id="contact1" style="padding-bottom: 5%;">
             <div class="main__contact--area" style="justify-content: center; align-items: center; margin: 0 auto;">
                 <div class="contact__form">
                     <h3 class="contact__form--title mb-30">Contact</h3>
@@ -534,6 +534,7 @@
     </main>
 
 
+
     @push('script')
         <script>
             // Get references to the form and preloader elements
@@ -547,6 +548,22 @@
                 pre.style.opacity = '100%';
                 letter.style.display = 'none';
                 footer.style.display = 'none';
+            });
+        </script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const redSpan = document.querySelector('span[style="color: red"]');
+
+                if (redSpan) {
+                    const redSpanTopOffset = redSpan.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    const scrollToY = redSpanTopOffset - windowHeight / 3; // Adjust the value as needed
+
+                    window.scrollTo({
+                        top: scrollToY,
+                        behavior: 'smooth'
+                    });
+                }
             });
         </script>
     @endpush

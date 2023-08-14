@@ -352,6 +352,22 @@
                 footer.style.display = 'none';
             });
         </script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const redSpan = document.querySelector('span[style="color: red"]');
+
+                if (redSpan) {
+                    const redSpanTopOffset = redSpan.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    const scrollToY = redSpanTopOffset - windowHeight / 2.5; // Adjust the value as needed
+
+                    window.scrollTo({
+                        top: scrollToY,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        </script>
     @endpush
 @endsection
 
