@@ -32,31 +32,23 @@
         <section class="about__Section section--padding">
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="col-lg-6 col-md-6 col-sm-6">
-                        <div class="about__thumbnail padding__left position-relative">
-                            <img src="{{ asset('front/img/other/about.jpg') }}" alt="img">
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                        <div class="about__thumbnail  position-relative" style="float: left; padding: 0 2% 0% 0;">
+                            <img src="{{ asset('storage/service/' . $service->img) }}" alt="img">
                         </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6">
-                        <div class="about__content padding__left">
+                        <div class="about__content ">
                             <h3 class="about__content--subtitle">
-                                Revitalize Your Skin
+                                {{ $service->title }}
                             </h3>
                             <h2 class="about__content--title">
-                                Experience the Ultimate Rejuvenation for a Radiant Complexion
+                                {{ $service->sub_title }}
                             </h2>
-                            <p class="about__content--desc">
-                                Welcome to our esteemed beauty salon, where we invite you to immerse yourself in the
-                                transformative world of our signature facial treatment. Our dedicated team of skilled
-                                estheticians has crafted a pampering experience designed to bring out the natural beauty and
-                                radiance of your skin. <br>
-                                Indulge in our Signature Facial, a luxurious and comprehensive skincare ritual that combines
-                                expert techniques with premium products to deliver remarkable results. From the moment you
-                                step into our serene oasis, you'll be enveloped in a soothing ambiance, ready to embark on a
-                                journey of profound relaxation and skin revitalization.
+                            <p class="about__content--desc" style="text-align: justify;">
+                                {{ $service->text }}
                             </p>
                         </div>
                     </div>
+
                 </div>
             </div>
         </section>
@@ -157,7 +149,8 @@
                         <div class="col-lg-4 col-md-4 col-sm-6 col-6 custom-col mb-30">
                             <div class="team__items text-center team__items-hover">
                                 <div class="team__thumb">
-                                    <img class="team__thumb--img" src="{{ asset('front/img/icon/w5.png') }}" alt="team img">
+                                    <img class="team__thumb--img" src="{{ asset('front/img/icon/w5.png') }}"
+                                        alt="team img">
                                 </div>
                                 <div class="team__content ">
                                     <h3 class="team__content--title">Trends and Innovation</h3>
@@ -611,62 +604,88 @@
         <!--TODO  Services end -->
 
         <!-- TODO Contact Form start -->
-        <section class="contact__section  d-flex">
+        <section class="contact__section  d-flex" style="padding-bottom: 5%;">
             <div class="main__contact--area" style="justify-content: center; align-items: center; margin: 0 auto;">
                 <div class="contact__form">
                     <h3 class="contact__form--title mb-30">Contact</h3>
                     <h3 class=" mb-30" style="color:#3c3837;">Get in Touch for Expert Consultation</h3>
-                    <form class="contact__form--inner" action="#">
+                    <form class="contact__form--inner" form id="contact"
+                        action="{{ route('front.contact.storage', app()->getLocale()) }}" method="post">
+                        @csrf
                         <div class="row">
-                            <div class="col-lg-6 col-md-6">
+                            <div class="col-lg-12 col-md-12">
                                 <div class="contact__form--list mb-20">
-                                    <label class="contact__form--label" for="input1">First Name <span
+                                    <label class="contact__form--label" for="name"> Name <span
                                             class="contact__form--label__star">*</span></label>
-                                    <input class="contact__form--input" name="firstname" id="input1"
-                                        placeholder="Your First Name" type="text">
+                                    <input class="contact__form--input" type="text" name="name"
+                                        value="{{ old('name') }}" autocomplete="off">
+                                    @error('name')
+                                        <span style="color: red">
+                                            {{ __('The name field is required.') }}
+                                        </span>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6">
                                 <div class="contact__form--list mb-20">
-                                    <label class="contact__form--label" for="input2">Last Name <span
+                                    <label class="contact__form--label" for="phone">Phone <span
                                             class="contact__form--label__star">*</span></label>
-                                    <input class="contact__form--input" name="lastname" id="input2"
-                                        placeholder="Your Last Name" type="text">
+                                    <input class="contact__form--input" type="text" name="phone"
+                                        value="{{ old('phone') }}" autocomplete="off">
+                                    @error('phone')
+                                        <span style="color: red">
+                                            {{ __('The phone field is required.') }}
+                                        </span>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6">
                                 <div class="contact__form--list mb-20">
-                                    <label class="contact__form--label" for="input3">Phone Number <span
+                                    <label class="contact__form--label" for="email">Email <span
                                             class="contact__form--label__star">*</span></label>
-                                    <input class="contact__form--input" name="number" id="input3"
-                                        placeholder="Phone number" type="text">
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6">
-                                <div class="contact__form--list mb-20">
-                                    <label class="contact__form--label" for="input4">Email <span
-                                            class="contact__form--label__star">*</span></label>
-                                    <input class="contact__form--input" name="email" id="input4"
-                                        placeholder="Email" type="text">
+                                    <input class="contact__form--input" type="text" name="email"
+                                        value="{{ old('email') }}" autocomplete="off">
+                                    @error('email')
+                                        <span style="color: red">
+                                            {{ __('The email field is required.') }}
+                                        </span>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="col-lg-12 col-md-12">
                                 <div class="contact__form--list mb-20">
-                                    <label class="contact__form--label" for="input4">Subject <span
+                                    <label class="contact__form--label" for="title">Subject <span
                                             class="contact__form--label__star">*</span></label>
-                                    <input class="contact__form--input" name="text" id="input4"
-                                        placeholder="Subject" type="text">
+                                    <input class="contact__form--input" type="text" name="title"
+                                        value="{{ old('title') }}" autocomplete="off">
+                                    @error('title')
+                                        <span style="color: red">
+                                            {{ __('The subject field is required.') }}
+                                        </span>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="contact__form--list mb-15">
-                                    <label class="contact__form--label" for="input5">Write Your Message <span
+                                    <label class="contact__form--label" for="message">Write Your Message <span
                                             class="contact__form--label__star">*</span></label>
-                                    <textarea class="contact__form--textarea" name="message" id="input5" placeholder="Write Your Message"></textarea>
+                                    <textarea class="contact__form--textarea" id="input5" placeholder="Write Your Message" name="message"
+                                        autocomplete="off">{{ old('message') }}</textarea>
+                                    @error('message')
+                                        <span style="color: red">
+                                            {{ __('The message field is required.') }}
+                                        </span>
+                                    @enderror
                                 </div>
                             </div>
                         </div>
-                        <button class="contact__form--btn primary__btn" type="submit"> <span>Submit Now</span></button>
+
+                        <button class="contact__form--btn primary__btn" type="submit" name="submit" id="submitButton">
+                            <span>
+                                Submit
+                            </span>
+                        </button>
+
                     </form>
                 </div>
             </div>
@@ -675,6 +694,38 @@
 
 
     </main>
+    @push('script')
+        <script>
+            // Get references to the form and preloader elements
+            const form = document.getElementById('submitButton'); // Replace 'contactForm' with your form's ID
+            const preloader = document.getElementById('ctn-preloader');
+            const pre = document.querySelector('.animation-preloader');
+            const letter = document.querySelector('.main__content_wrapper');
+            const footer = document.querySelector('.footer__section');
+            // Add an event listener to the form submission
+            submitButton.addEventListener('click', function(event) {
+                pre.style.opacity = '100%';
+                letter.style.display = 'none';
+                footer.style.display = 'none';
+            });
+        </script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const redSpan = document.querySelector('span[style="color: red"]');
+
+                if (redSpan) {
+                    const redSpanTopOffset = redSpan.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    const scrollToY = redSpanTopOffset - windowHeight / 2.5; // Adjust the value as needed
+
+                    window.scrollTo({
+                        top: scrollToY,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        </script>
+    @endpush
 @endsection
 
 {{-- <h1> --}}

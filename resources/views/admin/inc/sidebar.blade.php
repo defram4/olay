@@ -140,13 +140,13 @@
                         </a>
                     </li>
 
-                    {{-- <li>
+                    <li>
                         <a class="{{ Route::currentRouteName() == 'admin.services.index' ? 'active' : '' }}"
                             href="{{ route('admin.services.index', ['locale' => app()->getLocale()]) }}">
                             <i class="fa fa-chain"></i>
                             <span class="sidebar-mini-hide">{{ __('Service') }}</span>
                         </a>
-                    </li> --}}
+                    </li>
                     <li>
                         <a class="{{ Route::currentRouteName() == 'admin.projects.index' ? 'active' : '' }}"
                             href="{{ route('admin.projects.index', ['locale' => app()->getLocale()]) }}">
@@ -239,7 +239,8 @@
                     {{-- TODO:COMENT THIS li WHEN YOU FINISH PROJECT --}}
                     <li
                         class="{{ request()->segment(3) == 'contents' || request()->segment(3) == 'images' ? 'open' : '' }}">
-                        <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-book-open"></i><span
+                        <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i
+                                class="si si-book-open"></i><span
                                 class="sidebar-mini-hide">{{ __('Web content') }}</span></a>
                         <ul>
 

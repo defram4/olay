@@ -29,14 +29,11 @@
         <section class="about__Section section--padding">
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="col-lg-6 col-md-6 col-sm-6">
-                        <div class="about__thumbnail padding__left position-relative">
-                            <img src="{{ asset('storage/project/' . $project->img_1) }}" alt="img"
-                                style="width: 100%;">
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                        <div class="about__thumbnail position-relative" style="float:left; padding: 0 2% 2% 0;">
+                            <img src="{{ asset('storage/project/' . $project->img_1) }}" alt="img">
                         </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6">
-                        <div class="about__content padding__left">
+                        <div class="about__content">
                             <h3 class="about__content--subtitle">{{ $project->title }}</h3>
                             <h2 class="about__content--title">{{ $project->sub_title }}</h2>
                             <p class="about__content--desc">
