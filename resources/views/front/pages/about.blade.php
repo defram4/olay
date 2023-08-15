@@ -39,12 +39,11 @@
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6">
                         <div class="about__content padding__left">
-                            <h3 class="about__content--subtitle">
-                                About
-                            </h3>
-                            <h2 class="about__content--title">
-                                Enhancing Your Natural Glow
-                            </h2>
+                            <div class="section__heading text-center mb-40">
+                                <h2 class="section__heading--maintitle" style="text-align: left;">
+                                    About Us
+                                </h2>
+                            </div>
                             <p class="about__content--desc">
                                 Welcome to Radiant Beauty, where we believe that every individual possesses their unique
                                 radiance waiting to be unveiled. Our salon is dedicated to enhancing your natural beauty,
@@ -71,7 +70,7 @@
             <div class="video__banner--wrapper">
                 <div class="container">
                     <div class="video__banner--inner d-flex align-items-end">
-                        <div class="video__banner--box position-relative">
+                        <div class="video__banner--box position-relative" style="background: #f5f7ff;">
                             <img class="video__banner--box__thumbnail" src="{{ asset('front/img/banner/banner3.jpg') }}"
                                 alt="banner-img">
                             <div class="bideo__play">
@@ -106,7 +105,7 @@
         <!-- TODO Cta copy -->
         <section class="advice__banner--section" style="padding-top: 5%;">
             <div class="advice__banner--box position-relative">
-                <img class="advice__banner--thumbnail height_260 border-radius-5" style="width: 100%;"
+                <img class="advice__banner--thumbnail height_360 border-radius-5" style="width: 100%;"
                     src="{{ asset('front/img/banner/cta1.jpg') }}" alt="banner">
                 <div class="advice__banner--content style2">
                     <h2 class="advice__banner--title">
@@ -154,7 +153,7 @@
                                         </a>
                                     </h3>
                                     <p style="text-align: justify;">
-                                        {!! $project->text !!}
+                                        {!! Str::limit($project->text, 200) !!}
                                     </p>
                                 </div>
                             </article>
@@ -195,7 +194,7 @@
         <!-- TODO Cal to action 2 end-->
 
         <!--TODO Start team members section -->
-        <section class="team__section " style="padding-top: 4%;">
+        <section class="team__section " style="padding-top: 5%; padding-bottom:5%;">
             <div class="container">
                 <div class="section__heading style2 text-center mb-40">
                     <h2 class="section__heading--maintitle">

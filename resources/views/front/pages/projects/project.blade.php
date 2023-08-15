@@ -110,7 +110,7 @@
         <!-- TODO Cal to action 2 end-->
 
         <!--TODO Start testimonial section -->
-        <section class="testimonial__section testimonial__bg " style="padding: 5% 0 2% 0;">
+        <section class="testimonial__section  " style="padding: 5% 0 2% 0;">
             <div class="container">
                 <div class="section__heading text-center mb-40">
                     <h2 class="section__heading--maintitle">What Clients Are Saying</h2>

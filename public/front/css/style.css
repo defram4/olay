@@ -9234,7 +9234,7 @@ input.quickview__value--number {
 }
 
 .counterup__banner--inner {
-    padding: 6rem 0;
+    padding: 10% 0 10% 0;
     gap: 2.5rem;
 }
 
@@ -9247,7 +9247,8 @@ input.quickview__value--number {
 
 .counterup__title {
     color: var(--primary-color);
-    font-size: 1.5rem;
+    /* font-size: 1.5rem; */
+    font-size: 40px;
     line-height: 2.4rem;
     margin-bottom: 1.5rem;
     font-weight: 500;
@@ -9255,14 +9256,14 @@ input.quickview__value--number {
 
 @media only screen and (min-width: 992px) {
     .counterup__title {
-        font-size: 1.6rem;
+        font-size: 2.5rem;
         line-height: 2.5rem;
         margin-bottom: 1.8rem;
     }
 }
 
 .counterup__number {
-    font-size: 2.5rem;
+    font-size: 3.5rem;
     line-height: 2.5rem;
     font-weight: 600;
     color: var(--primary-color);
@@ -9270,7 +9271,7 @@ input.quickview__value--number {
 
 @media only screen and (min-width: 992px) {
     .counterup__number {
-        font-size: 3rem;
+        font-size: 3.5rem;
         line-height: 3rem;
     }
 }

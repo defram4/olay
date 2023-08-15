@@ -69,7 +69,7 @@
         <!-- TODO Cta copy -->
         <section class="advice__banner--section" style=" padding-bottom: 5%;">
             <div class="advice__banner--box position-relative">
-                <img class="advice__banner--thumbnail height_260 border-radius-5" style="width: 100%;"
+                <img class="advice__banner--thumbnail height_360 border-radius-5" style="width: 100%;"
                     src="{{ asset('front/img/banner/cta1.jpg') }}" alt="banner">
                 <div class="advice__banner--content style2">
                     <h2 class="advice__banner--title">Transform Your Look Today!</h2>

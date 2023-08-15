@@ -79,8 +79,11 @@
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6">
                         <div class="about__content padding__left">
-                            <h3 class="about__content--subtitle">About</h3>
-                            <h2 class="about__content--title">Enhancing Your Natural Glow</h2>
+                            <div class="section__heading text-center mb-40">
+                                <h2 class="section__heading--maintitle" style="text-align: left;">
+                                    About Us
+                                </h2>
+                            </div>
                             <p class="about__content--desc">
                                 Welcome to Radiant Beauty, where we believe that every individual possesses their unique
                                 radiance waiting to be unveiled. Our salon is dedicated to enhancing your natural beauty,
@@ -105,7 +108,13 @@
         <!--TODO  Services start -->
         <section class="team__section" style="padding-bottom: 5%; padding-top:5%;">
             <div class="container">
+                <div class="section__heading text-center mb-40">
+                    <h2 class="section__heading--maintitle">
+                        Services
+                    </h2>
+                </div>
                 <div class="team__container d-flex">
+
                     <div class="row" style="justify-content: center; align-items:center; margin: 0 auto">
                         @foreach ($services as $service)
                             <div class="col-lg-4 col-md-4  mb-30">
@@ -182,7 +191,7 @@
         <!-- TODO Cta copy -->
         <section class="advice__banner--section" style="padding-top: 5%; padding-bottom: 5%;">
             <div class="advice__banner--box position-relative">
-                <img class="advice__banner--thumbnail height_260 border-radius-5" style="width: 100%;"
+                <img class="advice__banner--thumbnail height_360 border-radius-5" style="width: 100%;"
                     src="{{ asset('front/img/banner/cta1.jpg') }}" alt="banner">
                 <div class="advice__banner--content style2">
                     <h2 class="advice__banner--title">Transform Your Look Today!</h2>
@@ -379,8 +388,9 @@
         <!-- TODO Cal to action 2 start-->
         <section class="newsletter__section" style="margin: 5% 0 5% 0;">
             <div class="container">
-                <div class="newsletter__inner--style2 newsletter__bg2"
-                    style="background: url({{ asset('front/img/banner/cta2.png') }})">
+                <div class="newsletter__inner--style2 "
+                    style="background: url({{ asset('front/img/banner/cta2.png') }}); background-size:cover;">
+
                     <div class="newsletter__style2--content text-center" style="margin-bottom: 0;">
                         <h2 class="newsletter__style2--content__title">
                             Book Your Beauty Transformation Today!
@@ -393,16 +403,15 @@
                             Contact Us
                         </a>
                     </div>
-
                 </div>
-
             </div>
         </section>
         <!-- TODO Cal to action 2 end-->
 
         <!-- TODO Contact Form start -->
         <section class="contact__section  d-flex" id="contact1" style="padding-bottom: 5%;">
-            <div class="main__contact--area" style="justify-content: center; align-items: center; margin: 0 auto;">
+            <div class="main__contact--area container"
+                style="justify-content: center; align-items: center; margin: 0 auto;">
                 <div class="contact__form">
                     <h3 class="contact__form--title mb-30">Contact</h3>
                     <h3 class=" mb-30" style="color:#3c3837;">Get in Touch for Expert Consultation</h3>

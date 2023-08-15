@@ -12,14 +12,13 @@
                     </div>
                     <div class="block-options">
                         <button type="button" class="btn-block-option" data-toggle="block-option"
-                                data-action="fullscreen_toggle"><i class="si si-size-fullscreen"></i></button>
+                            data-action="fullscreen_toggle"><i class="si si-size-fullscreen"></i></button>
                     </div>
                 </div>
                 <div class="block-content">
                     <!-- Messages Options -->
                     <div class="push text-right">
-                        <button type="button" id="btn-delete"
-                                class="btn btn-rounded form-delete btn-alt-secondary w-25">
+                        <button type="button" id="btn-delete" class="btn btn-rounded form-delete btn-alt-secondary w-25">
                             <i class="fa fa-times text-danger mx-5"></i>
                             <span class="d-none d-sm-inline">{{ __('Delete') }}</span>
                         </button>
@@ -30,32 +29,32 @@
                     <!-- Checkable Table (.js-table-checkable class is initialized in Helpers.tableToolsCheckable()) -->
                     <table class="js-table-checkable table table-hover table-vcenter js-table-checkable-enabled">
                         <tbody>
-                        @foreach($inboxes as $inbox)
-                            <tr>
-                                <td class="text-center" style="width: 40px;">
-                                    <label class="css-control css-control-primary css-checkbox">
-                                        <input type="checkbox" class="css-control-input inbox-selector"
-                                               data-id="{{ $inbox->id }}">
-                                        <span class="css-control-indicator"></span>
-                                    </label>
-                                </td>
-                                <td class="d-none d-sm-table-cell font-w600 show-modal" data-id="{{ $inbox->id }}"
-                                    style="width: 140px;">
-                                    {{ $inbox->name }}
-                                </td>
-                                <td class="show-modal" data-id="{{ $inbox->id }}">
-                                    <a class="font-w600" href="#">
-                                        {{ $inbox->title }}
-                                    </a>
-                                    <div class="text-muted mt-5">{{ Str::limit($inbox->message, 30) }}</div>
-                                </td>
-                                <td class="d-none d-xl-table-cell font-w600 font-size-sm text-muted show-modal"
-                                    data-id="{{ $inbox->id }}"
-                                    style="width: 120px;">
-                                    {{ \Carbon\Carbon::parse($inbox->created_at)->format('d-m-Y') }}
-                                </td>
-                            </tr>
-                        @endforeach
+                            @foreach ($inboxes as $inbox)
+                                <tr>
+                                    <td class="text-center" style="width: 40px;">
+                                        <label class="css-control css-control-primary css-checkbox">
+                                            <input type="checkbox" class="css-control-input inbox-selector"
+                                                data-id="{{ $inbox->id }}">
+                                            <span class="css-control-indicator"></span>
+                                        </label>
+                                    </td>
+                                    <td class="d-none d-sm-table-cell font-w600 show-modal" data-id="{{ $inbox->id }}"
+                                        style="width: 140px;">
+                                        {{ $inbox->name }}
+                                    </td>
+                                    <td class="show-modal" data-id="{{ $inbox->id }}">
+                                        <a class="font-w600" href="#">
+                                            {{ $inbox->title }}
+                                        </a>
+                                        <div class="text-muted mt-5">{{ Str::limit($inbox->message, 30) }}</div>
+                                    </td>
+                                    <td class="d-none d-xl-table-cell font-w600 font-size-sm text-muted show-modal"
+                                        data-id="{{ $inbox->id }}" style="width: 120px;">
+                                        {{ \Carbon\Carbon::parse($inbox->created_at)->format('d-m-Y') }}
+                                    </td>
+
+                                </tr>
+                            @endforeach
                         </tbody>
                     </table>
                     <!-- END Messages -->
@@ -67,17 +66,17 @@
     <!-- END Page Content -->
     <!-- Message Modal -->
     <div class="modal fade" id="modal-message" tabindex="-1" role="dialog" aria-labelledby="modal-message"
-         aria-hidden="true">
+        aria-hidden="true">
         <div class="modal-dialog modal-dialog-popout" role="document">
             <div class="modal-content">
                 <div class="block block-themed block-transparent mb-0">
                     <div class="block-header bg-primary-dark">
                         <h3 class="block-title" id="modal-title"></h3>
                         <div class="block-options">
-                            {{--                            <button type="button" class="btn-block-option" data-toggle="modal" data-placement="left"--}}
-                            {{--                                    title="Reply" data-target="#modal-compose" data-dismiss="modal">--}}
-                            {{--                                <i class="fa fa-reply"></i>--}}
-                            {{--                            </button>--}}
+                            {{--                            <button type="button" class="btn-block-option" data-toggle="modal" data-placement="left" --}}
+                            {{--                                    title="Reply" data-target="#modal-compose" data-dismiss="modal"> --}}
+                            {{--                                <i class="fa fa-reply"></i> --}}
+                            {{--                            </button> --}}
                             <button type="button" class="btn-block-option" data-dismiss="modal" aria-label="Close">
                                 <i class="si si-close"></i>
                             </button>
@@ -89,6 +88,8 @@
                     <div class="block-content">
                         <p id="modal-name"></p>
                         <p id="modal-text"></p>
+                        <p id="modal-phone2"></p>
+                        <p id="modal-email"></p>
                     </div>
                     <div class="block-content bg-body p-3">
                         <a class="btn btn-primary" id="modal-email">
@@ -113,14 +114,14 @@
 @push('script')
     <script src="{{ asset('/admin/js/sweetalert.min.js') }}"></script>
     <script>
-        $(document).ready(function () {
+        $(document).ready(function() {
             let ids = [];
-            $('.inbox-selector').on('change', function () {
+            $('.inbox-selector').on('change', function() {
                 const id = $(this).data('id')
                 if ($(this).prop('checked')) {
                     ids.push(id);
                 } else {
-                    ids = ids.filter(function (item) {
+                    ids = ids.filter(function(item) {
                         if (item !== id) {
                             return item;
                         }
@@ -128,10 +129,10 @@
                 }
                 $(this).parents('tr').toggleClass('table-active')
             });
-            $('#btn-delete').on('click', function () {
+            $('#btn-delete').on('click', function() {
                 Swal.fire({
                     title: '{{ trans('Are you sure?') }}',
-                    text: '{{ trans("You could not be able to revert this!") }}',
+                    text: '{{ trans('You could not be able to revert this!') }}',
                     icon: 'warning',
                     showCancelButton: true,
                     confirmButtonColor: '#3085d6',
@@ -141,40 +142,44 @@
                 }).then((result) => {
                     if (result.isConfirmed) {
                         $.ajax({
-                            method: 'DELETE',
-                            url: '/api/inbox',
-                            data: {ids}
-                        })
-                            .then(function (res) {
+                                method: 'DELETE',
+                                url: '/api/inbox',
+                                data: {
+                                    ids
+                                }
+                            })
+                            .then(function(res) {
                                 location.reload();
                                 $('.inbox-selector').prop('checked', false);
 
                             })
-                            .catch(function (err) {
+                            .catch(function(err) {
                                 console.log(err)
                             })
                     }
                 })
 
             })
-            $('.show-modal').on('click', function (e) {
+            $('.show-modal').on('click', function(e) {
                 e.preventDefault();
                 const inboxId = $(this).data('id');
                 $.ajax({
-                    method: 'GET',
-                    url: `/api/inbox/${inboxId}`,
-                    dataType: 'json'
-                })
-                    .then(function (res) {
+                        method: 'GET',
+                        url: `/api/inbox/${inboxId}`,
+                        dataType: 'json'
+                    })
+                    .then(function(res) {
                         console.log(res)
                         $('#modal-title').text(res.title);
                         $('#modal-email').attr('href', `mailto:${res.email}`);
                         $('#modal-phone').attr('href', `tel:${res.phone}`);
                         $('#modal-name').text(res.name);
+                        $('#modal-phone2').text(res.phone);
+                        $('#modal-email').text(res.email);
                         $('#modal-text').text(res.message);
                         $('#modal-message').modal('show')
                     })
-                    .catch(function (err) {
+                    .catch(function(err) {
                         console.log(err)
                     })
             })

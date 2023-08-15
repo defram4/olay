@@ -246,9 +246,10 @@
     "The email field is required.": "Câmpul email este obligatoriu.",
     "The subject field is required.": "Câmpul subiect este obligatoriu.",
     "The contact number field is required.": "Câmpul număr de contact este obligatoriu.",
-    "The message field is required.": "Câmpul mesaj este obligatoriu.",
+    "The message field is required.": "Subiectul este un câmp obligatoriu.",
     "Add project": "Adaugă proiect",
     "Banner": "Banner",
     "Add banner": "Adaugă banner",
-    "Projects": "Proiecte"
+    "Projects": "Proiecte",
+    "The phone field is required.": "Numărul de telefon este obligatoriu."
 }
