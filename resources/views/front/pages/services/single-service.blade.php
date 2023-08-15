@@ -175,7 +175,7 @@
 
         <!-- TODO Our Project start -->
         <section class="product__section section--paddfront
-             container" style="padding-bottom:5%;">
+             container" style="padding-bottom:7%;">
             <div class="section__heading text-center mb-40">
                 <h2 class="section__heading--maintitle">
                     Our projects

@@ -251,5 +251,7 @@
     "Banner": "Banner",
     "Add banner": "Adaugă banner",
     "Projects": "Proiecte",
-    "The phone field is required.": "Numărul de telefon este obligatoriu."
+    "The phone field is required.": "Numărul de telefon este obligatoriu.",
+    "We will contact you soon!": "Vă vom contacta curând.",
+    "Message send successfully": "Expediat cu succes!"
 }

@@ -390,5 +390,9 @@
     "Banner": "Баннер",
     "Projects": "Проекты",
     "Add banner": "Добавить баннер",
-    "Project": "Добавить баннер"
+    "Project": "Добавить баннер",
+    "We will contact you soon!": "Мы свяжемся с вами в ближайшее время!",
+    "Message send successfully": "Сообщение отправлено успешно",
+    "The phone field is required.": "Поле телефон является обязательным для заполнения."
+
 }

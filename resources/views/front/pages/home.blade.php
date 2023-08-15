@@ -414,7 +414,7 @@
                 style="justify-content: center; align-items: center; margin: 0 auto;">
                 <div class="contact__form">
                     <h3 class="contact__form--title mb-30">Contact</h3>
-                    <h3 class=" mb-30" style="color:#3c3837;">Get in Touch for Expert Consultation</h3>
+                    {{-- <h3 class=" mb-30" style="color:#3c3837;">Get in Touch for Expert Consultation</h3> --}}
                     <form class="contact__form--inner" form id="contact"
                         action="{{ route('front.contact.storage', app()->getLocale()) }}" method="post">
                         @csrf
