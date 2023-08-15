@@ -103,81 +103,38 @@
         <!--TODO End about section -->
 
         <!--TODO  Services start -->
-        <section class="team__section" style="padding-bottom: 2%;">
+        <section class="team__section" style="padding-bottom: 5%; padding-top:5%;">
             <div class="container">
-                <div class="section__heading style2 text-center mb-40">
-                    <h2 class="section__heading--maintitle">Services</h2>
-                </div>
                 <div class="team__container d-flex">
                     <div class="row" style="justify-content: center; align-items:center; margin: 0 auto">
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-6 custom-col mb-30">
-                            <div class="team__items text-center">
-                                <div class="team__thumb">
-                                    <img class="team__thumb--img" src="{{ asset('front/img/other/service1.jpg') }}"
-                                        alt="team img">
-                                </div>
-                                <div class="team__content ">
-                                    <h3 class="team__content--title">Facial Treatments</h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-6 custom-col mb-30">
-                            <div class="team__items text-center">
-                                <div class="team__thumb">
-                                    <img class="team__thumb--img" src="{{ asset('front/img/other/service2.jpg') }}"
-                                        alt="team img">
-                                </div>
-                                <div class="team__content ">
-                                    <h3 class="team__content--title">Body Waxing</h3>
+                        @foreach ($services as $service)
+                            <div class="col-lg-4 col-md-4  mb-30">
+                                <div class="team__items text-center">
+                                    <div class="team__thumb" style="cursor:pointer;"
+                                        onclick="navigateToService('{{ route('front.single.service', ['locale' => app()->getLocale(), 'slug' => $service->slug]) }}')">
+                                        <img class="team__thumb--img" src="{{ asset('storage/service/' . $service->img) }}"
+                                            alt="team img">
+                                    </div>
+                                    <div class="team__content ">
+                                        <h3 class="team__content--title">
+                                            <a
+                                                href="{{ route('front.single.service', ['locale' => app()->getLocale(), 'slug' => $service->slug]) }}">
+                                                {{ $service->title }}
+                                            </a>
+                                        </h3>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-6 custom-col mb-30">
-                            <div class="team__items text-center">
-                                <div class="team__thumb">
-                                    <img class="team__thumb--img" src="{{ asset('front/img/other/service3.jpg') }}"
-                                        alt="team img">
-                                </div>
-                                <div class="team__content ">
-                                    <h3 class="team__content--title">Nail Care and Art</h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-6 custom-col mb-30">
-                            <div class="team__items text-center">
-                                <div class="team__thumb">
-                                    <img class="team__thumb--img" src="{{ asset('front/img/other/service4.jpg') }}"
-                                        alt="team img">
-                                </div>
-                                <div class="team__content ">
-                                    <h3 class="team__content--title">Eyebrow Shapin</h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-6 custom-col mb-30">
-                            <div class="team__items text-center">
-                                <div class="team__thumb">
-                                    <img class="team__thumb--img" src="{{ asset('front/img/other/service5.jpg') }}"
-                                        alt="team img">
-                                </div>
-                                <div class="team__content ">
-                                    <h3 class="team__content--title">Makeup Application</h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-6 custom-col mb-30">
-                            <div class="team__items text-center">
-                                <div class="team__thumb">
-                                    <img class="team__thumb--img" src="{{ asset('front/img/other/service6.jpg') }}"
-                                        alt="team img">
-                                </div>
-                                <div class="team__content ">
-                                    <h3 class="team__content--title">Massage Therapy</h3>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
+
                 </div>
+                <script>
+                    function navigateToService(url) {
+                        window.location.href = url;
+                    }
+                </script>
+
 
             </div>
         </section>

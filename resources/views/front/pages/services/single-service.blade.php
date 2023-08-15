@@ -193,7 +193,7 @@
 
         <!-- TODO Our Project start -->
         <section class="product__section section--paddfront
-             container">
+             container" style="padding-bottom:5%;">
             <div class="section__heading text-center mb-40">
                 <h2 class="section__heading--maintitle">
                     Our projects
@@ -201,199 +201,36 @@
             </div>
             <div class="product__section--inner">
                 <div class="row mb--n30">
-                    <div class="col-lg-3 col-md-4 col-sm-6 col-6 custom-col mb-30">
-                        <article class="product__card">
-                            <div class="product__card--thumbnail">
-                                <a class="product__card--thumbnail__link display-block">
-                                    <img class="product__card--thumbnail__img product__primary--img"
-                                        src="{{ asset('front/img/product/main-product/pr1.png') }}" alt="product-img">
-                                    <img class="product__card--thumbnail__img product__secondary--img"
-                                        src="{{ asset('front/img/product/main-product/pr1-1.png') }}" alt="product-img">
-                                </a>
-                            </div>
-                            <div class="product__card--content text-center height">
-                                <h3 class="product__card--title">
-                                    <a>
-                                        Redefining Glamour
+                    @foreach ($projects as $project)
+                        <div class="col-lg-3 col-md-4 col-sm-6 col-6 custom-col mb-30">
+                            <article class="product__card">
+                                <div class="product__card--thumbnail">
+                                    <a class="product__card--thumbnail__link display-block"
+                                        href="{{ route('front.single.project', ['locale' => app()->getLocale(), 'slug' => $project->slug]) }}">
+                                        <img class="product__card--thumbnail__img product__primary--img"
+                                            src="{{ asset('storage/project/' . $project->img_1) }}" alt="product-img1">
+                                        <img class="product__card--thumbnail__img product__secondary--img"
+                                            src="{{ asset('storage/project/' . $project->img_2) }}" alt="product-img2">
                                     </a>
-                                </h3>
-                                <p style="text-align: justify;">
-                                    Step into our Beauty Haven and experience a world of luxurious pampering, expert
-                                    styling, and personalized beauty treatments that will leave you feeling like
-                                    royalty.
-                                </p>
-                            </div>
-                        </article>
+                                </div>
+                                <div class="product__card--content text-center height">
+                                    <h3 class="product__card--title">
+                                        <a
+                                            href="{{ route('front.single.project', ['locale' => app()->getLocale(), 'slug' => $project->slug]) }}">
+                                            {{ $project->title }}
+                                        </a>
+                                    </h3>
+                                    <p style="text-align: justify;">
+                                        {!! Str::limit($project->text, 200) !!}
+                                    </p>
+                                </div>
+                            </article>
+                        </div>
+                    @endforeach
+                    <div class="product__load--more text-center">
+                        <a class="load__more--btn primary__btn"
+                            href="{{ route('front.project', app()->getLocale()) }}">All projects</a>
                     </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 col-6 custom-col mb-30">
-                        <article class="product__card">
-                            <div class="product__card--thumbnail">
-                                <a class="product__card--thumbnail__link display-block">
-                                    <img class="product__card--thumbnail__img product__primary--img"
-                                        src="{{ asset('front/img/product/main-product/pr2.png') }}" alt="product-img">
-                                    <img class="product__card--thumbnail__img product__secondary--img"
-                                        src="{{ asset('front/img/product/main-product/pr2-1.png') }}" alt="product-img">
-                                </a>
-                            </div>
-                            <div class="product__card--content text-center height">
-                                <h3 class="product__card--title">
-                                    <a>
-                                        Glow Up Projec
-                                    </a>
-                                </h3>
-                                <p style="text-align: justify;">
-                                    Embark on a transformative journey with our Glow Up Project, where our skilled team of
-                                    beauty professionals will enhance your natural beauty, leaving you with a radiant and
-                                    confident glow.
-                                </p>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 col-6 custom-col mb-30">
-                        <article class="product__card">
-                            <div class="product__card--thumbnail">
-                                <a class="product__card--thumbnail__link display-block">
-                                    <img class="product__card--thumbnail__img product__primary--img"
-                                        src="{{ asset('front/img/product/main-product/pr3.png') }}" alt="product-img">
-                                    <img class="product__card--thumbnail__img product__secondary--img"
-                                        src="{{ asset('front/img/product/main-product/pr3-1.png') }}" alt="product-img">
-                                </a>
-                            </div>
-                            <div class="product__card--content text-center height">
-                                <h3 class="product__card--title">
-                                    <a>
-                                        Beauty Revamp
-                                    </a>
-                                </h3>
-                                <p style="text-align: justify;">
-                                    Discover the power of a Beauty Revamp as our talented stylists and beauty experts work
-                                    their magic to revitalize your look, bringing out your inner beauty and redefining your
-                                    style.
-                                </p>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 col-6 custom-col mb-30">
-                        <article class="product__card">
-                            <div class="product__card--thumbnail">
-                                <a class="product__card--thumbnail__link display-block">
-                                    <img class="product__card--thumbnail__img product__primary--img"
-                                        src="{{ asset('front/img/product/main-product/pr4.png') }}" alt="product-img">
-                                    <img class="product__card--thumbnail__img product__secondary--img"
-                                        src="{{ asset('front/img/product/main-product/pr4-1.png') }}" alt="product-img">
-                                </a>
-                            </div>
-                            <div class="product__card--content text-center height">
-                                <h3 class="product__card--title">
-                                    <a>
-                                        Empowering You Beauty
-                                    </a>
-                                </h3>
-                                <p style="text-align: justify;">
-                                    Project Confidence is all about empowering you to embrace your unique beauty. Let our
-                                    salon be the canvas where you unleash your confidence.
-                                </p>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 col-6 custom-col mb-30">
-                        <article class="product__card">
-                            <div class="product__card--thumbnail">
-                                <a class="product__card--thumbnail__link display-block">
-                                    <img class="product__card--thumbnail__img product__primary--img"
-                                        src="{{ asset('front/img/product/main-product/pr5.png') }}" alt="product-img">
-                                    <img class="product__card--thumbnail__img product__secondary--img"
-                                        src="{{ asset('front/img/product/main-product/pr5-1.png') }}" alt="product-img">
-                                </a>
-                            </div>
-                            <div class="product__card--content text-center height">
-                                <h3 class="product__card--title">
-                                    <a>
-                                        Beauty Makeover Project
-                                    </a>
-                                </h3>
-                                <p style="text-align: justify;">
-                                    Join us on The Beauty Makeover Project, where our team of skilled professionals will
-                                    work closely with you to unveil your true potential. Experience a personalized beauty
-                                    journey that will leave you looking and feeli.
-                                </p>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 col-6 custom-col mb-30">
-                        <article class="product__card">
-                            <div class="product__card--thumbnail">
-                                <a class="product__card--thumbnail__link display-block">
-                                    <img class="product__card--thumbnail__img product__primary--img"
-                                        src="{{ asset('front/img/product/main-product/pr6.png') }}" alt="product-img">
-                                    <img class="product__card--thumbnail__img product__secondary--img"
-                                        src="{{ asset('front/img/product/main-product/pr6-1.png') }}" alt="product-img">
-                                </a>
-                            </div>
-                            <div class="product__card--content text-center height">
-                                <h3 class="product__card--title">
-                                    <a>
-                                        Beauty Renaissance
-                                    </a>
-                                </h3>
-                                <p style="text-align: justify;">
-                                    Indulge in our Beauty Renaissance project and let us guide you through a revitalizing
-                                    experience that transcends physical transformation. Discover a renewed sense of self and
-                                    embrace the beauty that lies within.
-                                </p>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 col-6 custom-col mb-30">
-                        <article class="product__card">
-                            <div class="product__card--thumbnail">
-                                <a class="product__card--thumbnail__link display-block">
-                                    <img class="product__card--thumbnail__img product__primary--img"
-                                        src="{{ asset('front/img/product/main-product/pr7.png') }}" alt="product-img">
-                                    <img class="product__card--thumbnail__img product__secondary--img"
-                                        src="{{ asset('front/img/product/main-product/pr7-1.png') }}" alt="product-img">
-                                </a>
-                            </div>
-                            <div class="product__card--content text-center height">
-                                <h3 class="product__card--title">
-                                    <a>
-                                        Beauty Evolution
-                                    </a>
-                                </h3>
-                                <p style="text-align: justify;">
-                                    Witness the transformative power of our Beauty Evolution project, where our experts will
-                                    guide you through a personalized journey of self-discovery and help you embrace a new
-                                    and improved version of yourself.
-                                </p>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 col-6 custom-col mb-30">
-                        <article class="product__card">
-                            <div class="product__card--thumbnail">
-                                <a class="product__card--thumbnail__link display-block">
-                                    <img class="product__card--thumbnail__img product__primary--img"
-                                        src="{{ asset('front/img/product/main-product/pr8.png') }}" alt="product-img">
-                                    <img class="product__card--thumbnail__img product__secondary--img"
-                                        src="{{ asset('front/img/product/main-product/pr8-1.png') }}" alt="product-img">
-                                </a>
-                            </div>
-                            <div class="product__card--content text-center height">
-                                <h3 class="product__card--title">
-                                    <a>
-                                        Redefining Elegance
-                                    </a>
-                                </h3>
-                                <p style="text-align: justify;">
-                                    Join Project Glam and experience the epitome of elegance and sophistication. Let our
-                                    salon's talented team of beauty professionals elevate your style with exquisite
-                                    treatments and personalized services that exude glamour.
-                                </p>
-                            </div>
-                        </article>
-                    </div>
-
-
                 </div>
 
             </div>
@@ -402,7 +239,7 @@
         <!-- TODO Our Project end -->
 
         <!--TODO Start testimonial section -->
-        <section class="testimonial__section testimonial__bg " style="padding: 5% 0 0% 0;">
+        <section class="testimonial__section testimonial__bg " style="padding: 5% 0 5% 0;">
             <div class="container">
                 <div class="section__heading text-center mb-40">
                     <h2 class="section__heading--maintitle">What Clients Are Saying</h2>
@@ -522,89 +359,58 @@
         </section>
         <!--TODO End testimonial section -->
 
-        <!--TODO  Services start -->
-        <section class="team__section" style="padding-bottom: 5%; padding-top:5%;">
+        <!--TODO Start blog section -->
+        <section class="blog__section bg" style="margin-top: 4%; padding: 0% 0 5% 0;">
             <div class="container">
-                <div class="section__heading style2 text-center mb-40">
+                <div class="section__heading text-center mb-40">
                     <h2 class="section__heading--maintitle">Services</h2>
                 </div>
-                <div class="team__container d-flex">
-                    <div class="row" style="justify-content: center; align-items:center; margin: 0 auto">
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-6 custom-col mb-30">
-                            <div class="team__items text-center">
-                                <div class="team__thumb">
-                                    <img class="team__thumb--img" src="{{ asset('front/img/other/service1.jpg') }}"
-                                        alt="team img">
-                                </div>
-                                <div class="team__content ">
-                                    <h3 class="team__content--title">Facial Treatments</h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-6 custom-col mb-30">
-                            <div class="team__items text-center">
-                                <div class="team__thumb">
-                                    <img class="team__thumb--img" src="{{ asset('front/img/other/service2.jpg') }}"
-                                        alt="team img">
-                                </div>
-                                <div class="team__content ">
-                                    <h3 class="team__content--title">Body Waxing</h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-6 custom-col mb-30">
-                            <div class="team__items text-center">
-                                <div class="team__thumb">
-                                    <img class="team__thumb--img" src="{{ asset('front/img/other/service3.jpg') }}"
-                                        alt="team img">
-                                </div>
-                                <div class="team__content ">
-                                    <h3 class="team__content--title">Nail Care and Art</h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-6 custom-col mb-30">
-                            <div class="team__items text-center">
-                                <div class="team__thumb">
-                                    <img class="team__thumb--img" src="{{ asset('front/img/other/service4.jpg') }}"
-                                        alt="team img">
-                                </div>
-                                <div class="team__content ">
-                                    <h3 class="team__content--title">Eyebrow Shapin</h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-6 custom-col mb-30">
-                            <div class="team__items text-center">
-                                <div class="team__thumb">
-                                    <img class="team__thumb--img" src="{{ asset('front/img/other/service5.jpg') }}"
-                                        alt="team img">
-                                </div>
-                                <div class="team__content ">
-                                    <h3 class="team__content--title">Makeup Application</h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-6 custom-col mb-30">
-                            <div class="team__items text-center">
-                                <div class="team__thumb">
-                                    <img class="team__thumb--img" src="{{ asset('front/img/other/service6.jpg') }}"
-                                        alt="team img">
-                                </div>
-                                <div class="team__content ">
-                                    <h3 class="team__content--title">Massage Therapy</h3>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <div class="blog__section--inner blog__swiper--activation swiper">
+                    <div class="swiper-wrapper">
+                        @foreach ($services as $service)
+                            <div class="swiper-slide">
+                                <article class="blog__card">
+                                    <div class="blog__card--thumbnail">
+                                        <a class="blog__card--thumbnail__link"
+                                            href="{{ route('front.single.service', ['locale' => app()->getLocale(), 'slug' => $service->slug]) }}">
+                                            <img class="blog__card--thumbnail__img"
+                                                src="{{ asset('storage/service/' . $service->img) }}">
+                                        </a>
+                                    </div>
+                                    <div class="blog__card--content height1">
+                                        <h3 class="blog__card--title" style="text-align: center;">
+                                            <a
+                                                href="{{ route('front.single.service', ['locale' => app()->getLocale(), 'slug' => $service->slug]) }}">
+                                                {{ $service->title }}
+                                            </a>
+                                        </h3>
 
+                                    </div>
+                                </article>
+                            </div>
+                        @endforeach
+                    </div>
+                    {{-- <div class="swiper__nav--btn swiper-button-next">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" class=" -chevron-right">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </div>
+                    <div class="swiper__nav--btn swiper-button-prev">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" class=" -chevron-left">
+                            <polyline points="15 18 9 12 15 6"></polyline>
+                        </svg>
+                    </div> --}}
+                </div>
             </div>
         </section>
-        <!--TODO  Services end -->
+        <!--TODO End blog section -->
 
         <!-- TODO Contact Form start -->
-        <section class="contact__section  d-flex" style="padding-bottom: 5%;">
+        <section class="contact__section  d-flex" style="padding: 0% 0 5% 0;">
             <div class="main__contact--area" style="justify-content: center; align-items: center; margin: 0 auto;">
                 <div class="contact__form">
                     <h3 class="contact__form--title mb-30">Contact</h3>

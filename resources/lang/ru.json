@@ -363,7 +363,7 @@
     "Partner logo": "Логотип партнера",
     "Add partner logo": "Добавить логотип партнера",
     "Edit partner logo": "Редактировать логотип партнера",
-    "Testimonial": "Отзыв",
+    "Testimonial": "Отзывы",
     "Add testimonial": "Добавьте отзыв",
     "Edit testimonial": "Редактировать отзыв",
     "Social media": "Социальные сети",
@@ -389,5 +389,6 @@
     "Add project": "Добавить проект",
     "Banner": "Баннер",
     "Projects": "Проекты",
-    "Add banner": "Добавить баннер"
+    "Add banner": "Добавить баннер",
+    "Project": "Добавить баннер"
 }

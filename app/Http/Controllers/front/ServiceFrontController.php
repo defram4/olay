@@ -4,6 +4,7 @@ namespace App\Http\Controllers\front;
 
 use App\Http\Controllers\Controller;
 use App\Models\CustomerLogo;
+use App\Models\Project;
 use App\Models\Review;
 use App\Models\Service;
 use App\Models\ServiceMeta;
@@ -25,6 +26,7 @@ class ServiceFrontController extends Controller
         $content = Content::getContentByPage($locale, 3);
         $meta = PageMeta::getMetaForPage($locale, 3);
         $socials = Social::getAllSocials($locale);
+        $projects = Project::getForFrontFourProjects($locale);
 
 
         return View::make('front.pages.services.service', [
@@ -33,6 +35,7 @@ class ServiceFrontController extends Controller
             'content'=>$content,
             'meta'=>$meta,
             'socials' => $socials,
+            'projects' => $projects,
         ]);
 
 
@@ -65,6 +68,7 @@ class ServiceFrontController extends Controller
         $reviews = Review::getAllReviewsForFront($locale);
         $services = Service::getForFrontAllServices($locale);
         $socials = Social::getAllSocials($locale);
+        $projects = Project::getForFrontFourProjects($locale);
 
         return View::make('front.pages.services.single-service', [
             'locale' => $locale,
@@ -77,6 +81,7 @@ class ServiceFrontController extends Controller
             'customers' => $customers,
             'reviews' => $reviews,
             'socials' => $socials,
+            'projects' => $projects,
         ]);
     }
 

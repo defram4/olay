@@ -41,6 +41,7 @@ class ProjectFrontController extends Controller
             'services' => $services,
             'meta'=>$meta,
             'socials' => $socials, // img(sometimes) , name(sometimes) , url
+
         ]);
 
 
@@ -73,6 +74,7 @@ class ProjectFrontController extends Controller
         $services = Service::getForFrontAllServices($locale);
         $socials = Social::getAllSocials($locale);
         $socials = Social::getAllSocialsForFront($locale);
+        $projects = Project::getForFrontFourProjects($locale);
 
         return View::make('front.pages.projects.single-project', [
             'locale' => $locale,
