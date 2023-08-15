@@ -217,7 +217,7 @@
             <div class="product__section--inner">
                 <div class="row mb--n30">
                     @foreach ($projects as $project)
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-6 custom-col mb-30">
+                        <div class="col-lg-3 col-md-6 col-sm-6  mb-30">
                             <article class="product__card">
                                 <div class="product__card--thumbnail">
                                     <a class="product__card--thumbnail__link display-block"
@@ -257,11 +257,13 @@
         <section class="team__section" style="padding-bottom: 2%;">
             <div class="container">
                 <div class="section__heading style2 text-center mb-40">
-                    <h2 class="section__heading--maintitle">Why Choose Us</h2>
+                    <h2 class="section__heading--maintitle">
+                        Why Choose Us
+                    </h2>
                 </div>
                 <div class="team__container d-flex">
-                    <div class="row" style="justify-content: center; align-items:center; margin: 0 auto">
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-6 custom-col mb-30">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4  mb-30">
                             <div class="team__items text-center team__items-hover">
                                 <div class="team__thumb">
                                     <img class="team__thumb--img" src="{{ asset('front/img/icon/w1.png') }}"
@@ -272,7 +274,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-6 custom-col mb-30">
+                        <div class="col-lg-4 col-md-4  mb-30">
                             <div class="team__items text-center team__items-hover">
                                 <div class="team__thumb">
                                     <img class="team__thumb--img" src="{{ asset('front/img/icon/w2.png') }}"
@@ -283,7 +285,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-6 custom-col mb-30">
+                        <div class="col-lg-4 col-md-4  mb-30">
                             <div class="team__items text-center team__items-hover">
                                 <div class="team__thumb">
                                     <img class="team__thumb--img" src="{{ asset('front/img/icon/w3.png') }}"
@@ -294,7 +296,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-6 custom-col mb-30">
+                        <div class="col-lg-4 col-md-4  mb-30">
                             <div class="team__items text-center team__items-hover">
                                 <div class="team__thumb">
                                     <img class="team__thumb--img" src="{{ asset('front/img/icon/w4.png') }}"
@@ -305,7 +307,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-6 custom-col mb-30">
+                        <div class="col-lg-4 col-md-4  mb-30">
                             <div class="team__items text-center team__items-hover">
                                 <div class="team__thumb">
                                     <img class="team__thumb--img" src="{{ asset('front/img/icon/w5.png') }}"
@@ -316,7 +318,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-6 custom-col mb-30">
+                        <div class="col-lg-4 col-md-4  mb-30">
                             <div class="team__items text-center team__items-hover">
                                 <div class="team__thumb">
                                     <img class="team__thumb--img" src="{{ asset('front/img/icon/w6.png') }}"
