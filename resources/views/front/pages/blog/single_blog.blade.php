@@ -26,13 +26,17 @@
         <section class="about__Section section--padding">
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="col-lg-6 col-md-6 col-sm-6">
+                    {{-- <div class="col-lg-6 col-md-6 col-sm-6">
                         <div class="about__thumbnail padding__left position-relative">
                             <img src="{{ asset('storage/news/' . $news->img) }}" alt="img">
                         </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6">
-                        <div class="about__content padding__left">
+                    </div> --}}
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                        <div class="about__thumbnail  position-relative">
+                            <img src="{{ asset('storage/news/' . $news->img) }}" alt="img"
+                                style="float:left; padding: 0 2% 2% 0; box-sizing:border box;">
+                        </div>
+                        <div class="about__content " style="text-align:justify;">
                             <h3 class="about__content--subtitle">{!! $news->title !!}</h3>
                             <h2 class="about__content--title">{!! $news->sub_title !!}</h2>
                             <p class="about__content--desc">
@@ -59,7 +63,7 @@
                                 <article class="blog__card">
                                     <div class="blog__card--thumbnail">
                                         <a class="blog__card--thumbnail__link"
-                                            href="{{ route('front.single_news', ['locale' => app()->getLocale(), 'slug' => $news->slug]) }}">
+                                            href="{{ route('front.single_blog', ['locale' => app()->getLocale(), 'slug' => $news->slug]) }}">
                                             <img class="blog__card--thumbnail__img"
                                                 src="{{ asset('storage/news/' . $news->img) }}" alt="blog-img">
                                         </a>
@@ -67,7 +71,7 @@
                                     <div class="blog__card--content height1">
                                         <h3 class="blog__card--title">
                                             <a
-                                                href="{{ route('front.single_news', ['locale' => app()->getLocale(), 'slug' => $news->slug]) }}">
+                                                href="{{ route('front.single_blog', ['locale' => app()->getLocale(), 'slug' => $news->slug]) }}">
                                                 {!! $news->title !!}
                                             </a>
                                         </h3>

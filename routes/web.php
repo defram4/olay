@@ -117,7 +117,7 @@ Route::group(['prefix' => '{locale}', 'middleware' => 'setLocale'], function () 
 
         Route::get('/blog', [BlogFrontController::class, 'index'])->name('front.blog');
         // Route::get('/single-blog/{slug}', [BlogFrontController::class, 'show'])->name('front.single.blog');
-        Route::get('/single-news/{slug}', [BlogFrontController::class, 'show'])->name('front.single_blog');
+        Route::get('/single-blog/{slug}', [BlogFrontController::class, 'show'])->name('front.single_blog');
         // Route::get('/filter-blog/{id}', [\App\Http\Controllers\front\BlogFilterController::class, 'filterBlog']);
         // Route::delete('/gallery-post/{id}', [PostGalleryController::class, 'delete'])->name('admin.gallery-post-delete');
 

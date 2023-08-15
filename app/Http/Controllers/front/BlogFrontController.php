@@ -12,6 +12,7 @@ use App\Models\Image;
 use App\Models\Page;
 use App\Models\PageMeta;
 use App\Models\Service;
+// use Cviebrock\EloquentSluggable\Tests\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
@@ -28,14 +29,20 @@ class BlogFrontController extends Controller
         $content = Content::getContentByPage($locale, Page::HOME);
         $image = Image::getImageByPageId(Page::HOME);
         $newses = News::getAllNewsForFront($locale);
+        $posts = Post::getAllByCategoryId($locale, 1);
+        $services = Service::getForFrontAllServices($locale);
+        $socials = Social::getAllSocials($locale);
+        $socials = Social::getAllSocialsForFront($locale);
 
-        return view()->make('front.pages.news.news', [
+        return view()->make('front.pages.blog.blog', [
             'meta' => $meta,
             'content' => $content,
             'locale' => $locale,
             'image' => $image,
             'newses' => $newses,
-
+            'posts' => $posts,
+            'services' => $services,
+            'socials' => $socials,
         ]);
     }
 
@@ -66,6 +73,10 @@ class BlogFrontController extends Controller
         $newsMeta = NewsMeta::getNewsMeta($locale, $newsId->news_id);
         $services = Service::getForFrontAllServices($locale);
         $socials = Social::getAllSocials($locale);
+        $posts = Post::getAllByCategoryId($locale, 1);
+        $socials = Social::getAllSocials($locale);
+        $socials = Social::getAllSocialsForFront($locale);
+
 
 
 
@@ -77,6 +88,7 @@ class BlogFrontController extends Controller
             'newses' => $newses,
             'services' => $services,
             'socials' => $socials,
+            'posts' => $posts,
 
         ]);
     }

@@ -270,7 +270,7 @@
                                         </a>
                                     </h3>
                                     <p style="text-align: justify;">
-                                        {!! $project->text !!}
+                                        {!! Str::limit($project->text, 200) !!}
                                     </p>
                                 </div>
                             </article>

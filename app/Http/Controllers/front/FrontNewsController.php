@@ -4,20 +4,16 @@ namespace App\Http\Controllers\front;
 
 use App\Http\Controllers\Controller;
 use App\Models\Content;
-use App\Models\News;
-use App\Models\NewsTrans;
-use App\Models\NewsMeta;
-use App\Models\NewsMetaTrans;
 use App\Models\Image;
+use App\Models\News;
+use App\Models\NewsMeta;
+use App\Models\NewsTrans;
 use App\Models\Page;
 use App\Models\PageMeta;
-use App\Models\Service;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Redirect;
-use Illuminate\Support\Facades\View;
-use PHPUnit\Util\Test;
-use App\Models\Social;
 use App\Models\Post;
+use App\Models\Service;
+use App\Models\Social;
+use Illuminate\Support\Facades\Redirect;
 
 class FrontNewsController extends Controller
 {
@@ -28,6 +24,7 @@ class FrontNewsController extends Controller
         $content = Content::getContentByPage($locale, Page::HOME);
         $image = Image::getImageByPageId(Page::HOME);
         $newses = News::getAllNewsForFront($locale);
+        $posts = Post::getAllByCategoryId($locale, 1);
 
         return view()->make('front.pages.news.news', [
             'meta' => $meta,
@@ -35,6 +32,7 @@ class FrontNewsController extends Controller
             'locale' => $locale,
             'image' => $image,
             'newses' => $newses,
+            'posts' => $posts,
 
         ]);
     }
@@ -53,7 +51,7 @@ class FrontNewsController extends Controller
                 ])
                 ->first();
 
-            return Redirect::route('front.single_news', [
+            return Redirect::route('front.single_blog', [
                 'locale' => $locale,
                 'slug' => $newsRedirect->slug
             ]);
@@ -66,10 +64,11 @@ class FrontNewsController extends Controller
         $newsMeta = NewsMeta::getNewsMeta($locale, $newsId->news_id);
         $services = Service::getForFrontAllServices($locale);
         $socials = Social::getAllSocials($locale);
+        $posts = Post::getAllByCategoryId($locale, 1);
 
 
 
-        return view()->make('front.pages.blog.single_news', [
+        return view()->make('front.pages.blog.single_blog', [
             'newsMeta' => $newsMeta,
             'content' => $content,
             'image' => $image,
@@ -77,6 +76,7 @@ class FrontNewsController extends Controller
             'newses' => $newses,
             'services' => $services,
             'socials' => $socials,
+            'posts' => $posts,
 
         ]);
     }

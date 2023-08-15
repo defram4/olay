@@ -65,15 +65,17 @@
                                  </a>
                              </li>
                              <li class="header__menu--items">
-                                 <a class="header__menu--link">Language
+                                 <a class="header__menu--link">
+                                     {{ currentLangName() }}
                                  </a>
                                  <ul class="header__sub--menu">
-                                     <li class="header__sub--menu__items"><a class="header__sub--menu__link">Română</a>
-                                     </li>
-                                     <li class="header__sub--menu__items"><a class="header__sub--menu__link">Русский</a>
-                                     </li>
-                                     <li class="header__sub--menu__items"><a class="header__sub--menu__link">English</a>
-                                     </li>
+                                     @foreach (getLangs() as $lang)
+                                         <li class="header__sub--menu__items"><a class="header__sub--menu__link"
+                                                 href="{{ url(substr_replace(request()->path(), $lang->code, 0, 2)) }}">
+                                                 {{ $lang->name }}
+                                             </a>
+                                         </li>
+                                     @endforeach
                                  </ul>
                              </li>
                          </ul>
@@ -158,26 +160,19 @@
                          href="{{ route('front.blog', app()->getLocale()) }}">Blog</a></li>
                  <li class="offcanvas__menu_li"><a class="offcanvas__menu_item"
                          href="{{ route('front.contact', app()->getLocale()) }}">Contacts</a></li>
-                 <li class="offcanvas__menu_li">
-                     <a class="offcanvas__menu_item">
-                         Language
+                 <li class="header__menu--items">
+                     <a class="header__menu--link">
+                         {{ currentLangName() }}
                      </a>
-                     <ul class="offcanvas__sub_menu">
-                         <li class="offcanvas__sub_menu_li">
-                             <a class="offcanvas__sub_menu_item">
-                                 Română
-                             </a>
-                         </li>
-                         <li class="offcanvas__sub_menu_li">
-                             <a class="offcanvas__sub_menu_item">
-                                 Русский
-                             </a>
-                         </li>
-                         <li class="offcanvas__sub_menu_li">
-                             <a class="offcanvas__sub_menu_item">
-                                 English
-                             </a>
-                         </li>
+                     <ul class="header__sub--menu">
+                         @foreach (getLangs() as $lang)
+                             <li class="header__sub--menu__items">
+                                 <a class="header__sub--menu__link"
+                                     href="{{ url(substr_replace(request()->path(), $lang->code, 0, 2)) }}">
+                                     {{ $lang->name }}
+                                 </a>
+                             </li>
+                         @endforeach
                      </ul>
                  </li>
              </ul>

@@ -53,7 +53,7 @@
                                         </a>
                                     </h3>
                                     <p style="text-align: justify;">
-                                        {{ \Illuminate\Support\Str::limit(strip_tags($project->text), 200) }}
+                                        {!! Str::limit($project->text, 200) !!}
                                     </p>
                                 </div>
                             </article>
