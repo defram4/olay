@@ -136,7 +136,7 @@
                         <a class="{{ Route::currentRouteName() == 'admin.newses.index' ? 'active' : '' }}"
                             href="{{ route('admin.newses.index', ['locale' => app()->getLocale()]) }}">
                             <i class="fa-regular fa-newspaper"></i>
-                            <span class="sidebar-mini-hide">{{ __('News') }}</span>
+                            <span class="sidebar-mini-hide">{{ __('Blog') }}</span>
                         </a>
                     </li>
 

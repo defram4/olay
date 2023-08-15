@@ -373,9 +373,9 @@
     "Why choose us": "Почему выбирают нас",
     "Add why choose us": "Добавьте почему выбирают нас",
     "Edit why choose us": "Редактировать почему выбирают нас",
-    "News": "Новости",
-    "Add news": "Добавить новость",
-    "Edit news": "Редактировать новости",
+    "Blog": "Блог",
+    "Add post": "Добавить пост",
+    "Edit post": "Редактировать пост",
     "Support": "Поддержка",
     "Instructions": "Инструкция",
     "To provide you with the best website experience, we use ": "Чтобы предоставить вам лучший опыт использования веб-сайта, мы используем файлы ",
@@ -388,5 +388,6 @@
     "The message field is required.": "Поле сообщение обязательно для заполнения.",
     "Add project": "Добавить проект",
     "Banner": "Баннер",
-    "Projects": "Проекты"
+    "Projects": "Проекты",
+    "Add banner": "Добавить баннер"
 }

@@ -7,7 +7,7 @@
             <!-- Floating Labels -->
             <div class="block">
                 <div class="block-header block-header-default">
-                    <h3 class="block-title">{{ __('Edit news') }}</h3>
+                    <h3 class="block-title">{{ __('Edit post') }}</h3>
                 </div>
 
                 @if ($errors->any())

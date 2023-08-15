@@ -234,9 +234,9 @@
     "Why choose us": "De ce să ne alegeți pe noi",
     "Add why choose us": "Adaugă de ce să ne alegi pe noi",
     "Edit why choose us": "Editează de ce ne alegi pe noi",
-    "News": "Știri",
-    "Add news": "Adaugă o știre",
-    "Edit news": "Editeză știrea",
+    "Blog": "Blog",
+    "Add post": "Adaugă o postare",
+    "Edit post": "Editeză postarea",
     "Support": "Suport",
     "Instructions": "Instrucțiuni",
     "To provide you with the best website experience, we use ": "Pentru a vă oferi o experiență mai bună, folosim ",
@@ -249,5 +249,5 @@
     "The message field is required.": "Câmpul mesaj este obligatoriu.",
     "Add project": "Adaugă proiect",
     "Banner": "Banner",
-    "Projects": "Proiecte"
+    "Add banner": "Adaugă banner"
 }

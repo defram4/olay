@@ -2,7 +2,7 @@
 @section('content')
     <!-- Page Content -->
     <div class="content">
-        <h2 class="content-heading">{{ __('News') }}</h2>
+        <h2 class="content-heading">{{ __('Blog') }}</h2>
         <div class="block">
 
             <div class="block-header block-header-default">
@@ -10,7 +10,7 @@
                     <a href="{{ route('admin.newses.create', ['locale' => app()->getLocale()]) }}" type="button"
                         class="btn btn-alt-secondary min-width-125 js-click-ripple-enabled" data-toggle="click-ripple"
                         style="overflow: hidden; position: relative; z-index: 1;">
-                        {{ __('Add news') }}
+                        {{ __('Add post') }}
                     </a>
                 </div>
             </div>
