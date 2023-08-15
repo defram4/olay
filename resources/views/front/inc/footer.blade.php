@@ -33,7 +33,7 @@
                                 <ul class="social__share footer__social d-flex">
                                     @foreach ($socials as $social)
                                         <li class="social__share--list">
-                                            <a class="social__share--icon" target="_blank">
+                                            <a href="{{ $social->url }}" class="social__share--icon" target="_blank">
                                                 <img src="{{ asset('storage/social/' . $social->img) }}" alt="Icons">
                                             </a>
                                         </li>
